@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre nuestro menú completo en Fluffy Bites Café en Vantaa, Finlandia. Bebidas premium, comida gourmet, chocolates artesanales y delicias frescas. El mejor 'Espoo cafe' y 'Helsinki coffee' te espera.">
+    <title>Menú Completo - Fluffy Bites</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fluffybites.fi/menu.html">
+    <meta property="og:title" content="Menú Completo - Fluffy Bites">
+    <meta property="og:description" content="Descubre nuestro menú completo de bebidas premium, comida gourmet, chocolates artesanales y delicias frescas en Fluffy Bites.">
+    <meta property="og:image" content="https://www.fluffybites.fi/Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.fluffybites.fi/menu.html">
+    <meta property="twitter:title" content="Menú Completo - Fluffy Bites">
+    <meta property="twitter:description" content="Descubre nuestro menú completo de bebidas premium, comida gourmet, chocolates artesanales y delicias frescas en Fluffy Bites.">
+    <meta property="twitter:image" content="https://www.fluffybites.fi/Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png">
+    <meta name="twitter:site" content="@fluffybitesfi">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/image-grid.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo/1.png">
+    
+    <style>
+        /* Estilos específicos para la página de menú - Paleta Rojo, Negro, Blanco */
+        :root {
+            /* Paleta estricta: Rojo Ferrari, Negro, Blanco */
+            --bg-primary: #000000;
+            --bg-secondary: #1a1a1a;
+            --bg-card: rgba(26, 26, 26, 0.95);
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --accent-red: #dc143c;
+            --accent-red-hover: #ff4757;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Fondo con imágenes superpuestas */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url('Fotos/Fondo/u3829884585_abstract_background_of_silky_creamy_rich_tiramisu_e5508e4a-901f-417e-aaaa-e32ed5fc5d80_2.png'),
+                url('Fotos/Fondo/u3829884585_abstract_background_of_silky_creamy_rich_tiramisu_e5508e4a-901f-417e-a236-e32ed5fc5d80_3.png'),
+                url('Fotos/Fondo/u3829884585_abstract_background_of_silky_creamy_rich_tiramisu_e66d1ca4-83de-45ca-a9cb-44647d4e20e1_1.png'),
+                url('Fotos/Fondo/u3829884585_abstract_background_of_silky_creamy_rich_tiramisu_e66d1ca4-83de-45ca-a9cb-44647d4e20e1_3.png');
+            background-size: cover, cover, cover, cover;
+            background-position: center, center, center, center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.08;
+            z-index: -2;
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        /* Overlay oscuro adicional */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.4) 0%, 
+                rgba(0, 0, 0, 0.2) 50%, 
+                rgba(0, 0, 0, 0.4) 100%);
+            z-index: -1;
+        }
+
+        .menu-hero {
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%),
+                url('Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png'),
+                url('Fotos/u3829884585_A_realistic_product_shot_of_a_premium_chocolate_b_9f482ab1-2912-4ef9-89ce-7a2b5beaf2cc_3.png'),
+                url('Fotos/Pasteles/chocolate-dreamland-1.png'),
+                url('Fotos/Crossants/croissant-cube.png');
+            background-size: cover, cover, cover, cover, cover;
+            background-position: center, center, center, center, center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .menu-hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-red) 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(220, 20, 60, 0.3);
+        }
+
+        .menu-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .menu-hero .btn {
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-hover) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3);
+        }
+
+        .menu-hero .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(220, 20, 60, 0.4);
+        }
+
+        /* Efecto de partículas flotantes */
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(45deg, var(--accent-red) 0%, #ffffff 100%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(220, 20, 60, 0.3);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .menu-hero-content {
+                padding: 1rem;
+            }
+        }
+
+        /* Botones de categoría */
+        .category-selector {
+            padding: 2rem 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .pill-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .pill-btn {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pill-btn.active,
+        .pill-btn:hover {
+            background: var(--accent-red);
+            border-color: var(--accent-red);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Contenedor del menú */
+        .menu-container {
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="Logo/1.png" alt="Fluffy Bites Logo" class="logo">
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link active">Menú</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="food.html" class="nav-link">Comida</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="drinks.html" class="nav-link">Bebidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="locations.html" class="nav-link">Ubicaciones</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="menu-hero">
+        <div class="floating-particles" id="particles"></div>
+        <div class="menu-hero-content">
+            <h1>Menú Completo</h1>
+            <p>Descubre nuestra selección premium de bebidas, comidas, chocolates y delicias artesanales</p>
+            <a href="#menu-content" class="btn">
+                <i class="fas fa-arrow-down"></i>
+                Ver Menú
+            </a>
+        </div>
+    </section>
+
+    <!-- Category Selector -->
+    <section class="category-selector">
+        <div class="container">
+            <div class="pill-buttons">
+                <button class="currency-btn" data-currency="eur">€ EUR</button>
+                <button class="currency-btn" data-currency="usd">$ USD</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <div class="menu-container" id="menu-content">
+        <!-- Sistema de Carga Automática de Imágenes -->
+        <div id="dynamic-menu-container">
+            <!-- Las imágenes se cargarán automáticamente aquí -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="Logo/1.png" alt="Fluffy Bites Logo" class="footer-logo-img">
+                </a>
+            </div>
+
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <!-- Navigation -->
+                <div class="footer-nav">
+                    <h4 class="footer-nav-title">Navegación</h4>
+                    <ul class="footer-nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4 class="footer-contact-title">Contacto</h4>
+                    <div class="footer-contact-info">
+                        <p class="footer-address">Merituulentie 36, 02200 Espoo</p>
+                        <p class="footer-phone">+358 40 7770086</p>
+                        <p class="footer-email">info@nordicglobe.fi</p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-social">
+                    <h4 class="footer-social-title">Síguenos</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/share/19kkHyRKti/?mibextid=wwXIfr" target="_blank" class="footer-social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/fluffybites.fi?igsh=MWVkbnhrbzU0OHJzbg%3D%3D&utm_source=qr" target="_blank" class="footer-social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@fluffybites.fi?_t=ZN-90irH9f9r9O&_r=1" target="_blank" class="footer-social-link" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-copyright">© 2025 Fluffy Bites. All rights reserved.</p>
+                <p class="footer-hours">Lunes - Domingo: 7:00 AM - 9:00 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/image-loader.js"></script>
+
+    <script>
+        // Inicializar sistema de carga automática de imágenes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar todas las imágenes (MENU: todas las fotos)
+            if (window.imageLoader) {
+                window.imageLoader.loadAndRenderImages('dynamic-menu-container', 'all');
+            }
+
+            // Crear partículas flotantes
+            createFloatingParticles();
+
+            // Smooth scroll para el botón del hero
+            document.querySelector('.menu-hero .btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('menu-content').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+
+            // Manejar botones de moneda
+            document.querySelectorAll('.currency-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    // Aquí puedes agregar lógica para cambiar precios
+                });
+            });
+
+            // Configurar el primer botón como activo
+            document.querySelector('.currency-btn[data-currency="eur"]').classList.add('active');
+        });
+
+        // Función para crear partículas flotantes
+        function createFloatingParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 15;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Posición aleatoria
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Delay de animación aleatorio
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Preload de imágenes críticas
+        document.addEventListener('DOMContentLoaded', function() {
+            const criticalImages = [
+                'Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png',
+                'Fotos/Chocolate/u3829884585_A_hyper-realistic_extreme_close-up_food_photograp_dc1da413-b9ff-49b8-9d26-72c2a52f0bfd_3.png',
+                'Fotos/Pasteles/chocolate-dreamland-1.png',
+                'Fotos/Crossants/croissant-cube.png'
+            ];
+
+            criticalImages.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                document.head.appendChild(link);
+            });
+        });
+    </script>
+</body>
+</html>

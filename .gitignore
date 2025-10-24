@@ -1,0 +1,49 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Archivos de backup
+*_backup*
+*_old*
+*_new*
+*_original*
+*_copy*
+
+# Archivos de documentación de desarrollo
+CAMBIOS-*.md
+INSTRUCCIONES-*.md
+TEMA-*.md
+VERSION-*.md
+TRANSFORMACION-*.md
+UBICACION-*.md
+SISTEMA-*.md
+RESUMEN-*.md
+README-MEJORAS.md
+LEEME-*.md
+IMAGENES-*.md
+CONTACT-FORM-*.md
+
+# Archivos de servidor local
+start-server*.bat
+start-server*.sh
+
+# Archivos de desarrollo
+*.log
+*.cache
+node_modules/
+dist/
+build/
+.env
+.env.local
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos temporales
+*.bak
+*.backup

@@ -1,0 +1,399 @@
+/**
+ * Estilos para el Grid Dinámico de Imágenes
+ * Sistema responsivo con lazy loading y animaciones
+ */
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.dynamic-image-grid {
+    padding: 2rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.grid-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.grid-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary, #ffffff);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-red, #dc143c) 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.grid-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary, #cccccc);
+    margin-bottom: 1rem;
+}
+
+.grid-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(220, 20, 60, 0.1);
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    border-radius: 25px;
+    color: var(--accent-red, #dc143c);
+    font-weight: 600;
+}
+
+/* ===== GRID DE IMÁGENES ===== */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Responsive: 3 columnas en desktop */
+@media (min-width: 1200px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Responsive: 2 columnas en tablet */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Responsive: 1 columna en mobile */
+@media (max-width: 767px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .dynamic-image-grid {
+        padding: 1rem 0.5rem;
+    }
+    
+    .grid-title {
+        font-size: 2rem;
+    }
+}
+
+/* ===== TARJETA DE IMAGEN ===== */
+.image-card {
+    background: var(--bg-card, rgba(26, 26, 26, 0.95));
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.image-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(220, 20, 60, 0.2);
+    border-color: rgba(220, 20, 60, 0.3);
+}
+
+.image-card.selected {
+    transform: scale(1.02);
+    border-color: var(--accent-red, #dc143c);
+    box-shadow: 0 0 30px rgba(220, 20, 60, 0.4);
+}
+
+/* ===== CONTENEDOR DE IMAGEN ===== */
+.card-image-container {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.card-image.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.image-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    background: #1a1a1a;
+}
+
+.image-error i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* ===== OVERLAY ===== */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(220, 20, 60, 0.1) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.image-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+    padding: 1.5rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover .overlay-content {
+    transform: translateY(0);
+}
+
+.category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(220, 20, 60, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.image-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.image-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+
+/* ===== INFORMACIÓN DE LA TARJETA ===== */
+.card-info {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary, #ffffff);
+    margin-bottom: 0.5rem;
+}
+
+.card-category {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary, #cccccc);
+    font-size: 0.9rem;
+}
+
+.card-category i {
+    color: var(--accent-red, #dc143c);
+}
+
+/* ===== LOADING Y ESTADOS ===== */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary, #cccccc);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(220, 20, 60, 0.3);
+    border-top: 3px solid var(--accent-red, #dc143c);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.no-images,
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary, #cccccc);
+    text-align: center;
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.no-images i,
+.error-container i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+    color: var(--accent-red, #dc143c);
+}
+
+.error-container {
+    color: #ff6b6b;
+}
+
+.error-container i {
+    color: #ff6b6b;
+}
+
+.no-images p,
+.error-container p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ===== FOOTER DEL GRID ===== */
+.grid-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.grid-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+/* ===== ANIMACIONES DE ENTRADA ===== */
+.image-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.image-card:nth-child(1) { animation-delay: 0.1s; }
+.image-card:nth-child(2) { animation-delay: 0.2s; }
+.image-card:nth-child(3) { animation-delay: 0.3s; }
+.image-card:nth-child(4) { animation-delay: 0.4s; }
+.image-card:nth-child(5) { animation-delay: 0.5s; }
+.image-card:nth-child(6) { animation-delay: 0.6s; }
+.image-card:nth-child(7) { animation-delay: 0.7s; }
+.image-card:nth-child(8) { animation-delay: 0.8s; }
+.image-card:nth-child(9) { animation-delay: 0.9s; }
+.image-card:nth-child(10) { animation-delay: 1.0s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== EFECTOS ESPECIALES ===== */
+.image-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(220, 20, 60, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.image-card:hover::before {
+    opacity: 1;
+}
+
+/* ===== ACCESIBILIDAD ===== */
+@media (prefers-reduced-motion: reduce) {
+    .image-card,
+    .card-image,
+    .card-overlay,
+    .overlay-content {
+        transition: none;
+        animation: none;
+    }
+    
+    .image-card {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ===== IMPRESIÓN ===== */
+@media print {
+    .card-overlay,
+    .grid-footer {
+        display: none;
+    }
+    
+    .image-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

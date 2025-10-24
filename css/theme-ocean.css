@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Tema Azul Mar - Azules y Blancos
+   ========================================================================== */
+
+:root {
+    /* Colors - Tema Azul Mar */
+    --color-primary: #1E3A8A;
+    --color-primary-light: #3B82F6;
+    --color-primary-dark: #1E40AF;
+    --color-secondary: #0EA5E9;
+    --color-secondary-light: #38BDF8;
+    --color-secondary-dark: #0284C7;
+    --color-accent: #06B6D4;
+    --color-accent-light: #22D3EE;
+    --color-accent-dark: #0891B2;
+    --color-gold: #0EA5E9;
+    --color-gold-light: #E0F2FE;
+    --color-gold-dark: #0284C7;
+    
+    --color-text-dark: #1E3A8A;
+    --color-text-medium: #3B82F6;
+    --color-text-light: #6B7280;
+    --color-text-muted: #9CA3AF;
+    
+    --color-background: #FFFFFF;
+    --color-background-light: #F8FAFC;
+    --color-background-alt: #F1F5F9;
+    --color-background-warm: #F0F9FF;
+    --color-background-gradient: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%);
+    --color-background-soft: linear-gradient(135deg, #F0F9FF 0%, #F8FAFC 100%);
+    
+    --color-border: #E2E8F0;
+    --color-border-light: #F1F5F9;
+    --color-shadow: rgba(30, 58, 138, 0.08);
+    --color-shadow-light: rgba(30, 58, 138, 0.04);
+    --color-shadow-medium: rgba(30, 58, 138, 0.12);
+    --color-shadow-dark: rgba(30, 58, 138, 0.16);
+    
+    /* Gradients - Tema Azul Mar */
+    --gradient-primary: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+    --gradient-secondary: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%);
+    --gradient-accent: linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%);
+    --gradient-gold: linear-gradient(135deg, #0EA5E9 0%, #22D3EE 100%);
+    --gradient-warm: linear-gradient(135deg, #F0F9FF 0%, #F8FAFC 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(30, 58, 138, 0.5) 100%);
+}
+
+/* Tema específico para elementos destacados */
+.theme-ocean .hero-section {
+    background: linear-gradient(135deg, #F0F9FF 0%, #F8FAFC 100%);
+}
+
+.theme-ocean .btn-primary {
+    background: var(--gradient-secondary);
+    color: white;
+}
+
+.theme-ocean .btn-primary:hover {
+    background: var(--gradient-accent);
+}

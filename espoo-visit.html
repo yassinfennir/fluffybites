@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visita Fluffy Bites Café en Espoo, Finlandia. Tu destino para el mejor café en Espoo y Helsinki.">
+    <title>Visítanos en Espoo | Fluffy Bites Café</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fluffybites.fi/espoo-visit.html">
+    <meta property="og:title" content="Visítanos en Espoo | Fluffy Bites Café">
+    <meta property="og:description" content="Tu destino para el mejor café en Espoo y Helsinki. Merituulentie 36, 02200 Espoo, Finlandia.">
+    <meta property="og:image" content="https://www.fluffybites.fi/Fotos/Caffe/780x520-2.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo/1.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #dc143c;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 4px rgba(220, 20, 60, 0.1);
+        }
+
+        .main-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #dc143c;
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #8b4513;
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Map Section */
+        .map-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10%;
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 3px solid #dc143c;
+            position: relative;
+            background: #f8f9fa;
+        }
+
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #dc143c, #ff6b6b, #dc143c);
+            border-radius: 24px;
+            z-index: -1;
+            animation: borderGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes borderGlow {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 21px;
+        }
+
+        /* Button Section */
+        .button-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .reserve-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 36px;
+            background: linear-gradient(135deg, #dc143c 0%, #ff4757 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reserve-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .reserve-btn:hover::before {
+            left: 100%;
+        }
+
+        .reserve-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(220, 20, 60, 0.4);
+            background: linear-gradient(135deg, #b91c3c 0%, #ff3742 100%);
+        }
+
+        .reserve-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .reserve-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .map-section {
+                padding: 0 5%;
+            }
+            
+            .map-container {
+                max-width: 1000px;
+                height: 550px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            .container {
+                gap: 30px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .map-section {
+                padding: 0 2%;
+            }
+            
+            .map-container {
+                height: 500px;
+                border-radius: 16px;
+            }
+            
+            .map-container::before {
+                border-radius: 16px;
+            }
+            
+            .map-container iframe {
+                border-radius: 13px;
+            }
+            
+            .reserve-btn {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .map-container {
+                height: 450px;
+            }
+            
+            .reserve-btn {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background: #f8f9fa;
+            color: #dc143c;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #dc143c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <h1 class="main-title">Visítanos en Espoo</h1>
+            <p class="subtitle">Tu destino para el mejor 'Espoo café' y 'Noticias Caffè'</p>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+            <div class="map-container">
+                <div class="loading" id="mapLoading">
+                    <div class="spinner"></div>
+                    Cargando mapa...
+                </div>
+                <iframe 
+                    id="mapFrame"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1978.123456789!2d24.7414!3d60.1558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920b8a6a5c4d4d%3A0x8b8c8d8e8f8g8h8i!2sMerituulentie%2036%2C%2002200%20Espoo%2C%20Finlandia!5e0!3m2!1ses!2ses!4v1703123456789!5m2!1ses!2ses" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    style="display: none;">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Button Section -->
+        <div class="button-section">
+            <a href="contact.html" class="reserve-btn">
+                <i class="fas fa-calendar-check"></i>
+                <span>Reserva aquí</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Map loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapFrame = document.getElementById('mapFrame');
+            const mapLoading = document.getElementById('mapLoading');
+            
+            // Simulate loading time for better UX
+            setTimeout(() => {
+                mapLoading.style.display = 'none';
+                mapFrame.style.display = 'block';
+            }, 1500);
+            
+            // Handle map load event
+            mapFrame.addEventListener('load', function() {
+                mapLoading.style.display = 'none';
+                mapFrame.style.display = 'block';
+            });
+        });
+
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive effects
+        document.querySelector('.reserve-btn').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+        });
+
+        document.querySelector('.reserve-btn').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    </script>
+</body>
+</html>

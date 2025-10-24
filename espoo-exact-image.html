@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encuéntranos Aquí en Espoo - Fluffy Bites Café en Avenida Estación Nöro, Espoo, Finlandia">
+    <title>Encuéntranos Aquí en Espoo | Fluffy Bites Café</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo/1.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0e6e3; /* Beige/rosa claro como en la imagen */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .main-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #dc143c; /* Rojo como en la imagen */
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #666;
+            margin-top: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* Map Section - 65-70% width with exact proportions */
+        .map-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 17.5%; /* Centered with equal margins (35% total = 17.5% each side) */
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 100%;
+            height: 400px; /* Proporción similar a la imagen (ancho x alto) */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+            background: #f8f9fa;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 11px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .map-section {
+                padding: 0 15%; /* Slightly less margin on smaller screens */
+            }
+            
+            .map-container {
+                height: 380px;
+            }
+            
+            .main-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 15px;
+            }
+            
+            .main-container {
+                gap: 30px;
+            }
+            
+            .main-title {
+                font-size: 2.4rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .map-section {
+                padding: 0 10%; /* Reduce margins on mobile */
+            }
+            
+            .map-container {
+                height: 350px;
+                border-radius: 10px;
+            }
+            
+            .map-container iframe {
+                border-radius: 9px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background: #f8f9fa;
+            color: #dc143c;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #dc143c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 12px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Ensure perfect centering */
+        .map-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Additional styling to match image exactly */
+        .main-title {
+            text-shadow: none;
+        }
+
+        .subtitle {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <h1 class="main-title">Encuéntranos Aquí en Espoo</h1>
+            <p class="subtitle">Avenida Estación Nöro, Espoo, Finlandia • Si 'Siipoo café' y 'Helsinki coffee' más cercano</p>
+        </div>
+
+        <!-- Map Section - 65-70% width with exact proportions -->
+        <div class="map-section">
+            <div class="map-container">
+                <div class="loading" id="mapLoading">
+                    <div class="spinner"></div>
+                    Cargando mapa...
+                </div>
+                <iframe 
+                    id="mapFrame"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1978.123456789!2d24.7414!3d60.1558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920b8a6a5c4d4d%3A0x8b8c8d8e8f8g8h8i!2sMerituulentie%2036%2C%2002200%20Espoo%2C%20Finlandia!5e0!3m2!1ses!2ses!4v1703123456789!5m2!1ses!2ses" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    style="display: none;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Map loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapFrame = document.getElementById('mapFrame');
+            const mapLoading = document.getElementById('mapLoading');
+            
+            // Simulate loading time for better UX
+            setTimeout(() => {
+                mapLoading.style.display = 'none';
+                mapFrame.style.display = 'block';
+            }, 1200);
+            
+            // Handle map load event
+            mapFrame.addEventListener('load', function() {
+                mapLoading.style.display = 'none';
+                mapFrame.style.display = 'block';
+            });
+        });
+
+        // Ensure perfect centering on window resize
+        window.addEventListener('resize', function() {
+            // Force reflow to ensure proper centering
+            const mapSection = document.querySelector('.map-section');
+            mapSection.style.display = 'none';
+            mapSection.offsetHeight; // Trigger reflow
+            mapSection.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>

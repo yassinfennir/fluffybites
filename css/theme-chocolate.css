@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Tema Chocolate/Café - Tonos Cálidos y Acogedores
+   ========================================================================== */
+
+:root {
+    /* Colors - Tema Chocolate/Café */
+    --color-primary: #92400E;
+    --color-primary-light: #B45309;
+    --color-primary-dark: #78350F;
+    --color-secondary: #A16207;
+    --color-secondary-light: #CA8A04;
+    --color-secondary-dark: #854D0E;
+    --color-accent: #D97706;
+    --color-accent-light: #F59E0B;
+    --color-accent-dark: #B45309;
+    --color-gold: #D97706;
+    --color-gold-light: #FEF3C7;
+    --color-gold-dark: #B45309;
+    
+    --color-text-dark: #451A03;
+    --color-text-medium: #78350F;
+    --color-text-light: #6B7280;
+    --color-text-muted: #9CA3AF;
+    
+    --color-background: #FFFFFF;
+    --color-background-light: #FEFDFB;
+    --color-background-alt: #FEF7ED;
+    --color-background-warm: #FFFBEB;
+    --color-background-gradient: linear-gradient(135deg, #FFFFFF 0%, #FEFDFB 50%, #FEF7ED 100%);
+    --color-background-soft: linear-gradient(135deg, #FFFBEB 0%, #FEFDFB 100%);
+    
+    --color-border: #FED7AA;
+    --color-border-light: #FEF7ED;
+    --color-shadow: rgba(146, 64, 14, 0.08);
+    --color-shadow-light: rgba(146, 64, 14, 0.04);
+    --color-shadow-medium: rgba(146, 64, 14, 0.12);
+    --color-shadow-dark: rgba(146, 64, 14, 0.16);
+    
+    /* Gradients - Tema Chocolate/Café */
+    --gradient-primary: linear-gradient(135deg, #92400E 0%, #B45309 100%);
+    --gradient-secondary: linear-gradient(135deg, #A16207 0%, #CA8A04 100%);
+    --gradient-accent: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+    --gradient-gold: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+    --gradient-warm: linear-gradient(135deg, #FFFBEB 0%, #FEFDFB 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(146, 64, 14, 0.7) 0%, rgba(146, 64, 14, 0.5) 100%);
+}
+
+/* Tema específico para elementos destacados */
+.theme-chocolate .hero-section {
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEFDFB 100%);
+}
+
+.theme-chocolate .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.theme-chocolate .btn-primary:hover {
+    background: var(--gradient-secondary);
+}
+
+.theme-chocolate .header {
+    background: rgba(146, 64, 14, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.theme-chocolate .nav-link:hover {
+    color: var(--color-accent-light);
+}
+
+.theme-chocolate .hero-title {
+    color: var(--color-primary);
+}
+
+.theme-chocolate .section-title {
+    color: var(--color-primary-dark);
+}

@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre nuestras bebidas premium en Fluffy Bites Café en Vantaa, Finlandia. Café specialty, bebidas artesanales y delicias gourmet. El mejor 'Espoo cafe' y 'Helsinki coffee' te espera.">
+    <title>Drinks - Fluffy Bites</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fluffybites.fi/drinks.html">
+    <meta property="og:title" content="Drinks - Fluffy Bites">
+    <meta property="og:description" content="Discover our premium drinks menu of coffee, artisanal beverages and gourmet delights at Fluffy Bites.">
+    <meta property="og:image" content="https://www.fluffybites.fi/Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.fluffybites.fi/drinks.html">
+    <meta property="twitter:title" content="Drinks - Fluffy Bites">
+    <meta property="twitter:description" content="Discover our premium drinks menu of coffee, artisanal beverages and gourmet delights at Fluffy Bites.">
+    <meta property="twitter:image" content="https://www.fluffybites.fi/Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png">
+    <meta name="twitter:site" content="@fluffybitesfi">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo/1.png">
+    
+    <style>
+        /* Estilos específicos para la página de drinks - Paleta Rojo, Negro, Blanco */
+        :root {
+            /* Paleta estricta: Rojo Ferrari, Negro, Blanco */
+            --bg-primary: #000000;
+            --bg-secondary: #1a1a1a;
+            --bg-card: rgba(26, 26, 26, 0.95);
+            --text-primary: #ffffff;
+            --text-secondary: #f0f0f0;
+            --text-muted: #cccccc;
+            --accent-red: #DC143C;
+            --accent-red-hover: #B22222;
+            --accent-red-light: #FF1744;
+            --border-color: rgba(255, 255, 255, 0.15);
+            --shadow-dark: rgba(0, 0, 0, 0.8);
+            --shadow-red: rgba(220, 20, 60, 0.3);
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Fondo con fotos de café oscurecidas */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url('Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png'),
+                url('Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png'),
+                url('Fotos/Caffe/u3829884585_COFFE_VIDEO_AND_ITS_LIKE_A_ESPRESSO_ANUCIO_DE_LA__fbe07e45-a133-41c8-ab87-1c29e714412e_0.png'),
+                url('Fotos/Caffe/u3829884585_COFFEE_EXPRESSO_WITH_A_HOT_BROWNIUE_--v_7_78e7d853-1e97-4741-90eb-bed18687cbea_2.png'),
+                url('Fotos/Caffe/u3829884585_Its_a_big_cup_of_cappuccino_Serve_in_a_glass_Ther_ad539098-6719-42d5-96bc-792b6b2ea701_2.png'),
+                url('Fotos/Caffe/u3829884585_The_aroma_of_freshly_brewed_coffee_fills_the_air__091b0b0c-05d9-4ee0-ad57-18baca72d9d0_3.png');
+            background-size: cover, cover, cover, cover, cover, cover;
+            background-position: center, center, center, center, center, center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.2;
+            z-index: -2;
+            filter: brightness(0.4) contrast(1.3);
+        }
+
+        /* Overlay oscuro adicional */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.8) 0%, 
+                rgba(0, 0, 0, 0.6) 50%, 
+                rgba(0, 0, 0, 0.8) 100%);
+            z-index: -1;
+        }
+
+        .menu-hero {
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%),
+                url('Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png'),
+                url('Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png'),
+                url('Fotos/Caffe/u3829884585_COFFE_VIDEO_AND_ITS_LIKE_A_ESPRESSO_ANUCIO_DE_LA__fbe07e45-a133-41c8-ab87-1c29e714412e_0.png'),
+                url('Fotos/Caffe/u3829884585_COFFEE_EXPRESSO_WITH_A_HOT_BROWNIUE_--v_7_78e7d853-1e97-4741-90eb-bed18687cbea_2.png'),
+                url('Fotos/Caffe/u3829884585_Its_a_big_cup_of_cappuccino_Serve_in_a_glass_Ther_ad539098-6719-42d5-96bc-792b6b2ea701_2.png');
+            background-size: cover, cover, cover, cover, cover;
+            background-position: center, center, center, center, center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 200px 0 80px;
+            text-align: center;
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .menu-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .menu-subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Navigation Buttons */
+        .page-navigation {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 40px 0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .nav-btn:hover::before {
+            left: 100%;
+        }
+
+        .nav-btn:hover {
+            background: rgba(220, 20, 60, 0.2);
+            border-color: var(--accent-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-light) 100%);
+            border-color: var(--accent-red);
+            color: white;
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+        }
+
+        .nav-btn i {
+            font-size: 1.2rem;
+        }
+
+        .menu-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 80px;
+            transition: all 0.5s ease;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.8rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-red);
+            border-radius: 2px;
+            box-shadow: 0 2px 8px var(--shadow-red);
+        }
+
+        .section-emoji {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .menu-item {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .menu-item:hover::before {
+            opacity: 1;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 80px rgba(220, 20, 60, 0.2);
+            border-color: var(--accent-red);
+            background: rgba(30, 30, 30, 0.95);
+        }
+
+        .menu-item-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .menu-item-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.2) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .menu-item:hover .menu-item-image::before {
+            opacity: 1;
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        .menu-item:hover .menu-item-image img {
+            transform: scale(1.08);
+            filter: brightness(1) contrast(1.2);
+        }
+
+        .menu-item-content {
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-item-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .menu-item-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .menu-item-btn {
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-light) 100%);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .menu-item-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .menu-item-btn:hover::before {
+            left: 100%;
+        }
+
+        .menu-item-btn:hover {
+            background: linear-gradient(135deg, var(--accent-red-hover) 0%, var(--accent-red) 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(220, 20, 60, 0.5);
+        }
+
+        .menu-item-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* Animaciones de entrada */
+        .menu-section {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .menu-section:nth-child(1) { animation-delay: 0.1s; }
+        .menu-section:nth-child(2) { animation-delay: 0.2s; }
+        .menu-section:nth-child(3) { animation-delay: 0.3s; }
+        .menu-section:nth-child(4) { animation-delay: 0.4s; }
+        .menu-section:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .menu-container {
+                padding: 60px 15px;
+            }
+
+            .page-navigation {
+                padding: 30px 0;
+                position: relative;
+                top: 0;
+            }
+
+            .nav-buttons {
+                gap: 15px;
+            }
+
+            .nav-btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+                gap: 8px;
+            }
+
+            .nav-btn i {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .nav-btn {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+
+        /* Header styling */
+        .site-header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1000 !important;
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            border-bottom: 2px solid var(--accent-red) !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(220, 20, 60, 0.05) 0%, 
+                rgba(255, 255, 255, 0.02) 50%, 
+                rgba(220, 20, 60, 0.03) 100%);
+            z-index: -1;
+        }
+
+        .site-header.scrolled {
+            background: rgba(255, 255, 255, 0.99) !important;
+            backdrop-filter: blur(25px) !important;
+            -webkit-backdrop-filter: blur(25px) !important;
+            border-bottom: 2px solid var(--accent-red) !important;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .site-header.scrolled::before {
+            background: linear-gradient(135deg, 
+                rgba(220, 20, 60, 0.08) 0%, 
+                rgba(255, 255, 255, 0.03) 50%, 
+                rgba(220, 20, 60, 0.05) 100%);
+        }
+
+        .logo {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .site-header.scrolled .logo-img {
+            height: 45px;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+        }
+
+        .main-nav {
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #000000 !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 700 !important;
+            font-size: 0.95rem !important;
+            text-decoration: none !important;
+            position: relative !important;
+            padding: 12px 20px !important;
+            border-radius: 12px !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            background: rgba(0, 0, 0, 0.05) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            text-shadow: none !important;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(220, 20, 60, 0.15) 0%, 
+                rgba(220, 20, 60, 0.08) 100%);
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            opacity: 1;
+        }
+
+        .nav-link:hover, 
+        .nav-link.active {
+            color: #000000 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.2) !important;
+            border-color: rgba(220, 20, 60, 0.3) !important;
+            text-shadow: none !important;
+        }
+
+        .header-cta .modern-btn {
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-light) 100%) !important;
+            border: none !important;
+            color: white !important;
+            padding: 14px 28px !important;
+            border-radius: 16px !important;
+            font-weight: 700 !important;
+            font-family: 'Inter', sans-serif !important;
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3) !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            position: relative !important;
+            overflow: hidden !important;
+            text-shadow: none !important;
+        }
+
+        .header-cta .modern-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .header-cta .modern-btn:hover::before {
+            left: 100%;
+        }
+
+        .header-cta .modern-btn:hover {
+            background: linear-gradient(135deg, var(--accent-red-hover) 0%, var(--accent-red) 100%) !important;
+            transform: translateY(-3px) scale(1.05) !important;
+            box-shadow: 0 15px 35px rgba(220, 20, 60, 0.4) !important;
+            color: white !important;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(220, 20, 60, 0.15);
+            border-color: rgba(220, 20, 60, 0.3);
+            transform: scale(1.05);
+        }
+
+        .hamburger-line {
+            width: 24px;
+            height: 2px;
+            background: #000000;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .site-header {
+            animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .site-header * {
+            color: #000000 !important;
+        }
+
+        .site-header .modern-btn {
+            color: white !important;
+        }
+
+        .site-header .language-btn.active {
+            color: white !important;
+        }
+
+        .site-footer {
+            background: var(--bg-primary) !important;
+            border-top: 1px solid var(--border-color) !important;
+        }
+
+        .footer-title {
+            color: var(--text-primary) !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        .footer-copyright, .footer-credits {
+            color: var(--text-secondary) !important;
+        }
+
+        .social-link {
+            color: var(--text-secondary) !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .social-link:hover {
+            color: var(--accent-red) !important;
+        }
+
+        body {
+            padding-top: 0 !important;
+        }
+
+        .menu-hero {
+            margin-top: 0 !important;
+            padding-top: 120px !important;
+        }
+
+        .site-header .container {
+            transition: all 0.3s ease !important;
+        }
+
+        .site-header.scrolled .container {
+            padding: 15px 20px !important;
+        }
+
+        .site-header .logo {
+            transition: all 0.3s ease !important;
+        }
+
+        .site-header.scrolled .logo {
+            transform: scale(0.9) !important;
+        }
+
+        .site-header .nav-link {
+            transition: all 0.3s ease !important;
+            padding: 8px 16px !important;
+        }
+
+        .site-header.scrolled .nav-link {
+            padding: 6px 12px !important;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 1.5rem;
+            }
+            
+            .nav-link {
+                padding: 10px 16px !important;
+                font-size: 0.9rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .header-cta .modern-btn {
+                padding: 12px 20px !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .logo-img {
+                height: 45px;
+            }
+            
+            .site-header.scrolled .logo-img {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-cta .modern-btn {
+                padding: 10px 16px !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .site-header.scrolled .logo-img {
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+    <!-- Header -->
+    <header class="site-header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo Moderno -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="Logo/1.png" alt="Fluffy Bites Logo" class="logo-img">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="menu.html" class="nav-link">Menu</a></li>
+                        <li><a href="drinks.html" class="nav-link active">Drinks</a></li>
+                        <li><a href="food.html" class="nav-link">Food</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="locations.html" class="nav-link">Locations</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-primary">Visit Us</a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-menu">
+                    <li><a href="index.html" class="mobile-nav-link">Inicio</a></li>
+                    <li><a href="menu.html" class="mobile-nav-link">Menú</a></li>
+                    <li><a href="drinks.html" class="mobile-nav-link">Drinks</a></li>
+                    <li><a href="food.html" class="mobile-nav-link">Food</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">Nosotros</a></li>
+                    <li><a href="locations.html" class="mobile-nav-link">Ubicaciones</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Menu Hero Section -->
+        <section class="menu-hero">
+            <div class="container">
+                <h1 class="menu-title">☕ Drinks</h1>
+                <p class="menu-subtitle">Descubre nuestras bebidas premium. Cafés artesanales, especialidades únicas y creaciones que despiertan todos los sentidos en Fluffy Bites.</p>
+            </div>
+        </section>
+
+        <!-- Page Navigation -->
+        <section class="page-navigation">
+            <div class="container">
+                <div class="nav-buttons">
+                    <a href="drinks.html" class="nav-btn active">
+                        <i class="fas fa-coffee"></i>
+                        <span>Drinks</span>
+                    </a>
+                    <a href="food.html" class="nav-btn">
+                        <i class="fas fa-hamburger"></i>
+                        <span>Food</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Content -->
+        <div class="menu-container">
+            
+            <!-- Cafés Artesanales -->
+            <section class="menu-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-emoji">☕</span>
+                        <span>Cafés Artesanales</span>
+                    </h2>
+                </div>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="Fotos/Caffe/designer-coffee.png" alt="Café Designer en Fluffy Bites Vantaa">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">Café Designer</h3>
+                            <p class="menu-item-description">Café premium con diseño artístico único, preparado con granos seleccionados y técnicas especiales. Una experiencia visual y gustativa excepcional para tu 'Espoo cafe'.</p>
+                            <div class="menu-item-footer">
+                                <button class="menu-item-btn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Descubrir</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="Fotos/Caffe/premium-espresso.png" alt="Espresso Premium en Fluffy Bites Helsinki">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">Espresso Premium</h3>
+                            <p class="menu-item-description">Espresso de la más alta calidad, preparado con granos premium y técnicas tradicionales italianas. La intensidad perfecta para los verdaderos amantes del café en tu 'Helsinki coffee'.</p>
+                            <div class="menu-item-footer">
+                                <button class="menu-item-btn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Descubrir</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="Fotos/Caffe/coffee-brownie.png" alt="Café con Brownie en Fluffy Bites Vantaa">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">Café con Brownie</h3>
+                            <p class="menu-item-description">La combinación perfecta: café premium acompañado de brownie artesanal. Una experiencia decadente que combina la intensidad del café con la dulzura del chocolate en tu 'Vantaa cafe'.</p>
+                            <div class="menu-item-footer">
+                                <button class="menu-item-btn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Descubrir</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png" alt="Café con Leche en Fluffy Bites Espoo">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">Café con Leche</h3>
+                            <p class="menu-item-description">Delicioso café con leche fresca siendo vertida en tiempo real. Una experiencia visual y gustativa única que combina la intensidad del café con la suavidad de la leche en tu 'Espoo cafe'.</p>
+                            <div class="menu-item-footer">
+                                <button class="menu-item-btn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Descubrir</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png" alt="Cappuccino Artesanal en Fluffy Bites">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">Cappuccino Artesanal</h3>
+                            <p class="menu-item-description">Cappuccino perfectamente balanceado con espuma cremosa y arte latte único. Preparado con granos premium y técnicas tradicionales italianas.</p>
+                            <div class="menu-item-footer">
+                                <button class="menu-item-btn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Descubrir</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="Fotos/Caffe/u3829884585_COFFE_VIDEO_AND_ITS_LIKE_A_ESPRESSO_ANUCIO_DE_LA__fbe07e45-a133-41c8-ab87-1c29e714412e_0.png" alt="Espresso Intenso en Fluffy Bites">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">Espresso Intenso</h3>
+                            <p class="menu-item-description">Espresso de intensidad perfecta, preparado con granos seleccionados y técnicas profesionales. Para los verdaderos amantes del café puro.</p>
+                            <div class="menu-item-footer">
+                                <button class="menu-item-btn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Descubrir</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="Fotos/Caffe/u3829884585_Its_a_big_cup_of_cappuccino_Serve_in_a_glass_Ther_ad539098-6719-42d5-96bc-792b6b2ea701_2.png" alt="Cappuccino Grande en Fluffy Bites">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">Cappuccino Grande</h3>
+                            <p class="menu-item-description">Cappuccino servido en vaso grande con espuma perfecta y sabor intenso. Ideal para disfrutar en una tarde relajante.</p>
+                            <div class="menu-item-footer">
+                                <button class="menu-item-btn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Descubrir</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="Fotos/Caffe/u3829884585_The_aroma_of_freshly_brewed_coffee_fills_the_air__091b0b0c-05d9-4ee0-ad57-18baca72d9d0_3.png" alt="Café Fresco en Fluffy Bites">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">Café Fresco</h3>
+                            <p class="menu-item-description">Café recién preparado con aroma intenso y sabor auténtico. Una experiencia que despierta todos los sentidos con cada sorbo.</p>
+                            <div class="menu-item-footer">
+                                <button class="menu-item-btn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Descubrir</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="Logo/1.png" alt="Fluffy Bites Logo" class="footer-logo-img">
+                </a>
+            </div>
+
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <!-- Navigation -->
+                <div class="footer-nav">
+                    <h4 class="footer-nav-title">Navegación</h4>
+                    <ul class="footer-nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4 class="footer-contact-title">Contacto</h4>
+                    <div class="footer-contact-info">
+                        <p class="footer-address">Merituulentie 36, 02200 Espoo</p>
+                        <p class="footer-phone">+358 40 7770086</p>
+                        <p class="footer-email">info@nordicglobe.fi</p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-social">
+                    <h4 class="footer-social-title">Síguenos</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/share/19kkHyRKti/?mibextid=wwXIfr" target="_blank" class="footer-social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/fluffybites.fi?igsh=MWVkbnhrbzU0OHJzbg%3D%3D&utm_source=qr" target="_blank" class="footer-social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@fluffybites.fi?_t=ZN-90irH9f9r9O&_r=1" target="_blank" class="footer-social-link" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-copyright">© 2025 Fluffy Bites. All rights reserved.</p>
+                <p class="footer-hours">Lunes - Domingo: 7:00 AM - 9:00 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+
+    <script>
+        // Animaciones adicionales para el menú
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar sistema de idiomas
+            initializeLanguage();
+            
+            // Animación de entrada de las tarjetas del menú
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            menuItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease';
+                observer.observe(item);
+            });
+
+            // Header invisible con efecto blur al hacer scroll
+            const header = document.querySelector('.site-header');
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            function updateHeader() {
+                const scrollY = window.scrollY;
+                
+                if (scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                lastScrollY = scrollY;
+                ticking = false;
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateHeader);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', requestTick, { passive: true });
+        });
+
+        // Efecto de hover mejorado para las tarjetas
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px) scale(1.03)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

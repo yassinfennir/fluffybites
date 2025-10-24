@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce la historia de Fluffy Bites Café en Espoo, Finlandia. Nuestra pasión por el café specialty y los pasteles artesanales nos convierte en el mejor 'Espoo cafe' y 'Espoo coffee' experience.">
+    <title>About Us - Fluffy Bites</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fluffybites.fi/about.html">
+    <meta property="og:title" content="About Us - Fluffy Bites">
+    <meta property="og:description" content="Learn about Fluffy Bites - our story, mission, and passion for creating the perfect coffee and pastries experience.">
+    <meta property="og:image" content="https://www.fluffybites.fi/Fotos/artisan-coffee.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.fluffybites.fi/about.html">
+    <meta property="twitter:title" content="About Us - Fluffy Bites">
+    <meta property="twitter:description" content="Learn about Fluffy Bites - our story, mission, and passion for creating the perfect coffee and pastries experience.">
+    <meta property="twitter:image" content="https://www.fluffybites.fi/Fotos/artisan-coffee.png">
+    <meta name="twitter:site" content="@fluffybitesfi">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/theme-red.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo/1.png">
+    
+    <style>
+        /* Estilos para imágenes redondeadas en Our Story */
+        .story-img {
+            border-radius: 20px !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        
+        .story-img:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+        }
+        
+        /* Asegurar que las imágenes mantengan su aspecto */
+        .story-image {
+            overflow: hidden;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="theme-red">
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Header -->
+    <header class="site-header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="Logo/1.png" alt="Fluffy Bites Logo" class="logo-img">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="menu.html" class="nav-link">Menu</a></li>
+                        <li><a href="about.html" class="nav-link active">About</a></li>
+                        <li><a href="locations.html" class="nav-link">Locations</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-primary">Visit Us</a>
+                </div>
+
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-menu">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="menu.html" class="mobile-nav-link">Menu</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="locations.html" class="mobile-nav-link">Locations</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cursor Follower -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">About Fluffy Bites</h1>
+                <p class="page-subtitle">Discover Our Passion for Coffee & Pastries</p>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-grid">
+                    <div class="mission-image" data-aos="fade-right">
+                        <img src="Fotos/Caffe/780x520-2.jpg" alt="Premium Coffee Experience at Fluffy Bites" class="mission-img" loading="lazy">
+                    </div>
+                    <div class="mission-content" data-aos="fade-left">
+                        <h2 class="section-title">Nuestra Misión en Fluffy Bites Espoo</h2>
+                        <p class="mission-text">
+                            En Fluffy Bites, tu 'Espoo cafe' de confianza, estamos comprometidos a servir solo productos de la más alta calidad. 
+                            Cada taza de café se elabora con granos cuidadosamente seleccionados, y cada pastel se 
+                            hornea fresco diariamente utilizando ingredientes premium, ofreciendo la mejor experiencia de 'Espoo coffee'.
+                        </p>
+                        <div class="mission-values">
+                            <div class="value-item">
+                                <i class="fas fa-heart value-icon"></i>
+                                <h3 class="value-title">Made with Love</h3>
+                                <p class="value-text">Every item is crafted with passion and attention to detail</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-leaf value-icon"></i>
+                                <h3 class="value-title">Fresh & Natural</h3>
+                                <p class="value-text">We use only the freshest, natural ingredients</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-users value-icon"></i>
+                                <h3 class="value-title">Community First</h3>
+                                <p class="value-text">We're proud to be part of your daily routine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">¿Por qué elegir Fluffy Bites, tu 'Espoo cafe'?</h2>
+                    <p class="section-subtitle">Ingredientes de calidad, comidas sabrosas y la mejor experiencia de 'Espoo coffee'</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <h3 class="feature-title">Café Premium en Espoo</h3>
+                        <p class="feature-text">
+                            Obtenemos nuestros granos de fincas sostenibles y los tostamos a la perfección para tu 'Espoo cafe'
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-bread-slice"></i>
+                        </div>
+                        <h3 class="feature-title">Repostería Fresca Diaria en Espoo</h3>
+                        <p class="feature-text">
+                            Nuestros pasteles se hornean frescos cada mañana utilizando recetas tradicionales, perfectos para tu 'Espoo cafe'
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h3 class="feature-title">Servicio Amigable para tu 'Espoo coffee'</h3>
+                        <p class="feature-text">
+                            Nuestro equipo se dedica a hacer que tu visita sea memorable y placentera, la mejor experiencia de 'Espoo coffee'
+                        </p>
+                    </div>
+
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="feature-title">Ambiente Acogedor en Espoo</h3>
+                        <p class="feature-text">
+                            Un espacio cálido y acogedor perfecto para trabajar, estudiar o reunirse con amigos en tu 'Espoo cafe'
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section - Redesigned -->
+        <section class="our-story-section">
+            <div class="container">
+                <div class="our-story-content">
+                    <h2 class="our-story-title">Our Story</h2>
+                    <p class="our-story-subtitle">Where Every Bite Feels Like a Hug</p>
+                    
+                    <div class="story-content">
+                        <div class="story-text">
+                            <h3 class="story-heading">Bienvenido a Fluffy Bites, tu 'Espoo cafe'</h3>
+                            <p class="story-paragraph">
+                                Fluffy Bites, el mejor 'Espoo cafe', comenzó con un simple sueño: crear un espacio acogedor donde la gente pudiera disfrutar 
+                                de café excepcional y pasteles recién horneados en un ambiente cálido y acogedor. Lo que comenzó 
+                                como un proyecto apasionante se ha convertido en un querido lugar de reunión de la comunidad en Espoo.
+                            </p>
+                        </div>
+                        
+                        <div class="story-image">
+                            <img src="Fotos/Fondo/u3829884585_abstract_background_of_silky_creamy_rich_tiramisu_e5508e4a-901f-417e-a236-e32ed5fc5d80_2.png" 
+                                 alt="Fluffy Bites Café Interior en Espoo, Finlandia" 
+                                 class="story-img" 
+                                 loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="story-content reverse">
+                        <div class="story-text">
+                            <p class="story-paragraph">
+                                Nuestra trayectoria comenzó en 2023 cuando nuestro fundador descubrió el equilibrio perfecto entre la elaboración artesanal de café 
+                                y la repostería de estilo europeo. Cada receta ha sido cuidadosamente desarrollada para ofrecerte 
+                                la experiencia más deliciosa posible, consolidándonos como un referente de 'Espoo coffee'.
+                            </p>
+                        </div>
+                        
+                        <div class="story-image">
+                            <img src="Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png" 
+                                 alt="Café Premium Artesanal" 
+                                 class="story-img" 
+                                 loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="story-text final">
+                        <p class="story-paragraph">
+                            Hoy, Fluffy Bites es más que una cafetería en Espoo; es un lugar donde se crean recuerdos, 
+                            florecen amistades y cada visita se siente como volver a casa. Ven a disfrutar de la mejor experiencia de 'Espoo cafe'.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="Logo/1.png" alt="Fluffy Bites Logo" class="footer-logo-img">
+                </a>
+            </div>
+
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <!-- Navigation -->
+                <div class="footer-nav">
+                    <h4 class="footer-nav-title">Navegación</h4>
+                    <ul class="footer-nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4 class="footer-contact-title">Contacto</h4>
+                    <div class="footer-contact-info">
+                        <p class="footer-address">Merituulentie 36, 02200 Espoo</p>
+                        <p class="footer-phone">+358 40 7770086</p>
+                        <p class="footer-email">info@nordicglobe.fi</p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-social">
+                    <h4 class="footer-social-title">Síguenos</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/share/19kkHyRKti/?mibextid=wwXIfr" target="_blank" class="footer-social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/fluffybites.fi?igsh=MWVkbnhrbzU0OHJzbg%3D%3D&utm_source=qr" target="_blank" class="footer-social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@fluffybites.fi?_t=ZN-90irH9f9r9O&_r=1" target="_blank" class="footer-social-link" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-copyright">© 2025 Fluffy Bites. All rights reserved.</p>
+                <p class="footer-hours">Lunes - Domingo: 7:00 AM - 9:00 PM</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+</body>
+</html>
+

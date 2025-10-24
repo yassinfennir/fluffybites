@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Tema Clásico - Café y Chocolate
+   ========================================================================== */
+
+:root {
+    /* Colors - Tema Clásico Café */
+    --color-primary: #2C2C2C;
+    --color-primary-light: #4A4A4A;
+    --color-primary-dark: #1A1A1A;
+    --color-secondary: #8B7355;
+    --color-secondary-light: #A68B5B;
+    --color-secondary-dark: #6B5B47;
+    --color-accent: #D4AF37;
+    --color-accent-light: #E6C547;
+    --color-accent-dark: #B8941F;
+    --color-gold: #FFD700;
+    --color-gold-light: #FFF8DC;
+    --color-gold-dark: #B8860B;
+    
+    --color-text-dark: #2C2C2C;
+    --color-text-medium: #4A4A4A;
+    --color-text-light: #6B6B6B;
+    --color-text-muted: #8B8B8B;
+    
+    --color-background: #FFFFFF;
+    --color-background-light: #FAFAFA;
+    --color-background-alt: #F5F5F5;
+    --color-background-warm: #FEFCF8;
+    --color-background-gradient: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 50%, #F5F5F5 100%);
+    --color-background-soft: linear-gradient(135deg, #FEFCF8 0%, #FAFAFA 100%);
+    
+    --color-border: #E8E8E8;
+    --color-border-light: #F0F0F0;
+    --color-shadow: rgba(44, 44, 44, 0.08);
+    --color-shadow-light: rgba(44, 44, 44, 0.04);
+    --color-shadow-medium: rgba(44, 44, 44, 0.12);
+    --color-shadow-dark: rgba(44, 44, 44, 0.16);
+    
+    /* Gradients - Tema Clásico */
+    --gradient-primary: linear-gradient(135deg, #2C2C2C 0%, #4A4A4A 100%);
+    --gradient-secondary: linear-gradient(135deg, #8B7355 0%, #A68B5B 100%);
+    --gradient-accent: linear-gradient(135deg, #D4AF37 0%, #E6C547 100%);
+    --gradient-gold: linear-gradient(135deg, #FFD700 0%, #E6C547 100%);
+    --gradient-warm: linear-gradient(135deg, #FEFCF8 0%, #FAFAFA 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(44, 44, 44, 0.7) 0%, rgba(44, 44, 44, 0.5) 100%);
+}
+
+/* Tema específico para elementos destacados */
+.theme-classic .hero-section {
+    background: linear-gradient(135deg, #FEFCF8 0%, #FAFAFA 100%);
+}
+
+.theme-classic .btn-primary {
+    background: var(--gradient-secondary);
+    color: white;
+}
+
+.theme-classic .btn-primary:hover {
+    background: var(--gradient-accent);
+}

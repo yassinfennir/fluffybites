@@ -1,0 +1,599 @@
+/* ==========================================================================
+   Responsive Styles - Mobile First Approach
+   ========================================================================== */
+
+/* Tablet & Below (1024px and down) */
+@media (max-width: 1024px) {
+    :root {
+        --font-size-hero: 64px;
+        --font-size-4xl: 48px;
+        --font-size-3xl: 32px;
+        --font-size-2xl: 24px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    /* Header */
+    .logo-img {
+        height: 50px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .header-cta .btn {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 64px;
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+        justify-items: center;
+        align-items: stretch;
+    }
+
+    /* About Preview */
+    .about-preview-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .about-preview-content {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    /* Menu Categories */
+    .menu-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-card {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    /* Menu Grid */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* About Grid */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    /* Mission Grid */
+    .mission-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .mission-image {
+        order: -1;
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    /* Contact Grid */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    /* Questions CTA */
+    .questions-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .questions-cta .btn {
+        width: 100%;
+    }
+}
+
+/* Mobile (768px and down) */
+@media (max-width: 768px) {
+    :root {
+        --font-size-hero: 44px;
+        --font-size-4xl: 36px;
+        --font-size-3xl: 28px;
+        --font-size-2xl: 22px;
+        --font-size-xl: 20px;
+        --font-size-lg: 16px;
+        
+        --spacing-xl: 2rem;
+        --spacing-2xl: 3rem;
+        --spacing-3xl: 4rem;
+    }
+
+    /* Typography */
+    h1 { font-size: var(--font-size-3xl); }
+    h2 { font-size: var(--font-size-2xl); }
+    h3 { font-size: var(--font-size-xl); }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 15px 28px;
+        font-size: 14px;
+    }
+
+    .btn-hero {
+        padding: 16px 32px;
+        font-size: 15px;
+    }
+
+    /* Header */
+    .header-content {
+        min-height: 70px;
+        padding: 8px 0;
+    }
+
+    .logo-img {
+        height: 45px;
+    }
+
+    .header-cta {
+        display: none;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero-content {
+        padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    .hero-title {
+        font-size: 44px;
+        letter-spacing: -2px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Menu Hero */
+    .menu-hero {
+        min-height: 75vh;
+        padding-top: 64px;
+    }
+
+    .menu-hero .hero-title {
+        font-size: 44px;
+    }
+
+    .menu-categories {
+        margin: var(--spacing-xl) 0;
+        gap: var(--spacing-md);
+    }
+
+    .category-caption {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-md);
+    }
+
+    .menu-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    /* Sections */
+    .featured-products,
+    .about-preview,
+    .location-preview,
+    .menu-section,
+    .about-content,
+    .mission-section,
+    .why-choose-section,
+    .special-times-section,
+    .contact-section,
+    .map-section,
+    .questions-section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    /* Section Headers */
+    .section-header {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .section-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        margin: var(--spacing-lg) auto 0;
+        justify-items: center;
+        align-items: stretch;
+        max-width: 400px;
+    }
+
+    .product-info {
+        padding: var(--spacing-md);
+    }
+
+    .product-name {
+        font-size: var(--font-size-lg);
+    }
+
+    /* About Text */
+    .about-text,
+    .about-paragraph {
+        font-size: var(--font-size-base);
+    }
+
+    /* Location Info */
+    .location-info {
+        width: 100%;
+    }
+
+    .info-item {
+        padding: var(--spacing-md);
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        max-width: 350px;
+        margin: 0 auto var(--spacing-md);
+    }
+
+    .info-icon {
+        width: auto;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Page Hero */
+    .page-hero {
+        padding: var(--spacing-2xl) 0 var(--spacing-xl);
+    }
+
+    .page-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .page-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    /* Menu Items */
+    .menu-item {
+        padding: var(--spacing-md);
+    }
+
+    .menu-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .menu-item-name {
+        font-size: var(--font-size-base);
+    }
+
+    .menu-item-price {
+        font-size: var(--font-size-base);
+    }
+
+    /* Mission Values */
+    .mission-values {
+        gap: var(--spacing-md);
+    }
+
+    .value-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .value-icon {
+        width: auto;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .feature-card {
+        padding: var(--spacing-lg);
+    }
+
+    /* Special Times */
+    .special-times-text {
+        font-size: var(--font-size-base);
+    }
+
+    /* Contact */
+    .contact-intro {
+        font-size: var(--font-size-base);
+    }
+
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+
+    .contact-icon {
+        width: auto;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .social-links-large {
+        gap: var(--spacing-xs);
+    }
+
+    .contact-form-wrapper {
+        padding: var(--spacing-lg);
+    }
+
+    .form-group {
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Map */
+    .map-placeholder {
+        padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    .map-placeholder i {
+        font-size: 48px;
+    }
+
+    .map-placeholder p {
+        font-size: var(--font-size-base);
+    }
+
+    /* Questions */
+    .questions-text {
+        font-size: var(--font-size-base);
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+
+    .footer-logo {
+        width: 60px;
+        height: auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Small Mobile (544px and down) */
+@media (max-width: 544px) {
+    :root {
+        --font-size-hero: 36px;
+        --font-size-4xl: 30px;
+        --font-size-3xl: 24px;
+        --font-size-2xl: 20px;
+        --spacing-3xl: 3rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Header */
+    .header-content {
+        padding: 5px 0;
+        min-height: 60px;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 14px 24px;
+        font-size: 13px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 50vh;
+    }
+
+    .hero-title {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .btn-hero {
+        padding: 14px 24px;
+        font-size: 14px;
+    }
+
+    /* Menu Hero */
+    .menu-hero .hero-title {
+        font-size: 36px;
+    }
+
+    .category-caption {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    /* Sections Spacing */
+    .featured-products,
+    .about-preview,
+    .location-preview,
+    .menu-section,
+    .about-content,
+    .mission-section,
+    .why-choose-section,
+    .special-times-section,
+    .contact-section,
+    .map-section,
+    .questions-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    /* Section Title */
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+
+    /* Product Cards */
+    .product-name {
+        font-size: var(--font-size-base);
+    }
+
+    /* Menu Items */
+    .menu-item-name,
+    .menu-item-price {
+        font-size: var(--font-size-sm);
+    }
+
+    .menu-item-description {
+        font-size: 13px;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+        padding: var(--spacing-md);
+    }
+
+    .feature-icon {
+        font-size: var(--font-size-3xl);
+    }
+
+    /* Contact Form */
+    .contact-form-wrapper {
+        padding: var(--spacing-md);
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 14px;
+    }
+
+    /* Mobile Nav */
+    .mobile-nav {
+        padding: var(--spacing-lg);
+    }
+
+    .mobile-nav-link {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-sm) 0;
+    }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: var(--font-size-hero);
+    }
+
+    /* Products Grid */
+    .products-grid {
+        gap: var(--spacing-2xl);
+    }
+
+    /* Features Grid */
+    .features-grid {
+        gap: var(--spacing-2xl);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .site-header,
+    .site-footer,
+    .mobile-menu-toggle,
+    .mobile-menu-overlay,
+    .btn,
+    .hero-overlay {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        color: black;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .hero-title,
+    .page-title {
+        color: black;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
