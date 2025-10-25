@@ -195,10 +195,19 @@
 @media (max-width: 480px) {
     .site-footer {
         padding: 30px 0 15px;
+        /* Asegurar que el footer llegue a los bordes en iOS */
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .footer-container {
         padding: 0 15px;
+        /* Asegurar que el contenedor use todo el ancho disponible */
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
     }
 
     .footer-main {
@@ -229,5 +238,53 @@
     .footer-copyright,
     .footer-hours {
         font-size: 11px;
+    }
+
+    .footer-bottom-content {
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Estilos específicos para iOS/iPhone */
+@supports (-webkit-touch-callout: none) {
+    .site-footer {
+        /* Asegurar que el footer use todo el ancho en iOS */
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        box-sizing: border-box;
+    }
+    
+    .footer-container {
+        /* Asegurar padding adecuado en iOS */
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .footer-bottom-content {
+        /* Asegurar que el bottom también use todo el ancho */
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Estilos adicionales para pantallas muy pequeñas (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .site-footer {
+        padding: 25px 0 12px;
+    }
+    
+    .footer-container {
+        padding: 0 12px;
+    }
+    
+    .footer-bottom-content {
+        padding: 0 12px;
     }
 }
