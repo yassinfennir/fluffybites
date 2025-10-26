@@ -1,0 +1,252 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdate": "2025-10-26",
+    "cafeName": "Fluffy Bites",
+    "description": "Premium Coffee & Artisan Delights - Product Database"
+  },
+  "categories": {
+    "food": {
+      "name": "Food",
+      "icon": "🍔",
+      "description": "Artisan Food & Delicacies",
+      "subcategories": {
+        "chocolate": {
+          "name": "Chocolate",
+          "badge": "🍫 CHOCOLATE",
+          "description": "Premium Chocolate Delights"
+        },
+        "pasteles": {
+          "name": "Cakes",
+          "badge": "🍰 PASTELES",
+          "description": "Artisan Cakes"
+        },
+        "croissants": {
+          "name": "Croissants",
+          "badge": "🥐 CROISSANTS",
+          "description": "Artisan Croissants"
+        },
+        "delicias": {
+          "name": "Delights",
+          "badge": "⭐ DELICIAS",
+          "description": "Special Delights"
+        },
+        "sandwiches": {
+          "name": "Sandwiches",
+          "badge": "🥪 SÁNDWICHES",
+          "description": "Artisan Sandwiches"
+        }
+      }
+    },
+    "drinks": {
+      "name": "Drinks",
+      "icon": "🥤",
+      "description": "Premium Coffee & Beverages",
+      "subcategories": {
+        "caffe": {
+          "name": "Coffee",
+          "badge": "☕ CAFFE",
+          "description": "Specialty Coffee"
+        }
+      }
+    }
+  },
+  "products": [
+    {
+      "id": "choc-001",
+      "name": "Chocolate Cake",
+      "category": "food",
+      "subcategory": "chocolate",
+      "description": "Premium Chocolate Delights",
+      "price": 5.90,
+      "image": "Fotos/Chocolate/1.png",
+      "fallbackImage": "Fotos/Chocolate/choo.png",
+      "featured": true,
+      "available": true,
+      "allergens": ["gluten", "dairy", "eggs"],
+      "tags": ["bestseller", "premium"]
+    },
+    {
+      "id": "choc-002",
+      "name": "Tiramisu Clásico",
+      "category": "food",
+      "subcategory": "chocolate",
+      "description": "Classic Italian Dessert",
+      "price": 6.50,
+      "image": "Fotos/Chocolate/choo.png",
+      "fallbackImage": "Fotos/Chocolate/1.png",
+      "featured": false,
+      "available": true,
+      "allergens": ["gluten", "dairy", "eggs"],
+      "tags": ["italian", "coffee-flavored"]
+    },
+    {
+      "id": "cake-001",
+      "name": "Chocolate Dreamland",
+      "category": "food",
+      "subcategory": "pasteles",
+      "description": "Premium Chocolate Fantasy",
+      "price": 7.50,
+      "image": "Fotos/Pasteles/chocolate-dreamland-1.png",
+      "fallbackImage": "Fotos/Pasteles/chocolate-dreamland-2.png",
+      "featured": true,
+      "available": true,
+      "allergens": ["gluten", "dairy", "eggs"],
+      "tags": ["signature", "premium", "bestseller"]
+    },
+    {
+      "id": "cake-002",
+      "name": "Postre Premium",
+      "category": "food",
+      "subcategory": "pasteles",
+      "description": "Artisan Premium Dessert",
+      "price": 6.90,
+      "image": "Fotos/Pasteles/chocolate-dreamland-2.png",
+      "fallbackImage": "Fotos/Pasteles/chocolate-dreamland-1.png",
+      "featured": false,
+      "available": true,
+      "allergens": ["gluten", "dairy"],
+      "tags": ["artisan"]
+    },
+    {
+      "id": "crois-001",
+      "name": "Croissant Cubo",
+      "category": "food",
+      "subcategory": "croissants",
+      "description": "Unique Cube Croissant",
+      "price": 4.50,
+      "image": "Fotos/Crossants/croissant-cube.png",
+      "fallbackImage": "Fotos/Crossants/croissant-cube.png",
+      "featured": true,
+      "available": true,
+      "allergens": ["gluten", "dairy"],
+      "tags": ["unique", "instagram-worthy"]
+    },
+    {
+      "id": "crois-002",
+      "name": "Croissant Pistacho",
+      "category": "food",
+      "subcategory": "croissants",
+      "description": "Pistachio & Apricot Jam",
+      "price": 5.20,
+      "image": "Fotos/Crossants/u3829884585_A_Croissant_with_Apricot_Jam_and_Pistachios_is_a__3c4dd34f-4b20-4cc6-928d-9ceaca951354_1.png",
+      "fallbackImage": "Fotos/Crossants/croissant-cube.png",
+      "featured": false,
+      "available": true,
+      "allergens": ["gluten", "dairy", "nuts"],
+      "tags": ["seasonal", "nuts"]
+    },
+    {
+      "id": "deli-001",
+      "name": "Chocolate Explosion",
+      "category": "food",
+      "subcategory": "delicias",
+      "description": "Explosive Chocolate Experience",
+      "price": 7.90,
+      "image": "Fotos/Delicas/chocolate-explosion.png",
+      "fallbackImage": "Fotos/Delicas/chocolate-explosion.png",
+      "featured": true,
+      "available": true,
+      "allergens": ["gluten", "dairy", "eggs"],
+      "tags": ["signature", "premium"]
+    },
+    {
+      "id": "sand-001",
+      "name": "Sándwich Gourmet",
+      "category": "food",
+      "subcategory": "sandwiches",
+      "description": "Artisan Gourmet Sandwich",
+      "price": 8.50,
+      "image": "Fotos/Sandwitches/u3829884585_Sandwich_de_queso_y_tomate_basado_en_la_descripci_88028ac4-709b-49e3-82cb-006ce489a9f3_2.png",
+      "fallbackImage": "Fotos/Sandwitches/u3829884585_fish_sandwich_on_a_wooden_table_crispy_fried_fish_364ec9a6-ea07-4fcf-8293-a6b9bb74f9ce_2.png",
+      "featured": false,
+      "available": true,
+      "allergens": ["gluten", "dairy"],
+      "tags": ["savory", "lunch"]
+    },
+    {
+      "id": "coff-001",
+      "name": "Cappuccino Premium",
+      "category": "drinks",
+      "subcategory": "caffe",
+      "description": "Classic Italian Cappuccino",
+      "price": 4.50,
+      "image": "Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png",
+      "fallbackImage": "Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png",
+      "featured": true,
+      "available": true,
+      "allergens": ["dairy"],
+      "tags": ["bestseller", "classic"]
+    },
+    {
+      "id": "coff-002",
+      "name": "Latte Especial",
+      "category": "drinks",
+      "subcategory": "caffe",
+      "description": "Specialty Latte Art",
+      "price": 4.80,
+      "image": "Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png",
+      "fallbackImage": "Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png",
+      "featured": false,
+      "available": true,
+      "allergens": ["dairy"],
+      "tags": ["latte-art"]
+    },
+    {
+      "id": "coff-003",
+      "name": "Espresso Brownie",
+      "category": "drinks",
+      "subcategory": "caffe",
+      "description": "Espresso with Warm Brownie",
+      "price": 6.50,
+      "image": "Fotos/Caffe/u3829884585_COFFEE_EXPRESSO_WITH_A_HOT_BROWNIUE_--v_7_78e7d853-1e97-4741-90eb-bed18687cbea_2.png",
+      "fallbackImage": "Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png",
+      "featured": true,
+      "available": true,
+      "allergens": ["dairy", "gluten", "eggs"],
+      "tags": ["combo", "dessert"]
+    },
+    {
+      "id": "coff-004",
+      "name": "Cappuccino Glass",
+      "category": "drinks",
+      "subcategory": "caffe",
+      "description": "Cappuccino in Premium Glass",
+      "price": 5.20,
+      "image": "Fotos/Caffe/u3829884585_Its_a_big_cup_of_cappuccino_Serve_in_a_glass_Ther_ad539098-6719-42d5-96bc-792b6b2ea701_2.png",
+      "fallbackImage": "Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png",
+      "featured": false,
+      "available": true,
+      "allergens": ["dairy"],
+      "tags": ["premium", "instagram-worthy"]
+    },
+    {
+      "id": "coff-005",
+      "name": "Café Aromático",
+      "category": "drinks",
+      "subcategory": "caffe",
+      "description": "Aromatic Artisan Coffee",
+      "price": 4.20,
+      "image": "Fotos/Caffe/u3829884585_The_aroma_of_freshly_brewed_coffee_fills_the_air__091b0b0c-05d9-4ee0-ad57-18baca72d9d0_3.png",
+      "fallbackImage": "Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png",
+      "featured": false,
+      "available": true,
+      "allergens": ["dairy"],
+      "tags": ["artisan"]
+    },
+    {
+      "id": "coff-006",
+      "name": "Chocolate Brownie",
+      "category": "drinks",
+      "subcategory": "caffe",
+      "description": "Coffee with Chocolate Brownie",
+      "price": 6.90,
+      "image": "Fotos/Caffe/chocolate-brownie.png",
+      "fallbackImage": "Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png",
+      "featured": false,
+      "available": true,
+      "allergens": ["dairy", "gluten", "eggs"],
+      "tags": ["combo", "dessert"]
+    }
+  ]
+}

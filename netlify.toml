@@ -1,9 +1,11 @@
-# Netlify Configuration for Fluffy Bites
 [build]
-  publish = "."
-  command = "echo 'No build command needed for static site'"
+  publish = "dist"
+  command = "powershell -ExecutionPolicy Bypass -File deploy.ps1 -SkipTests"
 
-# Custom domain configuration
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -11,9 +13,8 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';"
 
-# Cache static assets
 [[headers]]
   for = "/css/*"
   [headers.values]
@@ -34,28 +35,78 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Redirects for SEO and user experience
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/admin"
+  to = "/admin.html"
   status = 200
 
-# Force HTTPS
 [[redirects]]
-  from = "http://fluffybites.net/*"
-  to = "https://fluffybites.net/:splat"
-  status = 301
-  force = true
+  from = "/menu"
+  to = "/#menu"
+  status = 302
 
 [[redirects]]
-  from = "http://www.fluffybites.net/*"
-  to = "https://fluffybites.net/:splat"
-  status = 301
-  force = true
+  from = "/contact"
+  to = "/#contacto"
+  status = 302
 
 [[redirects]]
-  from = "https://www.fluffybites.net/*"
-  to = "https://fluffybites.net/:splat"
-  status = 301
-  force = true
+  from = "/location"
+  to = "/#ubicacion"
+  status = 302
 
+# Service Worker
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Service-Worker-Allowed = "/"
+
+# Sitemap
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+
+# Robots
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain"
+
+# Security headers for admin
+[[headers]]
+  for = "/*admin*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Performance optimizations
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+# Form handling
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+# Analytics
+[build.environment]
+  NETLIFY_ANALYTICS_TOKEN = "your-analytics-token"
+
+# Functions (if needed in the future)
+[functions]
+  directory = "netlify/functions"
+
+# Edge functions
+[edge_functions]
+  directory = "netlify/edge-functions"
