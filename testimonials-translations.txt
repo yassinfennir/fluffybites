@@ -1,0 +1,60 @@
+TRADUCCIONES PARA LA SECCIÓN DE TESTIMONIOS
+============================================
+
+Necesitas añadir estas claves de traducción en el archivo index.html en las tres secciones de idiomas (inglés, finlandés y sueco).
+
+UBICACIÓN: Busca las secciones donde están las otras traducciones (alrededor de las líneas 2980-3200)
+
+INGLÉS (ya está en el HTML):
+'testimonials-title': 'What Our Customers Say',
+'testimonials-subtitle': 'Real experiences from our coffee lovers',
+'testimonial-1-text': 'The best coffee in town! The baristas are incredibly skilled and the atmosphere is perfect for working or relaxing. I come here every morning.',
+'testimonial-1-name': 'Sarah Johnson',
+'testimonial-1-role': 'Regular Customer',
+'testimonial-2-text': 'Amazing latte art and the coffee quality is outstanding. The pastries are fresh and delicious. This place has become my second home!',
+'testimonial-2-name': 'Michael Chen',
+'testimonial-2-role': 'Coffee Enthusiast',
+'testimonial-3-text': 'Perfect place to meet friends or work remotely. The WiFi is great, the coffee is exceptional, and the staff is always friendly and helpful.',
+'testimonial-3-name': 'Emma Rodriguez',
+'testimonial-3-role': 'Remote Worker',
+'rating-label': 'Average Rating',
+'customers-label': 'Happy Customers',
+'satisfaction-label': 'Satisfaction Rate',
+
+FINLANDÉS:
+'testimonials-title': 'Mitä asiakkaamme sanovat',
+'testimonials-subtitle': 'Aitoja kokemuksia kahvimme rakastajilta',
+'testimonial-1-text': 'Paras kahvi kaupungissa! Baristat ovat uskomattoman taitavia ja tunnelma on täydellinen työskentelyyn tai rentoutumiseen. Tulen tänne joka aamu.',
+'testimonial-1-name': 'Sarah Johnson',
+'testimonial-1-role': 'Vakituinen asiakas',
+'testimonial-2-text': 'Upeaa latte artia ja kahvin laatu on erinomainen. Leivonnaiset ovat tuoreita ja herkullisia. Tämä paikka on tullut toiseksi kodikseni!',
+'testimonial-2-name': 'Michael Chen',
+'testimonial-2-role': 'Kahvin ystävä',
+'testimonial-3-text': 'Täydellinen paikka tavata ystäviä tai työskennellä etänä. WiFi on loistava, kahvi on poikkeuksellista ja henkilökunta on aina ystävällistä ja avuliasta.',
+'testimonial-3-name': 'Emma Rodriguez',
+'testimonial-3-role': 'Etätyöntekijä',
+'rating-label': 'Keskiarvo',
+'customers-label': 'Tyytyväisiä asiakkaita',
+'satisfaction-label': 'Tyytyväisyysaste',
+
+SUECO:
+'testimonials-title': 'Vad våra kunder säger',
+'testimonials-subtitle': 'Riktiga upplevelser från våra kaffälskare',
+'testimonial-1-text': 'Det bästa kaffet i stan! Baristorna är otroligt skickliga och atmosfären är perfekt för att arbeta eller koppla av. Jag kommer hit varje morgon.',
+'testimonial-1-name': 'Sarah Johnson',
+'testimonial-1-role': 'Regelbunden kund',
+'testimonial-2-text': 'Fantastisk latte art och kaffekvaliteten är exceptionell. Bakverken är färska och läckra. Denna plats har blivit mitt andra hem!',
+'testimonial-2-name': 'Michael Chen',
+'testimonial-2-role': 'Kaffeentusiast',
+'testimonial-3-text': 'Perfekt plats att träffa vänner eller arbeta på distans. WiFi är bra, kaffet är exceptionellt och personalen är alltid vänlig och hjälpsam.',
+'testimonial-3-name': 'Emma Rodriguez',
+'testimonial-3-role': 'Fjärrarbetare',
+'rating-label': 'Genomsnittligt betyg',
+'customers-label': 'Nöjda kunder',
+'satisfaction-label': 'Tilfredsställelsegrad',
+
+INSTRUCCIONES:
+1. Copia el contenido del archivo testimonials-section.html
+2. Pégalo en index.html entre las líneas 2368 y 2374 (después de </section> y antes de <!-- About Preview Section -->)
+3. Añade las traducciones en las tres secciones de idiomas correspondientes
+4. El archivo CSS testimonials.css ya está creado y enlazado

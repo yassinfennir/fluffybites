@@ -73,7 +73,7 @@ npx serve .
 ## 📞 Contacto
 
 - **Ubicación**: Merituulentie 36, 02200 Espoo, Finlandia
-- **Teléfono**: +358 40 7770086
+- **Teléfono**: +358 45 3549022
 - **Email**: info@nordicglobe.fi
 
 ## 📄 Licencia

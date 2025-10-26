@@ -5,21 +5,21 @@
 
 /* ===== CONTENEDOR PRINCIPAL ===== */
 .dynamic-image-grid {
-    padding: 2rem 1rem;
+    padding: 0.25rem 0.125rem;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .grid-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 .grid-title {
-    font-size: 2.5rem;
+    font-size: 0.6rem;
     font-weight: 800;
     color: var(--text-primary, #ffffff);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
     background: linear-gradient(135deg, var(--accent-red, #dc143c) 0%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -27,9 +27,9 @@
 }
 
 .grid-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.3rem;
     color: var(--text-secondary, #cccccc);
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
 }
 
 .grid-stats {
@@ -47,58 +47,58 @@
 /* ===== GRID DE IMÁGENES ===== */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    gap: 0.2rem;
+    margin-bottom: 1rem;
 }
 
-/* Responsive: 3 columnas en desktop */
+/* Responsive: 20 columnas en desktop */
 @media (min-width: 1200px) {
     .image-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(20, 1fr);
     }
 }
 
-/* Responsive: 2 columnas en tablet */
+/* Responsive: 15 columnas en tablet */
 @media (max-width: 1199px) and (min-width: 768px) {
     .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(15, 1fr);
+        gap: 0.15rem;
     }
 }
 
-/* Responsive: 1 columna en mobile */
+/* Responsive: 8 columnas en mobile */
 @media (max-width: 767px) {
     .image-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 0.1rem;
     }
     
     .dynamic-image-grid {
-        padding: 1rem 0.5rem;
+        padding: 0.25rem 0.125rem;
     }
     
     .grid-title {
-        font-size: 2rem;
+        font-size: 0.8rem;
     }
 }
 
 /* ===== TARJETA DE IMAGEN ===== */
 .image-card {
     background: var(--bg-card, rgba(26, 26, 26, 0.95));
-    border-radius: 16px;
+    border-radius: 2px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
 .image-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(220, 20, 60, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(220, 20, 60, 0.2);
     border-color: rgba(220, 20, 60, 0.3);
 }
 
@@ -111,7 +111,7 @@
 /* ===== CONTENEDOR DE IMAGEN ===== */
 .card-image-container {
     position: relative;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1/1;
     overflow: hidden;
     background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
 }
@@ -179,8 +179,8 @@
 .overlay-content {
     text-align: center;
     color: white;
-    padding: 1.5rem;
-    transform: translateY(20px);
+    padding: 0.15rem;
+    transform: translateY(3px);
     transition: transform 0.3s ease;
 }
 
@@ -191,51 +191,53 @@
 .category-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.1rem;
     background: rgba(220, 20, 60, 0.9);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    padding: 0.05rem 0.1rem;
+    border-radius: 3px;
+    font-size: 0.2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.1rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1px;
 }
 
 .image-title {
-    font-size: 1.3rem;
+    font-size: 0.3rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
     color: white;
+    line-height: 1;
 }
 
 .image-description {
-    font-size: 0.9rem;
+    font-size: 0.2rem;
     opacity: 0.9;
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
+    margin-bottom: 0.15rem;
+    line-height: 1;
 }
 
 
 /* ===== INFORMACIÓN DE LA TARJETA ===== */
 .card-info {
-    padding: 1.5rem;
+    padding: 0.15rem;
 }
 
 .card-title {
-    font-size: 1.1rem;
+    font-size: 0.3rem;
     font-weight: 600;
     color: var(--text-primary, #ffffff);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
+    line-height: 1;
 }
 
 .card-category {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.1rem;
     color: var(--text-secondary, #cccccc);
-    font-size: 0.9rem;
+    font-size: 0.25rem;
 }
 
 .card-category i {
@@ -248,18 +250,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4rem 2rem;
+    padding: 0.5rem 0.25rem;
     color: var(--text-secondary, #cccccc);
 }
 
 .loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgba(220, 20, 60, 0.3);
-    border-top: 3px solid var(--accent-red, #dc143c);
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    border-top: 1px solid var(--accent-red, #dc143c);
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
 }
 
 @keyframes spin {

@@ -199,12 +199,12 @@ class ImageLoader {
      */
     generateTitle(folder, filename) {
         const titles = {
-            'Caffe': ['Espresso Premium', 'Cappuccino Artesanal', 'Café con Leche', 'Latte Especial', 'Americano Clásico'],
-            'Chocolate': ['Chocolate Premium', 'Tiramisu Clásico', 'Brownie Artesanal', 'Chocolate Derretido', 'Delicia de Cacao'],
-            'Crossants': ['Croissant Cubo', 'Hojaldre Dorado', 'Croissant Italiano', 'Mini Croissant', 'Croissant Premium'],
-            'Delicas': ['Explosión de Chocolate', 'Corazón de Chocolate', 'Delicia Especial', 'Creación Única', 'Especialidad Gourmet'],
-            'Pasteles': ['Velvet Chocolate', 'Matcha Dream', 'Tropical Delight', 'Zen Matcha', 'Berry Bliss', 'Chocolate Royale'],
-            'Sandwitches': ['Salty Salmon', 'Salty Fish', 'Salty Tomate & Queso', 'Salty Pollo']
+            'Caffe': ['Espresso Reserva', 'Cappuccino Premium', 'Latte Especial', 'Americano Clásico', 'Mocha Deluxe', 'Flat White'],
+            'Chocolate': ['Chocolate Cake', 'Tiramisu Clásico', 'Brownie Artesanal', 'Chocolate Mousse', 'Delicia de Cacao'],
+            'Crossants': ['Croissant Butter', 'Almond Croissant', 'Chocolate Croissant', 'Mini Croissant', 'Croissant Cubo'],
+            'Delicas': ['Bagel with Cream', 'Blueberry Muffin', 'Cinnamon Roll', 'Chocolate Chip Cookie', 'Red Velvet Cupcake'],
+            'Pasteles': ['Chocolate Dreamland', 'Berry Bliss', 'Cheesecake Deluxe', 'Carrot Cake', 'Strawberry Shortcake'],
+            'Sandwitches': ['Salty Salmon', 'Salty Fish', 'Salty Tomate & Queso', 'Chicken Deluxe', 'Veggie Supreme']
         };
 
         const categoryTitles = titles[folder] || ['Producto Premium'];
@@ -244,21 +244,21 @@ class ImageLoader {
                 return;
             }
 
-            // Verificar que las imágenes existan antes de renderizar
-            const validImages = await this.validateImages(images);
+            // NO validar imágenes - renderizar directamente para mejorar rendimiento
+            // Las imágenes que no existan simplemente no se mostrarán (manejado por onerror en el HTML)
             
-            if (validImages.length === 0) {
+            if (images.length === 0) {
                 container.innerHTML = `
                     <div class="no-images">
                         <i class="fas fa-image"></i>
-                        <p>No se encontraron imágenes válidas</p>
+                        <p>No se encontraron imágenes</p>
                     </div>
                 `;
                 return;
             }
 
-            // Renderizar grid
-            this.renderImageGrid(container, validImages);
+            // Renderizar grid directamente sin validación
+            this.renderImageGrid(container, images);
             
             // Configurar lazy loading
             this.setupLazyLoading();
@@ -274,34 +274,12 @@ class ImageLoader {
 
     /**
      * Valida que las imágenes existan antes de renderizarlas
+     * DEPRECATED: Se eliminó para mejorar rendimiento - las imágenes se renderizan directamente
      */
     async validateImages(images) {
-        const validImages = [];
-        
-        for (const img of images) {
-            try {
-                // Crear una promesa para verificar si la imagen existe
-                const imageExists = await new Promise((resolve) => {
-                    const testImg = new Image();
-                    testImg.onload = () => resolve(true);
-                    testImg.onerror = () => resolve(false);
-                    testImg.src = img.src;
-                    
-                    // Timeout después de 3 segundos
-                    setTimeout(() => resolve(false), 3000);
-                });
-                
-                if (imageExists) {
-                    validImages.push(img);
-                } else {
-                    console.warn(`Imagen no encontrada: ${img.src}`);
-                }
-            } catch (error) {
-                console.warn(`Error validando imagen ${img.src}:`, error);
-            }
-        }
-        
-        return validImages;
+        // Método deshabilitado para mejorar rendimiento
+        // Las imágenes se renderizan directamente y el navegador maneja los errores
+        return images;
     }
 
     /**
@@ -309,68 +287,229 @@ class ImageLoader {
      */
     renderImageGrid(container, images) {
         const gridHTML = `
-            <div class="dynamic-image-grid">
-                <div class="grid-header">
-                    <h2 class="grid-title">Nuestros Productos</h2>
-                    <p class="grid-subtitle">Descubre nuestra selección premium</p>
-                    <div class="grid-stats">
-                        <span class="image-count">${images.length} productos disponibles</span>
+            <div class="dynamic-image-grid" style="background: #1a1a1a; padding: 40px 20px; width: 100%;">
+                <div class="grid-container" style="max-width: 1400px; margin: 0 auto; width: 100%;">
+                    <div class="grid-header" style="text-align: center; margin-bottom: 50px;">
+                        <h2 class="grid-title" style="font-size: 3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 10px;">Nuestros Productos</h2>
+                        <p class="grid-subtitle" style="font-size: 1.2rem; color: #E63946; font-weight: 500;">Descubre nuestra selección premium</p>
                     </div>
-                </div>
-                
-                <div class="image-grid">
-                    ${images.map(img => this.createImageCard(img)).join('')}
-                </div>
-                
-                <div class="grid-footer">
-                    <button class="btn btn-primary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                        <i class="fas fa-arrow-up"></i> Volver Arriba
-                    </button>
+                    
+                    <div class="image-grid products-grid" style="
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 25px;
+                        width: 100%;
+                        margin: 0 auto;
+                    ">
+                        ${images.map(img => this.createImageCard(img)).join('')}
+                    </div>
+                    
+                    <div class="grid-footer" style="text-align: center; margin-top: 60px;">
+                        <button class="btn btn-primary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="
+                            background: linear-gradient(135deg, #E63946 0%, #d32f2f 100%);
+                            color: #ffffff;
+                            padding: 16px 32px;
+                            border: none;
+                            border-radius: 50px;
+                            font-weight: 600;
+                            font-size: 16px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
+                        ">
+                            <i class="fas fa-arrow-up"></i> Volver Arriba
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
 
         container.innerHTML = gridHTML;
+        
+        // Agregar estilos responsivos
+        this.addResponsiveStyles();
     }
 
     /**
      * Crea una tarjeta de imagen individual
      */
     createImageCard(img) {
+        // Obtener icono según categoría
+        const categoryIcon = img.categoryInfo.icon || 'fas fa-image';
+        
         return `
-            <div class="image-card" data-category="${img.category}" data-id="${img.id}">
-                <div class="card-image-container">
-                    <img 
-                        src="${img.src}" 
-                        alt="${img.alt}"
-                        loading="lazy"
-                        class="card-image"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                    >
-                    <div class="image-error" style="display: none;">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen no disponible</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="overlay-content">
-                            <div class="category-badge">
-                                <i class="${img.categoryInfo.icon}"></i>
-                                ${img.category}
-                            </div>
-                            <h3 class="image-title">${img.title}</h3>
-                            <p class="image-description">${img.categoryInfo.description}</p>
-                        </div>
-                    </div>
+            <div class="product-card" data-category="${img.category}" data-id="${img.id}" style="
+                position: relative;
+                border-radius: 16px;
+                overflow: hidden;
+                height: 350px;
+                width: 100%;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            ">
+                <img 
+                    src="${img.src}" 
+                    alt="${img.alt}"
+                    class="product-image" 
+                    loading="lazy"
+                    style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                        transition: transform 0.3s ease;
+                        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+                    "
+                    onerror="
+                        this.style.display='none';
+                        const errorDiv = this.parentElement.querySelector('.image-error');
+                        if(errorDiv) errorDiv.style.display='flex';
+                    "
+                >
+                <div class="image-error" style="
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    color: #666;
+                    border-radius: 16px;
+                ">
+                    <i class="fas fa-image" style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.5;"></i>
+                    <p style="font-size: 0.9rem; text-align: center; padding: 0 10px;">${img.title}</p>
                 </div>
-                <div class="card-info">
-                    <h4 class="card-title">${img.title}</h4>
-                    <p class="card-category">
-                        <i class="${img.categoryInfo.icon}"></i>
+                
+                <div class="product-overlay" style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(
+                        to bottom,
+                        rgba(0, 0, 0, 0),
+                        rgba(0, 0, 0, 0.8)
+                    );
+                    padding: 20px;
+                    color: white;
+                ">
+                    <h3 class="product-name" style="
+                        font-size: 22px;
+                        font-weight: 700;
+                        margin-bottom: 8px;
+                        color: #FFFFFF;
+                        line-height: 1.2;
+                    ">${img.title}</h3>
+                    <p class="product-category" style="
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #E63946;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    ">
+                        <i class="${categoryIcon}"></i>
                         ${img.categoryInfo.title}
                     </p>
-                </div>
-            </div>
+                                 </div>
+             </div>
+             
+             <style>
+                .products-grid {
+                    display: grid !important;
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    gap: 25px !important;
+                    width: 100% !important;
+                    max-width: 1400px !important;
+                    margin: 0 auto !important;
+                    padding: 0 !important;
+                }
+                
+                .product-card {
+                    position: relative !important;
+                    border-radius: 16px !important;
+                    overflow: hidden !important;
+                    height: 320px !important;
+                    width: 100% !important;
+                    display: block !important;
+                    box-sizing: border-box !important;
+                }
+                
+                .product-card:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+                }
+                
+                .product-card:hover .product-image {
+                    transform: scale(1.1);
+                }
+                
+                @media (max-width: 1199px) and (min-width: 769px) {
+                    .products-grid {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                        gap: 20px !important;
+                    }
+                }
+                
+                @media (max-width: 768px) {
+                    .products-grid {
+                        grid-template-columns: 1fr !important;
+                        gap: 20px !important;
+                    }
+                    
+                    .product-card {
+                        height: 350px !important;
+                    }
+                    
+                    .grid-title {
+                        font-size: 2.5rem !important;
+                    }
+                    
+                    .grid-subtitle {
+                        font-size: 1rem !important;
+                    }
+                    
+                    .grid-container {
+                        padding: 0 15px !important;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .product-card {
+                        height: 320px !important;
+                    }
+                    
+                    .product-name {
+                        font-size: 18px !important;
+                    }
+                    
+                    .product-category {
+                        font-size: 13px !important;
+                    }
+                    
+                    .product-overlay {
+                        padding: 15px !important;
+                    }
+                    
+                    .dynamic-image-grid {
+                        padding: 30px 15px !important;
+                    }
+                }
+            </style>
         `;
+    }
+
+    /**
+     * Agrega estilos responsivos adicionales
+     */
+    addResponsiveStyles() {
+        // Los estilos ya están incluidos en el createImageCard
+        console.log('Estilos responsivos aplicados');
     }
 
     /**

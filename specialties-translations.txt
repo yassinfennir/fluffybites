@@ -1,0 +1,103 @@
+TRADUCCIONES PARA LA SECCIÓN DE ESPECIALIDADES
+==============================================
+
+Necesitas añadir estas claves de traducción en el archivo index.html en las tres secciones de idiomas (inglés, finlandés y sueco).
+
+UBICACIÓN: Busca las secciones donde están las otras traducciones (alrededor de las líneas 2980-3200)
+
+INGLÉS (ya está en el HTML):
+'specialties-title': 'Our Signature Specialties',
+'specialties-subtitle': 'Discover our most beloved creations, crafted with passion and the finest ingredients',
+'signature-badge': 'Signature',
+'premium-badge': 'Premium',
+'artisan-badge': 'Artisan',
+'cappuccino-title': 'Artisan Cappuccino',
+'cappuccino-desc': 'Our signature cappuccino features perfectly steamed milk with intricate latte art, made with our premium espresso blend and organic milk.',
+'cappuccino-feature-1': 'Premium espresso blend',
+'cappuccino-feature-2': 'Organic steamed milk',
+'cappuccino-feature-3': 'Handcrafted latte art',
+'cappuccino-feature-4': 'Perfect temperature',
+'chocolate-title': 'Chocolate Delight',
+'chocolate-desc': 'A decadent blend of rich dark chocolate, premium cocoa, and our signature espresso, topped with whipped cream and chocolate shavings.',
+'chocolate-feature-1': 'Belgian dark chocolate',
+'chocolate-feature-2': 'Premium cocoa powder',
+'chocolate-feature-3': 'Fresh whipped cream',
+'chocolate-feature-4': 'Chocolate shavings',
+'pastry-title': 'Artisan Pastry',
+'pastry-desc': 'Handcrafted pastries made fresh daily with premium ingredients, featuring our signature flaky crust and rich fillings.',
+'pastry-feature-1': 'Fresh baked daily',
+'pastry-feature-2': 'Premium ingredients',
+'pastry-feature-3': 'Flaky golden crust',
+'pastry-feature-4': 'Rich creamy filling',
+'try-now': 'Try Now',
+'order-specialty': 'Order Now',
+'cta-title': 'Experience the Difference',
+'cta-text': 'Join thousands of coffee lovers who have made Fluffy Bites their daily ritual. Discover why our specialties are the talk of the town.',
+'explore-menu': 'Explore Full Menu',
+
+FINLANDÉS:
+'specialties-title': 'Meidän Allekirjoitettuja Erikoisuuksia',
+'specialties-subtitle': 'Löydä rakastetuimmat luomuksemme, tehty intohimolla ja parhailla aineksilla',
+'signature-badge': 'Allekirjoitettu',
+'premium-badge': 'Premium',
+'artisan-badge': 'Käsityöläinen',
+'cappuccino-title': 'Käsityöläinen Cappuccino',
+'cappuccino-desc': 'Meidän allekirjoitettu cappuccino sisältää täydellisesti höyrytettyä maitoa monimutkaisella latte artilla, tehty premium espressosekoituksellamme ja luomumaidolla.',
+'cappuccino-feature-1': 'Premium espressosekoitus',
+'cappuccino-feature-2': 'Luomu höyrytetty maito',
+'cappuccino-feature-3': 'Käsin tehty latte art',
+'cappuccino-feature-4': 'Täydellinen lämpötila',
+'chocolate-title': 'Suklaa Ilo',
+'chocolate-desc': 'Herkullinen sekoitus rikasta tummaa suklaata, premium kaakaojauhetta ja meidän allekirjoitettua espressoa, päällä kermavaahtoa ja suklaahiukkasia.',
+'chocolate-feature-1': 'Belgian tumma suklaa',
+'chocolate-feature-2': 'Premium kaakaojauhe',
+'chocolate-feature-3': 'Tuore kermavaahto',
+'chocolate-feature-4': 'Suklaahiukkaset',
+'pastry-title': 'Käsityöläinen Leivonnainen',
+'pastry-desc': 'Käsin tehdyt leivonnaiset tehty tuoreena päivittäin premium aineksilla, jossa on meidän allekirjoitettu rapea kuori ja rikkaat täytteet.',
+'pastry-feature-1': 'Tuoreena leivottu päivittäin',
+'pastry-feature-2': 'Premium ainekset',
+'pastry-feature-3': 'Rapea kultainen kuori',
+'pastry-feature-4': 'Rikas kermainen täyte',
+'try-now': 'Kokeile Nyt',
+'order-specialty': 'Tilaa Nyt',
+'cta-title': 'Koe Ero',
+'cta-text': 'Liity tuhansiin kahvin rakastajiin, jotka ovat tehneet Fluffy Bitesistä päivittäisen rituaalinsa. Löydä miksi meidän erikoisuutemme ovat kaupungin puheenaihe.',
+'explore-menu': 'Tutki Koko Menua',
+
+SUECO:
+'specialties-title': 'Våra Signatur Specialiteter',
+'specialties-subtitle': 'Upptäck våra mest älskade skapelser, gjorda med passion och de finaste ingredienserna',
+'signature-badge': 'Signatur',
+'premium-badge': 'Premium',
+'artisan-badge': 'Hantverkare',
+'cappuccino-title': 'Hantverks Cappuccino',
+'cappuccino-desc': 'Vår signatur cappuccino har perfekt ångad mjölk med intrikat latte art, gjord med vår premium espressoblandning och ekologisk mjölk.',
+'cappuccino-feature-1': 'Premium espressoblandning',
+'cappuccino-feature-2': 'Ekologisk ångad mjölk',
+'cappuccino-feature-3': 'Handgjord latte art',
+'cappuccino-feature-4': 'Perfekt temperatur',
+'chocolate-title': 'Choklad Glädje',
+'chocolate-desc': 'En dekadent blandning av rik mörk choklad, premium kakaopulver och vår signatur espresso, toppad med vispad grädde och chokladflingor.',
+'chocolate-feature-1': 'Belgisk mörk choklad',
+'chocolate-feature-2': 'Premium kakaopulver',
+'chocolate-feature-3': 'Fräsch vispad grädde',
+'chocolate-feature-4': 'Chokladflingor',
+'pastry-title': 'Hantverks Bakverk',
+'pastry-desc': 'Handgjorda bakverk gjorda färska dagligen med premium ingredienser, med vår signatur flaky skorpa och rika fyllningar.',
+'pastry-feature-1': 'Färskt bakad dagligen',
+'pastry-feature-2': 'Premium ingredienser',
+'pastry-feature-3': 'Flaky gyllene skorpa',
+'pastry-feature-4': 'Rik krämig fyllning',
+'try-now': 'Prova Nu',
+'order-specialty': 'Beställ Nu',
+'cta-title': 'Upplev Skillnaden',
+'cta-text': 'Gå med tusentals kaffälskare som har gjort Fluffy Bites till sin dagliga ritual. Upptäck varför våra specialiteter är stadens samtalsämne.',
+'explore-menu': 'Utforska Hela Menyn',
+
+INSTRUCCIONES:
+1. Copia el contenido del archivo specialties-section.html
+2. Pégalo en index.html donde quieras ubicar la nueva sección (recomiendo después de la sección de testimonios)
+3. Añade el enlace al CSS en el head: <link rel="stylesheet" href="css/specialties.css">
+4. Añade las traducciones en las tres secciones de idiomas correspondientes
+5. El archivo CSS specialties.css ya está creado con estilos modernos

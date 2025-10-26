@@ -2,6 +2,48 @@
    Header & Navigation Styles - Elegant Modern Design
    ========================================================================== */
 
+/* Hide FOOD and DRINKS elements in header */
+.site-header *:contains("FOOD"),
+.site-header *:contains("DRINKS"),
+.site-header *:contains("FOOD & DRINKS"),
+.site-header .food-drinks-banner,
+.site-header [class*="food-drinks"],
+.site-header [class*="food"],
+.site-header [class*="drinks"],
+.site-header [class*="Food"],
+.site-header [class*="Drinks"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Additional aggressive hiding for any element with FOOD or DRINKS text */
+.site-header div:contains("FOOD"),
+.site-header div:contains("DRINKS"),
+.site-header div:contains("FOOD & DRINKS"),
+.site-header span:contains("FOOD"),
+.site-header span:contains("DRINKS"),
+.site-header span:contains("FOOD & DRINKS"),
+.site-header p:contains("FOOD"),
+.site-header p:contains("DRINKS"),
+.site-header p:contains("FOOD & DRINKS"),
+.site-header a:contains("FOOD"),
+.site-header a:contains("DRINKS"),
+.site-header a:contains("FOOD & DRINKS"),
+.site-header button:contains("FOOD"),
+.site-header button:contains("DRINKS"),
+.site-header button:contains("FOOD & DRINKS") {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
 /* Site Header - Ferrari Red Design */
 .site-header {
     background: linear-gradient(135deg, #DC143C 0%, #B22222 100%);
@@ -45,7 +87,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
-    min-height: 100px; /* Aumentado para acomodar logo más grande */
+    min-height: 70px; /* Reducido para logo más pequeño */
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -61,7 +103,7 @@
 }
 
 .logo-img {
-    height: 66px; /* 55px + 20% = 66px */
+    height: 35px; /* Logo mucho más pequeño */
     width: auto;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     filter: brightness(1.2) contrast(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -953,7 +995,7 @@
     }
     
     .logo-img {
-        height: 45px;
+        height: 30px;
     }
     
     .nav-menu {

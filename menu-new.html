@@ -3,468 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubre nuestro menú completo en Fluffy Bites Café en Vantaa, Finlandia. Bebidas premium, comida gourmet, chocolates artesanales y delicias frescas. El mejor 'Espoo cafe' y 'Helsinki coffee' te espera.">
-    <title>Menú Completo - Fluffy Bites</title>
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.fluffybites.fi/menu.html">
-    <meta property="og:title" content="Menú Completo - Fluffy Bites">
-    <meta property="og:description" content="Descubre nuestro menú completo de bebidas premium, comida gourmet, chocolates artesanales y delicias frescas en Fluffy Bites.">
-    <meta property="og:image" content="https://www.fluffybites.fi/Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.fluffybites.fi/menu.html">
-    <meta property="twitter:title" content="Menú Completo - Fluffy Bites">
-    <meta property="twitter:description" content="Descubre nuestro menú completo de bebidas premium, comida gourmet, chocolates artesanales y delicias frescas en Fluffy Bites.">
-    <meta property="twitter:image" content="https://www.fluffybites.fi/Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png">
-    <meta name="twitter:site" content="@fluffybitesfi">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/image-grid.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="Logo/1.png">
-    
+    <title>Fluffy Bites - Menu</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
     <style>
-        /* Estilos específicos para la página de menú - Paleta Rojo, Negro, Blanco */
-        :root {
-            /* Paleta estricta: Rojo Ferrari, Negro, Blanco */
-            --bg-primary: #000000;
-            --bg-secondary: #1a1a1a;
-            --bg-card: rgba(26, 26, 26, 0.95);
-            --text-primary: #ffffff;
-            --text-secondary: #cccccc;
-            --accent-red: #dc143c;
-            --accent-red-hover: #ff4757;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --shadow-color: rgba(0, 0, 0, 0.5);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #1a1a1a;
         }
 
-        /* Fondo con imágenes superpuestas */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* MENU SECTION */
+        .menu-section {
+            background-color: #1a1a1a;
+            padding: 60px 20px;
             width: 100%;
-            height: 100%;
-            background-image: 
-                url('Fotos/Fondo/u3829884585_abstract_background_of_silky_creamy_rich_tiramisu_e5508e4a-901f-417e-aaaa-e32ed5fc5d80_2.png'),
-                url('Fotos/Fondo/u3829884585_abstract_background_of_silky_creamy_rich_tiramisu_e5508e4a-901f-417e-a236-e32ed5fc5d80_3.png'),
-                url('Fotos/Fondo/u3829884585_abstract_background_of_silky_creamy_rich_tiramisu_e66d1ca4-83de-45ca-a9cb-44647d4e20e1_1.png'),
-                url('Fotos/Fondo/u3829884585_abstract_background_of_silky_creamy_rich_tiramisu_e66d1ca4-83de-45ca-a9cb-44647d4e20e1_3.png');
-            background-size: cover, cover, cover, cover;
-            background-position: center, center, center, center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            opacity: 0.08;
-            z-index: -2;
-            filter: brightness(0.7) contrast(1.1);
         }
 
-        /* Overlay oscuro adicional */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                rgba(0, 0, 0, 0.4) 0%, 
-                rgba(0, 0, 0, 0.2) 50%, 
-                rgba(0, 0, 0, 0.4) 100%);
-            z-index: -1;
-        }
-
-        .menu-hero {
-            background: 
-                linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%),
-                url('Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png'),
-                url('Fotos/u3829884585_A_realistic_product_shot_of_a_premium_chocolate_b_9f482ab1-2912-4ef9-89ce-7a2b5beaf2cc_3.png'),
-                url('Fotos/Pasteles/chocolate-dreamland-1.png'),
-                url('Fotos/Crossants/croissant-cube.png');
-            background-size: cover, cover, cover, cover, cover;
-            background-position: center, center, center, center, center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* HEADER */
+        .menu-header {
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 50px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .menu-hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            z-index: 2;
+        .menu-header h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #FFFFFF;
+            letter-spacing: 2px;
         }
 
-        .menu-hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--accent-red) 0%, #ffffff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 4px 20px rgba(220, 20, 60, 0.3);
-        }
-
-        .menu-hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            color: var(--text-secondary);
-            font-weight: 300;
-        }
-
-        .menu-hero .btn {
-            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-hover) 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
+        .menu-header p {
+            font-size: 14px;
+            color: #999;
+            font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3);
+            margin-bottom: 20px;
         }
 
-        .menu-hero .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(220, 20, 60, 0.4);
+        .line-decoration {
+            width: 60px;
+            height: 3px;
+            background-color: #E63946;
+            margin: 0 auto;
         }
 
-        /* Efecto de partículas flotantes */
-        .floating-particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            background: linear-gradient(45deg, var(--accent-red) 0%, #ffffff 100%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            box-shadow: 0 0 10px rgba(220, 20, 60, 0.3);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .menu-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .menu-hero p {
-                font-size: 1.1rem;
-            }
-            
-            .menu-hero-content {
-                padding: 1rem;
-            }
-        }
-
-        /* Botones de categoría */
-        .category-selector {
-            padding: 2rem 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .pill-buttons {
+        /* BUTTONS */
+        .menu-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 20px;
+            margin-bottom: 50px;
             flex-wrap: wrap;
         }
 
-        .pill-btn {
-            background: transparent;
-            border: 2px solid var(--border-color);
-            color: var(--text-secondary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
+        .menu-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid #444;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 15px;
             font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            border-color: #E63946;
+            color: white;
+        }
+
+        .menu-btn.active {
+            background-color: #E63946;
+            color: white;
+            border-color: #E63946;
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+        }
+
+        /* PRODUCTS CONTAINER */
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* PRODUCTS GRID */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+
+        .product-card {
+            background-color: #2a2a2a;
+            border-radius: 14px;
+            overflow: hidden;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
-        .pill-btn.active,
-        .pill-btn:hover {
-            background: var(--accent-red);
-            border-color: var(--accent-red);
-            color: white;
-            transform: translateY(-2px);
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
         }
 
-        /* Contenedor del menú */
-        .menu-container {
-            min-height: 100vh;
-            padding: 2rem 0;
+        .product-image {
+            width: 100%;
+            height: 65%;
+            object-fit: cover;
+            display: block;
+            background-color: #1a1a1a;
+        }
+
+        .product-overlay {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background-color: #2a2a2a;
+        }
+
+        .product-badge {
+            background-color: #E63946;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            color: #FFFFFF;
+        }
+
+        .product-category {
+            font-size: 13px;
+            color: #cccccc;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* HIDDEN CONTENT */
+        .menu-content {
+            display: none;
+        }
+
+        .menu-content.active {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1199px) {
+            .products-grid,
+            .menu-content.active {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .menu-header h1 {
+                font-size: 40px;
+            }
+
+            .products-grid,
+            .menu-content.active {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .product-card {
+                height: 320px;
+            }
+
+            .menu-btn {
+                padding: 10px 24px;
+                font-size: 14px;
+            }
+
+            .product-name {
+                font-size: 16px;
+            }
+
+            .product-category {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-section {
+                padding: 40px 15px;
+            }
+
+            .menu-header h1 {
+                font-size: 32px;
+            }
+
+            .menu-header p {
+                font-size: 12px;
+            }
+
+            .menu-buttons {
+                gap: 12px;
+            }
+
+            .menu-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
-
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <a href="index.html">
-                        <img src="Logo/1.png" alt="Fluffy Bites Logo" class="logo">
-                    </a>
-                </div>
-                
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="menu.html" class="nav-link active">Menú</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="food.html" class="nav-link">Comida</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="drinks.html" class="nav-link">Bebidas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="locations.html" class="nav-link">Ubicaciones</a>
-                    </li>
-                </ul>
-                
-                <div class="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="menu-hero">
-        <div class="floating-particles" id="particles"></div>
-        <div class="menu-hero-content">
-            <h1>Menú Completo</h1>
-            <p>Descubre nuestra selección premium de bebidas, comidas, chocolates y delicias artesanales</p>
-            <a href="#menu-content" class="btn">
-                <i class="fas fa-arrow-down"></i>
-                Ver Menú
-            </a>
+    <section class="menu-section">
+        <!-- HEADER -->
+        <div class="menu-header">
+            <h1>OUR MENU</h1>
+            <p>Culinary Art in Every Detail</p>
+            <div class="line-decoration"></div>
         </div>
-    </section>
 
-    <!-- Category Selector -->
-    <section class="category-selector">
-        <div class="container">
-            <div class="pill-buttons">
-                <button class="currency-btn" data-currency="eur">€ EUR</button>
-                <button class="currency-btn" data-currency="usd">$ USD</button>
-            </div>
+        <!-- BUTTONS -->
+        <div class="menu-buttons">
+            <button class="menu-btn active" onclick="showMenu('food')">🍔 FOOD</button>
+            <button class="menu-btn" onclick="showMenu('drinks')">🥤 DRINKS</button>
         </div>
-    </section>
 
-    <!-- Menu Content -->
-    <div class="menu-container" id="menu-content">
-        <!-- Sistema de Carga Automática de Imágenes -->
-        <div id="dynamic-menu-container">
-            <!-- Las imágenes se cargarán automáticamente aquí -->
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <!-- Logo Section -->
-            <div class="footer-logo">
-                <a href="index.html" class="footer-logo-link">
-                    <img src="Logo/1.png" alt="Fluffy Bites Logo" class="footer-logo-img">
-                </a>
-            </div>
-
-            <!-- Main Footer Content -->
-            <div class="footer-main">
-                <!-- Navigation -->
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">Navegación</h4>
-                    <ul class="footer-nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="locations.html">Locations</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-contact">
-                    <h4 class="footer-contact-title">Contacto</h4>
-                    <div class="footer-contact-info">
-                        <p class="footer-address">Merituulentie 36, 02200 Espoo</p>
-                        <p class="footer-phone">+358 40 7770086</p>
-                        <p class="footer-email">info@nordicglobe.fi</p>
+        <!-- PRODUCTS CONTAINER -->
+        <div class="products-container">
+            <!-- FOOD PRODUCTS -->
+            <div class="menu-content active" id="food">
+                <!-- Chocolate Products -->
+                <div class="product-card">
+                    <img src="Fotos/Chocolate/1.png" alt="Chocolate Cake" class="product-image" onerror="this.src='Fotos/Chocolate/choo.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">🍫 CHOCOLATE</span>
+                        <h3 class="product-name">Chocolate Cake</h3>
+                        <p class="product-category">Chocolates Premium</p>
                     </div>
                 </div>
 
-                <!-- Social Media -->
-                <div class="footer-social">
-                    <h4 class="footer-social-title">Síguenos</h4>
-                    <div class="footer-social-links">
-                        <a href="https://www.facebook.com/share/19kkHyRKti/?mibextid=wwXIfr" target="_blank" class="footer-social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.instagram.com/fluffybites.fi?igsh=MWVkbnhrbzU0OHJzbg%3D%3D&utm_source=qr" target="_blank" class="footer-social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@fluffybites.fi?_t=ZN-90irH9f9r9O&_r=1" target="_blank" class="footer-social-link" aria-label="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
+                <div class="product-card">
+                    <img src="Fotos/Chocolate/choo.png" alt="Tiramisu Clásico" class="product-image" onerror="this.src='Fotos/Chocolate/1.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">🍫 CHOCOLATE</span>
+                        <h3 class="product-name">Tiramisu Clásico</h3>
+                        <p class="product-category">Delicias de Cacao</p>
+                    </div>
+                </div>
+
+                <!-- Pasteles Products -->
+                <div class="product-card">
+                    <img src="Fotos/Pasteles/chocolate-dreamland-1.png" alt="Chocolate Dreamland" class="product-image" onerror="this.src='Fotos/Pasteles/chocolate-dreamland-2.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">🍰 PASTELES</span>
+                        <h3 class="product-name">Chocolate Dreamland</h3>
+                        <p class="product-category">Pasteles Premium</p>
+                    </div>
+                </div>
+
+                <!-- Crossants Products -->
+                <div class="product-card">
+                    <img src="Fotos/Crossants/croissant-cube.png" alt="Croissant Cubo" class="product-image">
+                    <div class="product-overlay">
+                        <span class="product-badge">🥐 CROISSANTS</span>
+                        <h3 class="product-name">Croissant Cubo</h3>
+                        <p class="product-category">Croissants Artesanales</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="Fotos/Crossants/u3829884585_A_Croissant_with_Apricot_Jam_and_Pistachios_is_a__3c4dd34f-4b20-4cc6-928d-9ceaca951354_1.png" alt="Croissant con Mermelada" class="product-image" onerror="this.src='Fotos/Crossants/croissant-cube.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">🥐 CROISSANTS</span>
+                        <h3 class="product-name">Croissant Pistacho</h3>
+                        <p class="product-category">Croissants Artesanales</p>
+                    </div>
+                </div>
+
+                <!-- Delicas Products -->
+                <div class="product-card">
+                    <img src="Fotos/Delicas/chocolate-explosion.png" alt="Chocolate Explosion" class="product-image">
+                    <div class="product-overlay">
+                        <span class="product-badge">⭐ DELICIAS</span>
+                        <h3 class="product-name">Chocolate Explosion</h3>
+                        <p class="product-category">Delicias Especiales</p>
+                    </div>
+                </div>
+
+                <!-- Sandwitches Products -->
+                <div class="product-card">
+                    <img src="Fotos/Sandwitches/u3829884585_Sandwich_de_queso_y_tomate_basado_en_la_descripci_88028ac4-709b-49e3-82cb-006ce489a9f3_2.png" alt="Sándwich Gourmet" class="product-image" onerror="this.src='Fotos/Sandwitches/u3829884585_fish_sandwich_on_a_wooden_table_crispy_fried_fish_364ec9a6-ea07-4fcf-8293-a6b9bb74f9ce_2.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">🥪 SÁNDWICHES</span>
+                        <h3 class="product-name">Sándwich Gourmet</h3>
+                        <p class="product-category">Sándwiches Artesanales</p>
+                    </div>
+                </div>
+
+                <!-- More Pasteles -->
+                <div class="product-card">
+                    <img src="Fotos/Pasteles/chocolate-dreamland-2.png" alt="Postre de Chocolate" class="product-image" onerror="this.src='Fotos/Pasteles/chocolate-dreamland-1.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">🍰 PASTELES</span>
+                        <h3 class="product-name">Postre Premium</h3>
+                        <p class="product-category">Pasteles Artesanales</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DRINKS PRODUCTS -->
+            <div class="menu-content" id="drinks">
+                <!-- Caffe Products -->
+                <div class="product-card">
+                    <img src="Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png" alt="Cappuccino Premium" class="product-image" onerror="this.src='Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">☕ CAFFE</span>
+                        <h3 class="product-name">Cappuccino Premium</h3>
+                        <p class="product-category">Bebidas de Café</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png" alt="Latte Especial" class="product-image" onerror="this.src='Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">☕ CAFFE</span>
+                        <h3 class="product-name">Latte Especial</h3>
+                        <p class="product-category">Café con Leche</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="Fotos/Caffe/u3829884585_COFFEE_EXPRESSO_WITH_A_HOT_BROWNIUE_--v_7_78e7d853-1e97-4741-90eb-bed18687cbea_2.png" alt="Espresso Brownie" class="product-image" onerror="this.src='Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">☕ CAFFE</span>
+                        <h3 class="product-name">Espresso Brownie</h3>
+                        <p class="product-category">Café Especial</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="Fotos/Caffe/u3829884585_Its_a_big_cup_of_cappuccino_Serve_in_a_glass_Ther_ad539098-6719-42d5-96bc-792b6b2ea701_2.png" alt="Cappuccino Glass" class="product-image" onerror="this.src='Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">☕ CAFFE</span>
+                        <h3 class="product-name">Cappuccino Glass</h3>
+                        <p class="product-category">Bebidas Premium</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="Fotos/Caffe/u3829884585_The_aroma_of_freshly_brewed_coffee_fills_the_air__091b0b0c-05d9-4ee0-ad57-18baca72d9d0_3.png" alt="Café Aromático" class="product-image" onerror="this.src='Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">☕ CAFFE</span>
+                        <h3 class="product-name">Café Aromático</h3>
+                        <p class="product-category">Café Artesanal</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="Fotos/Caffe/chocolate-brownie.png" alt="Chocolate Brownie" class="product-image" onerror="this.src='Fotos/Caffe/u3829884585_professional_food_photography_of_a_single_cappucc_e6fdd216-0246-49b7-9387-be8b5e4451d4_0.png'">
+                    <div class="product-overlay">
+                        <span class="product-badge">☕ CAFFE</span>
+                        <h3 class="product-name">Chocolate Brownie</h3>
+                        <p class="product-category">Delicia de Café</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="footer-bottom-content">
-                <p class="footer-copyright">© 2025 Fluffy Bites. All rights reserved.</p>
-                <p class="footer-hours">Lunes - Domingo: 7:00 AM - 9:00 PM</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/mobile-menu.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/theme-switcher.js"></script>
-    <script src="js/image-loader.js"></script>
+    </section>
 
     <script>
-        // Inicializar sistema de carga automática de imágenes
-        document.addEventListener('DOMContentLoaded', function() {
-            // Cargar todas las imágenes (MENU: todas las fotos)
-            if (window.imageLoader) {
-                window.imageLoader.loadAndRenderImages('dynamic-menu-container', 'all');
-            }
+        function showMenu(category) {
+            // Ocultar todos los contenidos
+            const allContents = document.querySelectorAll('.menu-content');
+            allContents.forEach(content => content.classList.remove('active'));
 
-            // Crear partículas flotantes
-            createFloatingParticles();
+            // Remover active de todos los botones
+            const allButtons = document.querySelectorAll('.menu-btn');
+            allButtons.forEach(btn => btn.classList.remove('active'));
 
-            // Smooth scroll para el botón del hero
-            document.querySelector('.menu-hero .btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('menu-content').scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+            // Mostrar el contenido seleccionado
+            document.getElementById(category).classList.add('active');
 
-            // Manejar botones de moneda
-            document.querySelectorAll('.currency-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    // Aquí puedes agregar lógica para cambiar precios
-                });
-            });
-
-            // Configurar el primer botón como activo
-            document.querySelector('.currency-btn[data-currency="eur"]').classList.add('active');
-        });
-
-        // Función para crear partículas flotantes
-        function createFloatingParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 15;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Tamaño aleatorio
-                const size = Math.random() * 4 + 2;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                
-                // Posición aleatoria
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                
-                // Delay de animación aleatorio
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                
-                particlesContainer.appendChild(particle);
-            }
+            // Añadir active al botón clickeado
+            event.target.classList.add('active');
         }
-
-        // Preload de imágenes críticas
-        document.addEventListener('DOMContentLoaded', function() {
-            const criticalImages = [
-                'Fotos/Caffe/u3829884585_A_cup_of_coffee_with_milk_being_poured_into_it_cr_05cd907d-3155-49ca-8db2-bf78c16d4aef_0.png',
-                'Fotos/Chocolate/u3829884585_A_hyper-realistic_extreme_close-up_food_photograp_dc1da413-b9ff-49b8-9d26-72c2a52f0bfd_3.png',
-                'Fotos/Pasteles/chocolate-dreamland-1.png',
-                'Fotos/Crossants/croissant-cube.png'
-            ];
-
-            criticalImages.forEach(src => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'image';
-                link.href = src;
-                document.head.appendChild(link);
-            });
-        });
     </script>
 </body>
 </html>

@@ -1,0 +1,159 @@
+        <!-- Modern Contact Section -->
+        <section class="modern-contact-section">
+            <div class="modern-contact-container">
+                <div class="modern-contact-header">
+                    <h2 class="modern-contact-title" data-translate="contact-title">Get In Touch</h2>
+                    <p class="modern-contact-subtitle" data-translate="contact-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                </div>
+                
+                <div class="modern-contact-grid">
+                    <!-- Modern Contact Form -->
+                    <div class="modern-form-container" data-aos="fade-right">
+                        <h3 class="modern-form-title" data-translate="form-title">Send Us a Message</h3>
+                        
+                        <div class="form-status" id="formStatus"></div>
+                        
+                        <form class="modern-contact-form" id="modernContactForm">
+                            <div class="form-row">
+                                <div class="modern-form-group">
+                                    <label for="firstName" class="modern-form-label required" data-translate="first-name">First Name</label>
+                                    <input 
+                                        type="text" 
+                                        id="firstName" 
+                                        name="firstName" 
+                                        class="modern-form-input" 
+                                        required
+                                        placeholder="John"
+                                        data-translate-placeholder="first-name-placeholder"
+                                    >
+                                </div>
+                                
+                                <div class="modern-form-group">
+                                    <label for="lastName" class="modern-form-label required" data-translate="last-name">Last Name</label>
+                                    <input 
+                                        type="text" 
+                                        id="lastName" 
+                                        name="lastName" 
+                                        class="modern-form-input" 
+                                        required
+                                        placeholder="Doe"
+                                        data-translate-placeholder="last-name-placeholder"
+                                    >
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="modern-form-group">
+                                    <label for="email" class="modern-form-label required" data-translate="email">Email Address</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        class="modern-form-input" 
+                                        required
+                                        placeholder="john@example.com"
+                                        data-translate-placeholder="email-placeholder"
+                                    >
+                                </div>
+                                
+                                <div class="modern-form-group">
+                                    <label for="phone" class="modern-form-label" data-translate="phone">Phone Number</label>
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        name="phone" 
+                                        class="modern-form-input"
+                                        placeholder="+1 (555) 123-4567"
+                                        data-translate-placeholder="phone-placeholder"
+                                    >
+                                </div>
+                            </div>
+                            
+                            <div class="modern-form-group">
+                                <label for="subject" class="modern-form-label required" data-translate="subject">Subject</label>
+                                <select id="subject" name="subject" class="modern-form-input modern-form-select" required>
+                                    <option value="" data-translate="select-subject">Select a subject</option>
+                                    <option value="general" data-translate="general-inquiry">General Inquiry</option>
+                                    <option value="reservation" data-translate="reservation">Table Reservation</option>
+                                    <option value="catering" data-translate="catering">Catering Services</option>
+                                    <option value="feedback" data-translate="feedback">Feedback</option>
+                                    <option value="complaint" data-translate="complaint">Complaint</option>
+                                    <option value="other" data-translate="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="modern-form-group full-width">
+                                <label for="message" class="modern-form-label required" data-translate="message">Your Message</label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    class="modern-form-input modern-form-textarea" 
+                                    required
+                                    placeholder="Tell us how we can help you..."
+                                    data-translate-placeholder="message-placeholder"
+                                ></textarea>
+                            </div>
+                            
+                            <button type="submit" class="modern-form-submit" data-translate="send-message">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i> Sending...
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="contact-info" data-aos="fade-left">
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4 class="contact-info-title" data-translate="visit-us">Visit Us</h4>
+                            <p class="contact-info-text" data-translate="address">
+                                Leppävaarankatu 3-5<br>
+                                02600 Espoo, Finland
+                            </p>
+                            <a href="https://maps.google.com/?q=Leppävaarankatu+3-5,+02600+Espoo,+Finland" 
+                               class="contact-info-link" 
+                               target="_blank" 
+                               data-translate="get-directions">Get Directions</a>
+                        </div>
+                        
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4 class="contact-info-title" data-translate="call-us">Call Us</h4>
+                            <p class="contact-info-text" data-translate="phone-hours">
+                                Monday - Friday: 7:00 AM - 8:00 PM<br>
+                                Saturday - Sunday: 8:00 AM - 9:00 PM
+                            </p>
+                            <a href="tel:+358401234567" class="contact-info-link" data-translate="phone-number">+358 40 123 4567</a>
+                        </div>
+                        
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4 class="contact-info-title" data-translate="email-us">Email Us</h4>
+                            <p class="contact-info-text" data-translate="email-response">
+                                We typically respond within 24 hours during business days.
+                            </p>
+                            <a href="mailto:info@fluffybites.fi" class="contact-info-link" data-translate="email-address">info@fluffybites.fi</a>
+                        </div>
+                        
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4 class="contact-info-title" data-translate="business-hours">Business Hours</h4>
+                            <p class="contact-info-text">
+                                <strong data-translate="weekdays">Monday - Friday:</strong> 7:00 AM - 8:00 PM<br>
+                                <strong data-translate="weekends">Saturday - Sunday:</strong> 8:00 AM - 9:00 PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
