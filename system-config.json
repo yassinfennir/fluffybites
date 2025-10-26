@@ -1,0 +1,239 @@
+{
+  "name": "Fluffy Bites - Cafetería de Especialidad",
+  "version": "2.0.0",
+  "description": "Sistema completo de gestión de cafetería con diseño estilo Apple y automatización completa",
+  "author": "Fluffy Bites Team",
+  "license": "MIT",
+  
+  "system": {
+    "type": "cafe-management-system",
+    "framework": "vanilla-js",
+    "design": "apple-inspired",
+    "automation": "full-automation",
+    "performance": "optimized"
+  },
+  
+  "features": {
+    "design": {
+      "style": "Apple-inspired minimalism",
+      "colors": {
+        "primary": "#007AFF",
+        "secondary": "#FF3B30",
+        "accent": "#34C759",
+        "background": "#FFFFFF",
+        "text": "#1D1D1F"
+      },
+      "typography": "SF Pro Display",
+      "animations": "smooth-cubic-bezier",
+      "responsive": true
+    },
+    
+    "productManagement": {
+      "crud": true,
+      "categories": ["cafe", "sandwiches", "pasteles", "bebidas"],
+      "features": ["availability", "pricing", "ingredients", "allergens", "nutrition"],
+      "search": true,
+      "filtering": true,
+      "sorting": true
+    },
+    
+    "adminPanel": {
+      "enabled": true,
+      "access": "?admin=true or localStorage",
+      "features": [
+        "product-crud",
+        "bulk-operations",
+        "import-export",
+        "analytics",
+        "notifications"
+      ]
+    },
+    
+    "automation": {
+      "enabled": true,
+      "rules": [
+        "auto-update-availability",
+        "auto-backup-products",
+        "auto-optimize-images",
+        "auto-update-prices",
+        "auto-generate-reports",
+        "auto-clean-cache",
+        "auto-update-menu",
+        "auto-send-notifications"
+      ],
+      "scheduling": "cron-like",
+      "monitoring": true,
+      "error-handling": true
+    },
+    
+    "performance": {
+      "optimization": true,
+      "lazy-loading": true,
+      "image-optimization": true,
+      "caching": true,
+      "compression": true,
+      "monitoring": true,
+      "metrics": [
+        "load-time",
+        "first-contentful-paint",
+        "largest-contentful-paint",
+        "cumulative-layout-shift"
+      ]
+    }
+  },
+  
+  "automation": {
+    "rules": {
+      "autoUpdateProductAvailability": {
+        "schedule": "0 6 * * *",
+        "description": "Update product availability based on business hours",
+        "enabled": true
+      },
+      "autoBackupProducts": {
+        "schedule": "0 2 * * *",
+        "description": "Daily backup of product data",
+        "enabled": true
+      },
+      "autoOptimizeImages": {
+        "trigger": "productAdded",
+        "description": "Optimize images when new products are added",
+        "enabled": true
+      },
+      "autoUpdatePrices": {
+        "schedule": "0 8 * * 1",
+        "description": "Weekly price updates based on market data",
+        "enabled": false
+      },
+      "autoGenerateReports": {
+        "schedule": "0 23 * * *",
+        "description": "Daily analytics and performance reports",
+        "enabled": true
+      },
+      "autoCleanCache": {
+        "schedule": "0 */6 * * *",
+        "description": "Clean cache and optimize performance every 6 hours",
+        "enabled": true
+      },
+      "autoUpdateMenuDisplay": {
+        "trigger": "productUpdated",
+        "description": "Update menu display when products change",
+        "enabled": true
+      },
+      "autoSendNotifications": {
+        "trigger": "productOutOfStock",
+        "description": "Send notifications for important events",
+        "enabled": true
+      }
+    }
+  },
+  
+  "performance": {
+    "targets": {
+      "loadTime": "< 2s",
+      "firstContentfulPaint": "< 1.5s",
+      "largestContentfulPaint": "< 2.5s",
+      "cumulativeLayoutShift": "< 0.1"
+    },
+    "optimizations": [
+      "lazy-loading",
+      "image-compression",
+      "resource-preloading",
+      "service-worker-caching",
+      "code-splitting",
+      "minification"
+    ]
+  },
+  
+  "api": {
+    "endpoints": {
+      "products": "/api/products",
+      "analytics": "/api/analytics",
+      "backup": "/api/backup"
+    },
+    "authentication": "local-storage",
+    "rateLimiting": true
+  },
+  
+  "deployment": {
+    "platform": "netlify",
+    "domain": "fluffybites.net",
+    "ssl": true,
+    "cdn": true,
+    "compression": "gzip"
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "metrics": [
+      "performance",
+      "errors",
+      "user-interactions",
+      "automation-tasks",
+      "system-health"
+    ],
+    "alerts": [
+      "high-error-rate",
+      "performance-degradation",
+      "automation-failures",
+      "system-unhealthy"
+    ]
+  },
+  
+  "security": {
+    "features": [
+      "input-validation",
+      "xss-protection",
+      "csrf-protection",
+      "secure-headers",
+      "content-security-policy"
+    ],
+    "adminAccess": "url-parameter-or-localStorage"
+  },
+  
+  "accessibility": {
+    "enabled": true,
+    "features": [
+      "keyboard-navigation",
+      "screen-reader-support",
+      "high-contrast",
+      "focus-management",
+      "aria-labels"
+    ],
+    "compliance": "WCAG 2.1 AA"
+  },
+  
+  "browserSupport": {
+    "modern": [
+      "Chrome 90+",
+      "Firefox 88+",
+      "Safari 14+",
+      "Edge 90+"
+    ],
+    "mobile": [
+      "iOS Safari 14+",
+      "Chrome Mobile 90+",
+      "Samsung Internet 13+"
+    ]
+  },
+  
+  "development": {
+    "tools": [
+      "ES6+",
+      "CSS3",
+      "HTML5",
+      "Service Workers",
+      "Web APIs"
+    ],
+    "testing": "manual-testing",
+    "linting": "eslint-prettier",
+    "versionControl": "git"
+  },
+  
+  "maintenance": {
+    "automated": true,
+    "backups": "daily",
+    "updates": "automatic",
+    "monitoring": "24/7",
+    "alerts": "email-notifications"
+  }
+}

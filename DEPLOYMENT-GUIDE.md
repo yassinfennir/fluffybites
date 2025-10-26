@@ -94,7 +94,7 @@ Valor: fluffybites.net
 ## 🎯 URLs importantes
 
 - **Sitio principal**: https://fluffybites.net
-- **Menú**: https://fluffybites.net/menu.html
+- **Menú**: https://fluffybites.net/food.html
 - **Ubicación**: https://fluffybites.net/locations.html
 - **Contacto**: https://fluffybites.net/contact.html
 

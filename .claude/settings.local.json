@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gemini \"Actúa como experto en prompts de Midjourney. Genera 10 prompts PERFECTOS para crear imágenes de alta calidad para una cafetería premium llamada Fluffy Bites. Deben ser ultra realistas, cinematográficos, con iluminación profesional. Temas: café latte art, pasteles, ambiente acogedor, barista trabajando. Formato: solo los prompts en inglés, uno por línea, incluye parámetros --ar 16:9 --style raw --v 6\")",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\n✨ FASE 1 COMPLETE: Sistema de Menú Automatizado\n\n🎯 Features Implementados:\n- Sistema CMS automatizado con JSON (data/products.json)\n- Auto-generador de menú dinámico (js/auto-menu-generator.js)\n- CSS Premium estilo Apple (css/apple-premium-menu.css)\n- Dashboard admin completo (admin.html)\n- Sistema zero-code para actualizar productos\n- Documentación completa (PRODUCT-MANAGEMENT-GUIDE.md)\n\n🚀 Capacidades:\n- Menú se genera automáticamente desde JSON\n- Panel admin visual en /admin\n- Añadir/Editar/Eliminar productos sin código\n- Toggle rápido disponibilidad/featured\n- Export/Import de productos\n- Búsqueda y filtrado\n- Estadísticas en tiempo real\n\n🎨 Diseño:\n- Animaciones fluidas estilo Apple\n- Lazy loading de imágenes\n- Efectos 3D en hover\n- Parallax scrolling\n- Transiciones suaves\n- Mobile-first responsive\n\n📝 Uso:\n1. Ir a /admin\n2. Gestionar productos visualmente\n3. Descargar products.json\n4. Commit y push a GitHub\n5. Netlify actualiza automáticamente\n\n🤖 Generated with Claude Code\nhttps://claude.com/claude-code\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(npm install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

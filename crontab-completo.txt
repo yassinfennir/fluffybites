@@ -1,0 +1,286 @@
+# 🕐 CRONTAB COMPLETO PARA PLATAFORMA ALL-IN-ONE
+# Configuración de tareas automáticas 24/7
+# =====================================================
+
+# Para instalar este crontab:
+# 1. Copia todo este contenido
+# 2. Ejecuta: crontab -e
+# 3. Pega el contenido completo
+# 4. Guarda y sal (Ctrl+X, Y, Enter)
+
+# =====================================================
+# CONFIGURACIÓN DE VARIABLES DE ENTORNO
+# =====================================================
+PATH=/usr/local/bin:/usr/bin:/bin
+SHELL=/bin/bash
+MAILTO=admin@tu-dominio.com
+
+# =====================================================
+# OPTIMIZACIÓN Y RENDIMIENTO
+# =====================================================
+
+# Optimizar velocidad del sitio (diario a las 2:00 AM)
+0 2 * * * /home/user/scripts/optimize.sh >> /var/log/cron.log 2>&1
+
+# Limpiar caché y archivos temporales (cada 6 horas)
+0 */6 * * * find /tmp -type f -mtime +1 -delete >> /var/log/cron.log 2>&1
+
+# Optimizar base de datos (diario a las 3:00 AM)
+0 3 * * * psql -d all_in_one_db -c "VACUUM ANALYZE;" >> /var/log/cron.log 2>&1
+
+# =====================================================
+# MONITOREO Y SEGURIDAD
+# =====================================================
+
+# Monitorear sitio cada hora
+0 * * * * /home/user/scripts/monitor-site.sh >> /var/log/cron.log 2>&1
+
+# Verificación rápida cada 5 minutos
+*/5 * * * * /home/user/scripts/monitor-site.sh quick >> /var/log/cron.log 2>&1
+
+# Verificar certificados SSL (semanal los domingos a las 4:00 AM)
+0 4 * * 0 /home/user/scripts/check-ssl.sh >> /var/log/cron.log 2>&1
+
+# Actualizar sistema (semanal los lunes a las 5:00 AM)
+0 5 * * 1 apt update && apt upgrade -y >> /var/log/cron.log 2>&1
+
+# =====================================================
+# BACKUPS AUTOMÁTICOS
+# =====================================================
+
+# Backup completo 3 veces al día (6:00, 14:00, 22:00)
+0 6,14,22 * * * /home/user/scripts/backup.sh >> /var/log/cron.log 2>&1
+
+# Backup incremental cada 4 horas
+0 */4 * * * /home/user/scripts/backup-incremental.sh >> /var/log/cron.log 2>&1
+
+# Sincronizar backups con S3 (diario a las 1:00 AM)
+0 1 * * * /home/user/scripts/sync-to-s3.sh >> /var/log/cron.log 2>&1
+
+# =====================================================
+# REPORTES Y ANALYTICS
+# =====================================================
+
+# Generar reporte diario (diario a las 8:00 AM)
+0 8 * * * node /home/user/automation/daily-report.js >> /var/log/cron.log 2>&1
+
+# Generar reporte semanal (domingos a las 9:00 AM)
+0 9 * * 0 node /home/user/automation/weekly-report.js >> /var/log/cron.log 2>&1
+
+# Generar reporte mensual (1ro de cada mes a las 10:00 AM)
+0 10 1 * * node /home/user/automation/monthly-report.js >> /var/log/cron.log 2>&1
+
+# =====================================================
+# REDES SOCIALES Y MARKETING
+# =====================================================
+
+# Publicar contenido programado (cada 5 minutos)
+*/5 * * * * node /home/user/automation/social-scheduler.js publish >> /var/log/cron.log 2>&1
+
+# Generar contenido automático (diario a las 9:00 AM)
+0 9 * * * node /home/user/automation/social-scheduler.js generate >> /var/log/cron.log 2>&1
+
+# Analizar rendimiento de redes sociales (diario a las 11:00 PM)
+0 23 * * * node /home/user/automation/social-scheduler.js analyze >> /var/log/cron.log 2>&1
+
+# Limpiar posts antiguos (semanal los sábados a las 2:00 AM)
+0 2 * * 6 node /home/user/automation/social-scheduler.js cleanup >> /var/log/cron.log 2>&1
+
+# =====================================================
+# RECORDATORIOS Y NOTIFICACIONES
+# =====================================================
+
+# Procesar recordatorios (cada 5 minutos)
+*/5 * * * * node /home/user/automation/reminders.js all >> /var/log/cron.log 2>&1
+
+# Recordatorios de reuniones (cada 2 minutos)
+*/2 * * * * node /home/user/automation/reminders.js meetings >> /var/log/cron.log 2>&1
+
+# Recordatorios de facturas (cada 10 minutos)
+*/10 * * * * node /home/user/automation/reminders.js invoices >> /var/log/cron.log 2>&1
+
+# Recordatorios de pagos vencidos (cada 15 minutos)
+*/15 * * * * node /home/user/automation/reminders.js payments >> /var/log/cron.log 2>&1
+
+# =====================================================
+# FACTURACIÓN Y PAGOS
+# =====================================================
+
+# Generar facturas recurrentes (1ro de cada mes a las 6:00 AM)
+0 6 1 * * node /home/user/automation/recurring-invoices.js process >> /var/log/cron.log 2>&1
+
+# Enviar recordatorios de pago (diario a las 10:00 AM)
+0 10 * * * node /home/user/automation/payment-reminders.js >> /var/log/cron.log 2>&1
+
+# Procesar pagos automáticos (cada hora)
+0 * * * * node /home/user/automation/process-payments.js >> /var/log/cron.log 2>&1
+
+# Reconciliación bancaria (diario a las 11:00 PM)
+0 23 * * * node /home/user/automation/bank-reconciliation.js >> /var/log/cron.log 2>&1
+
+# =====================================================
+# SEO Y OPTIMIZACIÓN WEB
+# =====================================================
+
+# Optimización SEO completa (diario a las 3:00 AM)
+0 3 * * * node /home/user/automation/seo-optimizer.js optimize >> /var/log/cron.log 2>&1
+
+# Verificar enlaces rotos (diario a las 4:00 AM)
+0 4 * * * node /home/user/automation/seo-optimizer.js links >> /var/log/cron.log 2>&1
+
+# Generar sitemap (diario a las 5:00 AM)
+0 5 * * * node /home/user/automation/seo-optimizer.js sitemap >> /var/log/cron.log 2>&1
+
+# Verificar velocidad del sitio (diario a las 6:00 AM)
+0 6 * * * node /home/user/automation/seo-optimizer.js speed >> /var/log/cron.log 2>&1
+
+# =====================================================
+# COMUNICACIÓN Y EMAIL
+# =====================================================
+
+# Enviar newsletter (semanal los martes a las 8:00 AM)
+0 8 * * 2 node /home/user/automation/newsletter.js >> /var/log/cron.log 2>&1
+
+# Seguimiento de leads (diario a las 9:00 AM)
+0 9 * * * node /home/user/automation/lead-followup.js >> /var/log/cron.log 2>&1
+
+# Limpiar emails antiguos (semanal los domingos a las 3:00 AM)
+0 3 * * 0 node /home/user/automation/email-cleanup.js >> /var/log/cron.log 2>&1
+
+# =====================================================
+# MANTENIMIENTO Y LIMPIEZA
+# =====================================================
+
+# Limpiar logs antiguos (diario a las 2:00 AM)
+0 2 * * * find /var/log -name "*.log" -mtime +7 -delete >> /var/log/cron.log 2>&1
+
+# Limpiar archivos temporales (diario a las 1:00 AM)
+0 1 * * * find /tmp -type f -mtime +1 -delete >> /var/log/cron.log 2>&1
+
+# Limpiar caché de aplicaciones (diario a las 12:00 AM)
+0 0 * * * node /home/user/automation/cache-cleanup.js >> /var/log/cron.log 2>&1
+
+# Rotar logs del sistema (diario a las 11:00 PM)
+0 23 * * * logrotate /etc/logrotate.conf >> /var/log/cron.log 2>&1
+
+# =====================================================
+# SEGURIDAD Y MONITOREO AVANZADO
+# =====================================================
+
+# Escaneo de seguridad (diario a las 12:00 AM)
+0 0 * * * /home/user/scripts/security-scan.sh >> /var/log/cron.log 2>&1
+
+# Verificar integridad de archivos (diario a las 1:00 AM)
+0 1 * * * /home/user/scripts/file-integrity-check.sh >> /var/log/cron.log 2>&1
+
+# Actualizar reglas de firewall (semanal los viernes a las 6:00 PM)
+0 18 * * 5 /home/user/scripts/update-firewall.sh >> /var/log/cron.log 2>&1
+
+# Backup de configuración de seguridad (semanal los sábados a las 3:00 AM)
+0 3 * * 6 /home/user/scripts/security-backup.sh >> /var/log/cron.log 2>&1
+
+# =====================================================
+# ANALYTICS Y MÉTRICAS
+# =====================================================
+
+# Recopilar métricas de rendimiento (cada 15 minutos)
+*/15 * * * * node /home/user/automation/collect-metrics.js >> /var/log/cron.log 2>&1
+
+# Generar dashboard de métricas (diario a las 7:00 AM)
+0 7 * * * node /home/user/automation/generate-dashboard.js >> /var/log/cron.log 2>&1
+
+# Análisis de tendencias (semanal los lunes a las 8:00 AM)
+0 8 * * 1 node /home/user/automation/trend-analysis.js >> /var/log/cron.log 2>&1
+
+# =====================================================
+# INTEGRACIÓN CON SERVICIOS EXTERNOS
+# =====================================================
+
+# Sincronizar con CRM (cada 30 minutos)
+*/30 * * * * node /home/user/automation/crm-sync.js >> /var/log/cron.log 2>&1
+
+# Sincronizar con contabilidad (diario a las 7:00 AM)
+0 7 * * * node /home/user/automation/accounting-sync.js >> /var/log/cron.log 2>&1
+
+# Actualizar inventario (cada hora)
+0 * * * * node /home/user/automation/inventory-sync.js >> /var/log/cron.log 2>&1
+
+# Sincronizar calendarios (cada 15 minutos)
+*/15 * * * * node /home/user/automation/calendar-sync.js >> /var/log/cron.log 2>&1
+
+# =====================================================
+# NOTIFICACIONES Y ALERTAS
+# =====================================================
+
+# Verificar estado de servicios críticos (cada 5 minutos)
+*/5 * * * * /home/user/scripts/check-critical-services.sh >> /var/log/cron.log 2>&1
+
+# Enviar alertas de sistema (si hay problemas)
+0 */1 * * * /home/user/scripts/system-alerts.sh >> /var/log/cron.log 2>&1
+
+# Verificar espacio en disco (cada hora)
+0 * * * * /home/user/scripts/check-disk-space.sh >> /var/log/cron.log 2>&1
+
+# Verificar memoria del sistema (cada 30 minutos)
+*/30 * * * * /home/user/scripts/check-memory.sh >> /var/log/cron.log 2>&1
+
+# =====================================================
+# TAREAS ESPECÍFICAS DEL NEGOCIO
+# =====================================================
+
+# Procesar órdenes pendientes (cada 10 minutos)
+*/10 * * * * node /home/user/automation/process-orders.js >> /var/log/cron.log 2>&1
+
+# Actualizar precios de productos (diario a las 6:00 AM)
+0 6 * * * node /home/user/automation/update-prices.js >> /var/log/cron.log 2>&1
+
+# Generar códigos de descuento (semanal los lunes a las 9:00 AM)
+0 9 * * 1 node /home/user/automation/generate-discounts.js >> /var/log/cron.log 2>&1
+
+# Procesar devoluciones (diario a las 8:00 PM)
+0 20 * * * node /home/user/automation/process-returns.js >> /var/log/cron.log 2>&1
+
+# =====================================================
+# MANTENIMIENTO DE BASE DE DATOS
+# =====================================================
+
+# Optimizar índices de base de datos (semanal los domingos a las 2:00 AM)
+0 2 * * 0 psql -d all_in_one_db -c "REINDEX DATABASE all_in_one_db;" >> /var/log/cron.log 2>&1
+
+# Actualizar estadísticas de base de datos (diario a las 3:00 AM)
+0 3 * * * psql -d all_in_one_db -c "ANALYZE;" >> /var/log/cron.log 2>&1
+
+# Limpiar datos antiguos (mensual el 1ro a las 4:00 AM)
+0 4 1 * * node /home/user/automation/cleanup-old-data.js >> /var/log/cron.log 2>&1
+
+# =====================================================
+# MONITOREO DE RENDIMIENTO
+# =====================================================
+
+# Verificar tiempo de respuesta del sitio (cada 5 minutos)
+*/5 * * * * /home/user/scripts/check-response-time.sh >> /var/log/cron.log 2>&1
+
+# Verificar disponibilidad de APIs (cada 10 minutos)
+*/10 * * * * /home/user/scripts/check-api-status.sh >> /var/log/cron.log 2>&1
+
+# Monitorear uso de CPU (cada 15 minutos)
+*/15 * * * * /home/user/scripts/monitor-cpu.sh >> /var/log/cron.log 2>&1
+
+# Monitorear uso de memoria (cada 15 minutos)
+*/15 * * * * /home/user/scripts/monitor-memory.sh >> /var/log/cron.log 2>&1
+
+# =====================================================
+# FINALIZACIÓN Y NOTAS
+# =====================================================
+
+# Este crontab incluye todas las tareas necesarias para mantener
+# tu plataforma All-in-One funcionando perfectamente 24/7
+#
+# Para verificar que todo funciona:
+# - Revisa los logs: tail -f /var/log/cron.log
+# - Verifica tareas activas: crontab -l
+# - Monitorea recursos: htop
+#
+# Para modificar horarios, edita este archivo y ejecuta: crontab -e
+#
+# ¡Tu plataforma ahora está completamente automatizada! 🚀

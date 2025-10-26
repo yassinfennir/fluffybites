@@ -11,6 +11,9 @@ Thumbs.db
 *_original*
 *_copy*
 
+# Archivos de Netlify
+.netlify/
+
 # Archivos de documentación de desarrollo
 CAMBIOS-*.md
 INSTRUCCIONES-*.md
