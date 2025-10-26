@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Test Menú Hamburguesa - EMERGENCIA</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ESTILOS DEL MENÚ HAMBURGUESA INLINE */
+        :root {
+            --primary-color: #E63946;
+            --primary-dark: #D62828;
+            --secondary-color: #F77F00;
+            --accent-color: #FCBF49;
+            --text-light: #ffffff;
+            --text-dark: #2D3748;
+            --bg-overlay: rgba(0, 0, 0, 0.8);
+            --transition-fast: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            --border-radius: 12px;
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-strong: 0 8px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Botón hamburguesa */
+        .hamburger-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            transition: all var(--transition-fast);
+            box-shadow: var(--shadow-strong);
+            backdrop-filter: blur(10px);
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        .hamburger-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 50px rgba(230, 57, 70, 0.4);
+        }
+        
+        .hamburger-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .hamburger-line {
+            width: 24px;
+            height: 3px;
+            background: var(--text-light);
+            border-radius: 2px;
+            transition: all var(--transition-fast);
+            transform-origin: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .hamburger-btn.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .hamburger-btn.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+        
+        .hamburger-btn.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        /* Overlay de pantalla completa */
+        .fullscreen-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark), var(--secondary-color));
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+            transition: all var(--transition-slow);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            will-change: opacity, transform;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        
+        .fullscreen-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+        
+        .fullscreen-menu-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .close-menu-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all var(--transition-fast);
+            backdrop-filter: blur(10px);
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+            touch-action: manipulation;
+            min-width: 44px;
+            min-height: 44px;
+        }
+        
+        .close-menu-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .close-menu-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .close-menu-btn i {
+            color: var(--text-light);
+            font-size: 20px;
+        }
+        
+        .menu-logo-section {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .menu-logo {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .menu-logo i {
+            font-size: 40px;
+            color: var(--text-light);
+        }
+        
+        .menu-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin: 0 0 10px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .menu-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        .menu-navigation {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .menu-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .menu-nav-item {
+            position: relative;
+        }
+        
+        .menu-nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all var(--transition-fast);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            min-height: 60px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            will-change: transform, background-color;
+        }
+        
+        .menu-nav-link:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .menu-nav-link:active {
+            transform: scale(0.95);
+        }
+        
+        .menu-nav-link.active {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 30px rgba(252, 191, 73, 0.3);
+        }
+        
+        .menu-nav-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            transition: all var(--transition-fast);
+            min-width: 24px;
+            min-height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .menu-nav-link:hover .menu-nav-icon {
+            transform: scale(1.1);
+        }
+        
+        .menu-nav-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .menu-nav-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-align: center;
+            line-height: 1.3;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger-btn {
+                width: 50px;
+                height: 50px;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .hamburger-line {
+                width: 20px;
+                height: 2px;
+            }
+            
+            .menu-title {
+                font-size: 2.5rem;
+            }
+            
+            .menu-subtitle {
+                font-size: 1rem;
+            }
+            
+            .menu-nav-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .menu-nav-link {
+                padding: 25px 15px;
+                min-height: 56px;
+            }
+            
+            .menu-nav-icon {
+                font-size: 2rem;
+            }
+            
+            .close-menu-btn {
+                top: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        /* Estilos de la página de prueba */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .test-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+        
+        .test-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .test-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .test-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .status {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: left;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        
+        .status-item {
+            margin-bottom: 8px;
+        }
+        
+        .status-label {
+            color: #FCBF49;
+            font-weight: bold;
+        }
+        
+        .status-value {
+            color: #ffffff;
+        }
+        
+        .success {
+            color: #4ade80;
+        }
+        
+        .error {
+            color: #f87171;
+        }
+        
+        .warning {
+            color: #fbbf24;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-content">
+        <h1 class="test-title">🍔 Test Menú Hamburguesa</h1>
+        <p class="test-subtitle">Versión EMERGENCIA - Todo inline, debería funcionar</p>
+        
+        <div class="test-box">
+            <h2>¡Busca el botón hamburguesa!</h2>
+            <p>Debería aparecer un botón hamburguesa rojo en la esquina superior derecha.</p>
+            <p>Tócalo para abrir el menú de pantalla completa.</p>
+            <p><strong>Esta versión tiene todo el código inline, así que debería funcionar garantizadamente.</strong></p>
+        </div>
+        
+        <div class="status" id="status">
+            <div class="status-item">
+                <span class="status-label">Ancho de pantalla:</span>
+                <span class="status-value" id="width">Cargando...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Botón hamburguesa:</span>
+                <span class="status-value" id="button">Cargando...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Overlay del menú:</span>
+                <span class="status-value" id="overlay">Cargando...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Menú abierto:</span>
+                <span class="status-value" id="open">No</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // MENÚ HAMBURGUESA INLINE - VERSIÓN EMERGENCIA
+        var isOpen = false;
+        var hamburgerBtn = null;
+        var menuOverlay = null;
+        var closeBtn = null;
+        
+        function createMenu() {
+            console.log('Creando menú hamburguesa...');
+            
+            // Crear botón hamburguesa
+            hamburgerBtn = document.createElement('button');
+            hamburgerBtn.className = 'hamburger-btn';
+            hamburgerBtn.setAttribute('aria-label', 'Abrir menú de navegación');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            hamburgerBtn.innerHTML = '<div class="hamburger-line"></div><div class="hamburger-line"></div><div class="hamburger-line"></div>';
+            
+            // Crear overlay del menú
+            menuOverlay = document.createElement('div');
+            menuOverlay.className = 'fullscreen-menu-overlay';
+            menuOverlay.innerHTML = 
+                '<div class="fullscreen-menu-container">' +
+                    '<button class="close-menu-btn" aria-label="Cerrar menú">' +
+                        '<i class="fas fa-times"></i>' +
+                    '</button>' +
+                    '<div class="menu-logo-section">' +
+                        '<div class="menu-logo">' +
+                            '<i class="fas fa-heart"></i>' +
+                        '</div>' +
+                        '<h1 class="menu-title">Fluffy Bites</h1>' +
+                        '<p class="menu-subtitle">Café & Chocolatería</p>' +
+                    '</div>' +
+                    '<nav class="menu-navigation">' +
+                        '<ul class="menu-nav-grid">' +
+                            '<li class="menu-nav-item">' +
+                                '<a href="index.html" class="menu-nav-link" data-page="home">' +
+                                    '<i class="fas fa-home menu-nav-icon"></i>' +
+                                    '<span class="menu-nav-text">Inicio</span>' +
+                                    '<span class="menu-nav-description">Página principal</span>' +
+                                '</a>' +
+                            '</li>' +
+                            '<li class="menu-nav-item">' +
+                                '<a href="menu.html" class="menu-nav-link" data-page="menu">' +
+                                    '<i class="fas fa-utensils menu-nav-icon"></i>' +
+                                    '<span class="menu-nav-text">Menú</span>' +
+                                    '<span class="menu-nav-description">Ver nuestro menú</span>' +
+                                '</a>' +
+                            '</li>' +
+                            '<li class="menu-nav-item">' +
+                                '<a href="drinks.html" class="menu-nav-link" data-page="drinks">' +
+                                    '<i class="fas fa-coffee menu-nav-icon"></i>' +
+                                    '<span class="menu-nav-text">Bebidas</span>' +
+                                    '<span class="menu-nav-description">Bebidas y café</span>' +
+                                '</a>' +
+                            '</li>' +
+                            '<li class="menu-nav-item">' +
+                                '<a href="gallery.html" class="menu-nav-link" data-page="gallery">' +
+                                    '<i class="fas fa-camera menu-nav-icon"></i>' +
+                                    '<span class="menu-nav-text">Galería</span>' +
+                                    '<span class="menu-nav-description">Fotos de productos</span>' +
+                                '</a>' +
+                            '</li>' +
+                            '<li class="menu-nav-item">' +
+                                '<a href="blog.html" class="menu-nav-link" data-page="blog">' +
+                                    '<i class="fas fa-pen menu-nav-icon"></i>' +
+                                    '<span class="menu-nav-text">Blog</span>' +
+                                    '<span class="menu-nav-description">Artículos y noticias</span>' +
+                                '</a>' +
+                            '</li>' +
+                            '<li class="menu-nav-item">' +
+                                '<a href="locations.html" class="menu-nav-link" data-page="locations">' +
+                                    '<i class="fas fa-map-marker-alt menu-nav-icon"></i>' +
+                                    '<span class="menu-nav-text">Ubicaciones</span>' +
+                                    '<span class="menu-nav-description">Encuentra tiendas</span>' +
+                                '</a>' +
+                            '</li>' +
+                            '<li class="menu-nav-item">' +
+                                '<a href="contact.html" class="menu-nav-link" data-page="contact">' +
+                                    '<i class="fas fa-phone menu-nav-icon"></i>' +
+                                    '<span class="menu-nav-text">Contacto</span>' +
+                                    '<span class="menu-nav-description">Contáctanos</span>' +
+                                '</a>' +
+                            '</li>' +
+                            '<li class="menu-nav-item">' +
+                                '<a href="about.html" class="menu-nav-link" data-page="about">' +
+                                    '<i class="fas fa-info-circle menu-nav-icon"></i>' +
+                                    '<span class="menu-nav-text">Acerca de</span>' +
+                                    '<span class="menu-nav-description">Nuestra historia</span>' +
+                                '</a>' +
+                            '</li>' +
+                        '</ul>' +
+                    '</nav>' +
+                '</div>';
+            
+            // Añadir al body
+            document.body.appendChild(hamburgerBtn);
+            document.body.appendChild(menuOverlay);
+            
+            // Guardar referencias
+            closeBtn = menuOverlay.querySelector('.close-menu-btn');
+            
+            console.log('Menú creado correctamente');
+        }
+        
+        function openMenu() {
+            console.log('Abriendo menú...');
+            isOpen = true;
+            menuOverlay.classList.add('active');
+            hamburgerBtn.classList.add('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            document.body.classList.add('menu-open');
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            document.body.style.overflow = 'hidden';
+            updateStatus();
+        }
+        
+        function closeMenu() {
+            console.log('Cerrando menú...');
+            isOpen = false;
+            menuOverlay.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
+            document.body.style.position = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            updateStatus();
+        }
+        
+        function toggleMenu() {
+            console.log('Toggle menú - Estado actual:', isOpen);
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
+        
+        function bindEvents() {
+            console.log('Vinculando eventos...');
+            
+            // Botón hamburguesa
+            hamburgerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Click en botón hamburguesa');
+                toggleMenu();
+            });
+            
+            // Botón cerrar
+            closeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Click en botón cerrar');
+                closeMenu();
+            });
+            
+            // Cerrar al hacer click en el overlay
+            menuOverlay.addEventListener('click', function(e) {
+                if (e.target === menuOverlay) {
+                    console.log('Click en overlay - cerrando menú');
+                    closeMenu();
+                }
+            });
+            
+            // Cerrar con tecla Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isOpen) {
+                    console.log('Tecla Escape - cerrando menú');
+                    closeMenu();
+                }
+            });
+            
+            console.log('Eventos vinculados correctamente');
+        }
+        
+        function updateStatus() {
+            document.getElementById('width').textContent = window.innerWidth + 'px';
+            document.getElementById('button').textContent = hamburgerBtn ? 'Sí' : 'No';
+            document.getElementById('button').className = hamburgerBtn ? 'status-value success' : 'status-value error';
+            document.getElementById('overlay').textContent = menuOverlay ? 'Sí' : 'No';
+            document.getElementById('overlay').className = menuOverlay ? 'status-value success' : 'status-value error';
+            document.getElementById('open').textContent = isOpen ? 'Sí' : 'No';
+            document.getElementById('open').className = isOpen ? 'status-value success' : 'status-value warning';
+        }
+        
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM listo - creando menú hamburguesa...');
+            createMenu();
+            bindEvents();
+            updateStatus();
+            console.log('Menú hamburguesa inicializado correctamente');
+        });
+        
+        // Debug inicial
+        console.log('Test Menú Hamburguesa EMERGENCIA - Página cargada');
+        console.log('User Agent:', navigator.userAgent);
+    </script>
+</body>
+</html>

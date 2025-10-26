@@ -1,0 +1,150 @@
+/* ==========================================================================
+   iPhone Specific Optimizations for Mobile Menu
+   ========================================================================== */
+
+/* Viewport and Safe Area Support */
+@supports (padding: max(0px)) {
+    .mobile-menu-overlay {
+        padding-top: max(120px, env(safe-area-inset-top, 120px));
+        padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+        padding-left: max(0px, env(safe-area-inset-left, 0px));
+        padding-right: max(0px, env(safe-area-inset-right, 0px));
+    }
+}
+
+/* Dynamic Viewport Height for iOS */
+@supports (height: 100dvh) {
+    .mobile-menu-overlay {
+        height: 100dvh;
+    }
+}
+
+/* iOS Safari Specific Optimizations */
+@supports (-webkit-touch-callout: none) {
+    /* Remove tap highlights */
+    .mobile-menu-toggle,
+    .mobile-nav-link,
+    .mobile-nav-menu li {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    
+    /* Smooth scrolling */
+    .mobile-menu-overlay {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Prevent zoom on double tap */
+    .mobile-menu-toggle {
+        touch-action: manipulation;
+    }
+    
+    /* Optimize touch targets */
+    .mobile-nav-link {
+        touch-action: manipulation;
+        -webkit-touch-callout: none;
+    }
+}
+
+/* iPhone X and newer safe area support */
+@supports (padding: env(safe-area-inset-top)) {
+    .mobile-menu-overlay {
+        padding-top: calc(120px + env(safe-area-inset-top));
+    }
+    
+    .mobile-nav {
+        padding-bottom: calc(var(--spacing-lg) + env(safe-area-inset-bottom));
+    }
+}
+
+/* Landscape orientation optimizations for iPhone */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+    .mobile-menu-overlay {
+        padding-top: max(80px, env(safe-area-inset-top, 80px));
+    }
+    
+    .mobile-nav {
+        padding: var(--spacing-md);
+    }
+    
+    .mobile-nav-link {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Small iPhone screens (iPhone SE, etc.) */
+@media screen and (max-width: 375px) {
+    .mobile-menu-toggle {
+        width: 40px;
+        height: 40px;
+        padding: 6px;
+    }
+    
+    .mobile-nav-link {
+        padding: 16px 18px;
+        font-size: 16px;
+    }
+}
+
+/* Large iPhone screens (iPhone Pro Max, etc.) */
+@media screen and (min-width: 414px) and (max-width: 768px) {
+    .mobile-nav-link {
+        padding: 22px 26px;
+        font-size: 19px;
+    }
+}
+
+/* High DPI displays optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hamburger-line {
+        transform: translateZ(0); /* Force hardware acceleration */
+        will-change: transform;
+    }
+    
+    .mobile-nav-link {
+        transform: translateZ(0); /* Force hardware acceleration */
+        will-change: transform;
+    }
+}
+
+/* Dark mode support for iOS */
+@media (prefers-color-scheme: dark) {
+    .mobile-menu-overlay {
+        background: linear-gradient(135deg, rgba(220, 20, 60, 0.98), rgba(139, 0, 0, 0.95));
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .mobile-menu-toggle,
+    .mobile-menu-overlay,
+    .mobile-nav-link {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .hamburger-line {
+        transition: none !important;
+    }
+}
+
+/* Focus styles for accessibility */
+.mobile-menu-toggle:focus,
+.mobile-nav-link:focus {
+    outline: 2px solid #FFD700;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .mobile-menu-overlay {
+        background: linear-gradient(135deg, #DC143C, #8B0000);
+    }
+    
+    .mobile-nav-link {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Test iPhone - Menú Hamburguesa</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/fullscreen-burger-menu.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .test-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .test-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .test-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .test-instructions {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .instruction-step {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .instruction-step::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #E63946;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .test-instructions {
+            counter-reset: step-counter;
+        }
+        
+        .test-note {
+            background: rgba(252, 191, 73, 0.2);
+            border: 1px solid rgba(252, 191, 73, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .test-note-title {
+            font-weight: 600;
+            color: #FCBF49;
+            margin-bottom: 10px;
+        }
+        
+        .debug-info {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        
+        .debug-item {
+            margin-bottom: 8px;
+        }
+        
+        .debug-label {
+            color: #FCBF49;
+            font-weight: bold;
+        }
+        
+        .debug-value {
+            color: #ffffff;
+        }
+        
+        @media (max-width: 768px) {
+            .test-title {
+                font-size: 2rem;
+            }
+            
+            .test-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="test-title">🍔 Test iPhone - Menú Hamburguesa</h1>
+        <p class="test-subtitle">Prueba específica para dispositivos iOS</p>
+        
+        <div class="test-content">
+            <h2>¡Prueba el Menú en iPhone!</h2>
+            <p>Este es un test específico para verificar que el menú hamburguesa funcione perfectamente en iPhone.</p>
+            
+            <div class="debug-info">
+                <div class="debug-item">
+                    <span class="debug-label">User Agent:</span>
+                    <span class="debug-value" id="userAgent">Cargando...</span>
+                </div>
+                <div class="debug-item">
+                    <span class="debug-label">Ancho de pantalla:</span>
+                    <span class="debug-value" id="screenWidth">Cargando...</span>
+                </div>
+                <div class="debug-item">
+                    <span class="debug-label">Alto de pantalla:</span>
+                    <span class="debug-value" id="screenHeight">Cargando...</span>
+                </div>
+                <div class="debug-item">
+                    <span class="debug-label">Es móvil:</span>
+                    <span class="debug-value" id="isMobile">Cargando...</span>
+                </div>
+                <div class="debug-item">
+                    <span class="debug-label">Menú inicializado:</span>
+                    <span class="debug-value" id="menuInitialized">Cargando...</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-instructions">
+            <h3>Instrucciones de Prueba:</h3>
+            
+            <div class="instruction-step">
+                Busca el botón hamburguesa rojo en la esquina superior derecha
+            </div>
+            
+            <div class="instruction-step">
+                Toca el botón para abrir el menú de pantalla completa
+            </div>
+            
+            <div class="instruction-step">
+                Verifica que el menú cubra toda la pantalla
+            </div>
+            
+            <div class="instruction-step">
+                Prueba navegar tocando los diferentes enlaces
+            </div>
+            
+            <div class="instruction-step">
+                Toca la X o el fondo para cerrar el menú
+            </div>
+            
+            <div class="instruction-step">
+                Verifica que el scroll del body esté bloqueado cuando el menú esté abierto
+            </div>
+        </div>
+        
+        <div class="test-note">
+            <div class="test-note-title">📱 Optimizaciones para iPhone</div>
+            <p>Este menú está específicamente optimizado para iPhone con:</p>
+            <ul style="text-align: left; margin-top: 10px;">
+                <li>Soporte para notch (iPhone X y posteriores)</li>
+                <li>Áreas de toque optimizadas (mínimo 44px)</li>
+                <li>Prevención de zoom en doble toque</li>
+                <li>Scroll suave con -webkit-overflow-scrolling</li>
+                <li>Compatibilidad con iOS Safari</li>
+                <li>Prevención de scroll del body</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Fullscreen Burger Menu JavaScript -->
+    <script src="js/fullscreen-burger-menu.js"></script>
+    
+    <script>
+        // Debug info
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('userAgent').textContent = navigator.userAgent;
+            document.getElementById('screenWidth').textContent = window.innerWidth + 'px';
+            document.getElementById('screenHeight').textContent = window.innerHeight + 'px';
+            document.getElementById('isMobile').textContent = window.innerWidth <= 1024 ? 'Sí' : 'No';
+            
+            // Verificar si el menú se inicializó
+            setTimeout(function() {
+                var hamburgerBtn = document.querySelector('.hamburger-btn');
+                document.getElementById('menuInitialized').textContent = hamburgerBtn ? 'Sí' : 'No';
+            }, 1000);
+        });
+        
+        // Actualizar info en resize
+        window.addEventListener('resize', function() {
+            document.getElementById('screenWidth').textContent = window.innerWidth + 'px';
+            document.getElementById('screenHeight').textContent = window.innerHeight + 'px';
+            document.getElementById('isMobile').textContent = window.innerWidth <= 1024 ? 'Sí' : 'No';
+        });
+    </script>
+</body>
+</html>

@@ -87,12 +87,62 @@
     <link rel="stylesheet" href="css/email-subscription.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/theme-red.css">
+    <link rel="stylesheet" href="css/modern-burger-menu.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="Logo/1.png">
     
     <!-- Language Selector Styles -->
     <style>
+        /* ==========================================================================
+           PLACEHOLDER STYLES - Visible in ALL browsers including Chrome
+           HACER PLACEHOLDER NEGRO Y VISIBLE EN CHROME */
+        input::placeholder {
+            color: #000 !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }
+
+        textarea::placeholder {
+            color: #000 !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #000 !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }
+
+        textarea::-webkit-input-placeholder {
+            color: #000 !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }
+
+        input::-moz-placeholder {
+            color: #000 !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }
+
+        textarea::-moz-placeholder {
+            color: #000 !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }
+
+        input:-ms-input-placeholder {
+            color: #000 !important;
+            font-weight: 700 !important;
+        }
+
+        textarea:-ms-input-placeholder {
+            color: #000 !important;
+            font-weight: 700 !important;
+        }
+        
         /* ==========================================================================
            CRITICAL: Prevent Horizontal Overflow - iPhone Fix
            ========================================================================== */
@@ -3023,11 +3073,13 @@ Z        /* Home Map Section - Centered and Wider */
                     <a href="contact.html" class="btn btn-primary" data-translate="visit-us">Visit Us</a>
                 </div>
 
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
+                <!-- Modern Burger Menu Toggle -->
+                <button class="modern-burger-toggle" id="modernBurgerToggle" aria-label="Abrir menú de navegación">
+                    <div class="modern-burger-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
             </div>
         </div>
@@ -3185,7 +3237,6 @@ Z        /* Home Map Section - Centered and Wider */
             <div class="menu-buttons">
                 <button class="menu-btn" onclick="showMenu('food')">🍔 FOOD</button>
                 <button class="menu-btn" onclick="showMenu('drinks')">🥤 DRINKS</button>
-                <button class="menu-btn active" onclick="showAllImages()">📸 VER TODAS LAS FOTOS</button>
             </div>
 
             <!-- PRODUCTS CONTAINER -->
@@ -3547,7 +3598,7 @@ Z        /* Home Map Section - Centered and Wider */
                                 <div class="form-group">
                                     <div class="input-container">
                                         <i class="fas fa-user input-icon"></i>
-                                        <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
+                                        <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required style="color: #333;">
                                     </div>
                                     <div class="error-message" id="nameError"></div>
                                 </div>
@@ -3555,7 +3606,7 @@ Z        /* Home Map Section - Centered and Wider */
                                 <div class="form-group">
                                     <div class="input-container">
                                         <i class="fas fa-envelope input-icon"></i>
-                                        <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
+                                        <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required style="color: #333;">
                                     </div>
                                     <div class="error-message" id="emailError"></div>
                                 </div>
@@ -3565,7 +3616,7 @@ Z        /* Home Map Section - Centered and Wider */
                                 <div class="form-group">
                                     <div class="input-container">
                                         <i class="fas fa-phone input-icon"></i>
-                                        <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number">
+                                        <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" style="color: #333;">
                                     </div>
                                     <div class="error-message" id="phoneError"></div>
                                 </div>
@@ -3590,7 +3641,7 @@ Z        /* Home Map Section - Centered and Wider */
                             <div class="form-group">
                                 <div class="input-container">
                                     <i class="fas fa-comment input-icon"></i>
-                                    <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+                                    <textarea id="message" name="message" required placeholder="Write your message here..." style="color: #333;"></textarea>
                                 </div>
                                 <div class="error-message" id="messageError"></div>
                             </div>
@@ -5286,6 +5337,9 @@ Z        /* Home Map Section - Centered and Wider */
             console.log('Contact section initialized successfully!');
         });
     </script>
+
+    <!-- Modern Burger Menu JavaScript -->
+    <script src="js/modern-burger-menu.js"></script>
 </body>
 </html>
 

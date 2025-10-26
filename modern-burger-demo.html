@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="Demostración del nuevo menú hamburguesa moderno de Fluffy Bites - Optimizado para iPhone">
+    <title>Menú Hamburguesa Moderno - Fluffy Bites</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modern-burger-menu.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo/1.png">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+        
+        .demo-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #E63946, #F77F00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.2rem;
+            color: #B0B0B0;
+            margin-bottom: 30px;
+        }
+        
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #E63946;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #FFFFFF;
+        }
+        
+        .feature-description {
+            color: #B0B0B0;
+            line-height: 1.6;
+        }
+        
+        .demo-instructions {
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .instructions-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #E63946;
+            margin-bottom: 20px;
+        }
+        
+        .instructions-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .instructions-list li {
+            padding: 10px 0;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .instructions-list li::before {
+            content: "✓";
+            color: #E63946;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .demo-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #E63946, #F77F00);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 20px rgba(230, 57, 70, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(230, 57, 70, 0.4);
+        }
+        
+        .device-info {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .device-info h3 {
+            color: #E63946;
+            margin-bottom: 10px;
+        }
+        
+        .device-info p {
+            color: #B0B0B0;
+            margin: 5px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 2rem;
+            }
+            
+            .demo-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header con el nuevo menú hamburguesa -->
+    <header class="modern-header" style="background: #E63946; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.3);">
+        <div class="header-container" style="max-width: 1400px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <!-- Logo -->
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: 700; font-size: 18px;">
+                <img src="Logo/1.png" alt="Fluffy Bites" style="height: 40px; width: auto;">
+                <span>Fluffy Bites</span>
+            </a>
+            
+            <!-- CTA Button -->
+            <div class="header-cta">
+                <a href="contact.html" class="btn btn-primary" style="background: white; color: #E63946; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Visit Us</a>
+            </div>
+            
+            <!-- Modern Burger Menu Toggle -->
+            <button class="modern-burger-toggle" id="modernBurgerToggle" aria-label="Abrir menú de navegación">
+                <div class="modern-burger-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="demo-container">
+        <div class="demo-header">
+            <h1 class="demo-title">🍔 Menú Hamburguesa Moderno</h1>
+            <p class="demo-subtitle">Completamente optimizado para iPhone con animaciones suaves y excelente UX</p>
+        </div>
+
+        <div class="demo-features">
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Optimizado para iPhone</h3>
+                <p class="feature-description">
+                    Diseño específicamente creado para dispositivos iOS con gestos táctiles intuitivos, 
+                    prevención de zoom en doble tap y optimizaciones para Safari.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3 class="feature-title">Animaciones Suaves</h3>
+                <p class="feature-description">
+                    Transiciones fluidas con cubic-bezier, efectos de deslizamiento, 
+                    animaciones de entrada escalonadas y feedback visual inmediato.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">Diseño Moderno</h3>
+                <p class="feature-description">
+                    Interfaz limpia con gradientes, efectos de blur, sombras suaves 
+                    y tipografía moderna que se adapta perfectamente a tu marca.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Rendimiento Optimizado</h3>
+                <p class="feature-description">
+                    Código JavaScript eficiente, CSS optimizado, prevención de scroll 
+                    del body y gestión inteligente de memoria para una experiencia fluida.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">♿</div>
+                <h3 class="feature-title">Accesibilidad</h3>
+                <p class="feature-description">
+                    Navegación por teclado, atributos ARIA, indicadores de foco, 
+                    soporte para lectores de pantalla y respeto por las preferencias del usuario.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3 class="feature-title">Fácil Integración</h3>
+                <p class="feature-description">
+                    Solo dos archivos (CSS + JS), configuración automática, 
+                    detección de dispositivos móviles y API simple para personalización.
+                </p>
+            </div>
+        </div>
+
+        <div class="demo-instructions">
+            <h2 class="instructions-title">🚀 Cómo Usar el Menú</h2>
+            <ul class="instructions-list">
+                <li>Haz clic en el botón hamburguesa (3 líneas) en la esquina superior derecha</li>
+                <li>El menú se deslizará desde la derecha con una animación suave</li>
+                <li>Navega tocando cualquier enlace del menú</li>
+                <li>Cierra el menú tocando la X, tocando fuera del menú, o deslizando hacia abajo</li>
+                <li>Usa gestos de deslizamiento para una experiencia más natural</li>
+                <li>El menú se cierra automáticamente al cambiar de página</li>
+            </ul>
+        </div>
+
+        <div class="demo-cta">
+            <a href="index.html" class="cta-button">Ver en Acción →</a>
+        </div>
+
+        <div class="device-info">
+            <h3>📱 Información del Dispositivo</h3>
+            <p><strong>Ancho de pantalla:</strong> <span id="screenWidth"></span>px</p>
+            <p><strong>Altura de pantalla:</strong> <span id="screenHeight"></span>px</p>
+            <p><strong>Dispositivo móvil:</strong> <span id="isMobile"></span></p>
+            <p><strong>Navegador:</strong> <span id="userAgent"></span></p>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/modern-burger-menu.js"></script>
+    
+    <script>
+        // Mostrar información del dispositivo
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('screenWidth').textContent = window.innerWidth;
+            document.getElementById('screenHeight').textContent = window.innerHeight;
+            document.getElementById('isMobile').textContent = window.innerWidth <= 1024 ? 'Sí' : 'No';
+            document.getElementById('userAgent').textContent = navigator.userAgent.split(' ')[0];
+            
+            // Actualizar información en resize
+            window.addEventListener('resize', function() {
+                document.getElementById('screenWidth').textContent = window.innerWidth;
+                document.getElementById('screenHeight').textContent = window.innerHeight;
+                document.getElementById('isMobile').textContent = window.innerWidth <= 1024 ? 'Sí' : 'No';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -526,14 +526,33 @@
         font-size: 14px;
     }
 
-    /* Mobile Nav */
+    /* Mobile Nav - iPhone Optimized */
     .mobile-nav {
         padding: var(--spacing-lg);
+        padding-bottom: max(var(--spacing-lg), env(safe-area-inset-bottom, var(--spacing-lg))); /* Safe area for iPhone */
     }
 
     .mobile-nav-link {
         font-size: var(--font-size-base);
-        padding: var(--spacing-sm) 0;
+        padding: 16px 20px; /* Better touch targets */
+        min-height: 44px; /* iOS minimum touch target */
+        display: flex;
+        align-items: center;
+    }
+    
+    /* iPhone specific optimizations */
+    @supports (-webkit-touch-callout: none) {
+        .mobile-menu-toggle {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .mobile-nav-link {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .mobile-menu-overlay {
+            -webkit-overflow-scrolling: touch;
+        }
     }
 }
 

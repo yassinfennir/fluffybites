@@ -1,0 +1,238 @@
+/* BURGER MENU OPTIMIZATIONS FOR IPHONE */
+/* Optimizaciones específicas para el burger menu en dispositivos móviles */
+
+/* Mejoras para iPhone y dispositivos táctiles */
+@media (max-width: 1024px) {
+    /* Botón hamburger optimizado para touch */
+    .hamburger {
+        /* Aumentar área de toque para mejor usabilidad */
+        min-width: 44px;
+        min-height: 44px;
+        /* Mejorar feedback táctil */
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+        /* Prevenir zoom en doble toque */
+        touch-action: manipulation;
+    }
+
+    /* Menú móvil optimizado */
+    .nav-mobile {
+        /* Mejorar rendimiento en iOS */
+        -webkit-overflow-scrolling: touch;
+        /* Asegurar que el menú ocupe el 70% del ancho en móvil */
+        width: 70% !important;
+        max-width: 320px;
+        min-width: 280px;
+    }
+
+    /* Enlaces del menú móvil optimizados para touch */
+    .nav-mobile-link {
+        /* Aumentar área de toque */
+        min-height: 60px;
+        padding: 18px 24px;
+        /* Mejorar feedback visual */
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+        /* Prevenir selección de texto accidental */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Iconos optimizados */
+    .nav-mobile-link i:not(.fa-chevron-right) {
+        /* Asegurar que los iconos sean táctiles */
+        min-width: 24px;
+        min-height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Optimizaciones específicas para iPhone */
+@media (max-width: 768px) {
+    /* Ajustar posicionamiento del botón hamburger */
+    .hamburger {
+        top: 10px !important;
+        right: 15px !important;
+        /* Asegurar que esté siempre visible */
+        z-index: 99999 !important;
+    }
+
+    /* Menú móvil más compacto en pantallas pequeñas */
+    .nav-mobile {
+        width: 75% !important;
+        max-width: 300px;
+    }
+
+    /* Reducir padding en enlaces para pantallas pequeñas */
+    .nav-mobile-link {
+        padding: 16px 20px;
+        min-height: 56px;
+        font-size: 15px;
+    }
+
+    /* Optimizar iconos para pantallas pequeñas */
+    .nav-mobile-link i:not(.fa-chevron-right) {
+        font-size: 18px;
+        min-width: 20px;
+        min-height: 20px;
+    }
+}
+
+/* Optimizaciones para iPhone en orientación landscape */
+@media (max-width: 768px) and (orientation: landscape) {
+    .nav-mobile {
+        /* Ajustar altura en landscape */
+        max-height: calc(100vh - 60px) !important;
+        top: 60px !important;
+    }
+
+    .hamburger {
+        top: 8px !important;
+    }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .hamburger,
+    .nav-mobile,
+    .nav-mobile-link {
+        transition: none !important;
+    }
+}
+
+/* Optimizaciones para dispositivos con notch (iPhone X y posteriores) */
+@supports (padding: max(0px)) {
+    .hamburger {
+        /* Ajustar para notch */
+        top: max(10px, env(safe-area-inset-top)) !important;
+        right: max(15px, env(safe-area-inset-right)) !important;
+    }
+}
+
+/* Mejoras de rendimiento */
+.nav-mobile {
+    /* Usar transform en lugar de cambiar display para mejor rendimiento */
+    will-change: transform;
+    /* Optimizar compositing */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Estados de hover optimizados para touch */
+@media (hover: none) and (pointer: coarse) {
+    .nav-mobile-link:hover {
+        background-color: transparent;
+    }
+    
+    .nav-mobile-link:active {
+        background-color: #f9fafb;
+    }
+}
+
+/* Mejoras para lectores de pantalla */
+.nav-mobile-link {
+    /* Asegurar que los enlaces sean accesibles */
+    role: "menuitem";
+}
+
+/* Optimizaciones de scroll */
+.nav-mobile {
+    /* Scroll suave en iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Ocultar scrollbar en navegadores webkit */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.nav-mobile::-webkit-scrollbar {
+    display: none;
+}
+
+/* Mejoras de contraste para mejor legibilidad */
+.nav-mobile-link {
+    /* Asegurar contraste suficiente */
+    color: #374151;
+}
+
+.nav-mobile-link.active {
+    /* Mejorar contraste para página activa */
+    color: #1d4ed8;
+    background-color: #dbeafe;
+}
+
+/* Optimizaciones de carga */
+.nav-mobile {
+    /* Evitar reflow durante la animación */
+    contain: layout style paint;
+}
+
+/* Mejoras de animación */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.nav-mobile.active {
+    animation: slideInFromRight 0.3s ease-out;
+}
+
+/* Optimizaciones para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2) {
+    .hamburger .line {
+        /* Asegurar que las líneas se vean nítidas en pantallas Retina */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Mejoras de usabilidad para usuarios con discapacidades motoras */
+.nav-mobile-link {
+    /* Aumentar área de toque para usuarios con dificultades motoras */
+    position: relative;
+}
+
+.nav-mobile-link::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    z-index: -1;
+}
+
+/* Optimizaciones de memoria */
+.nav-mobile {
+    /* Reducir uso de memoria en dispositivos con poca RAM */
+    contain: strict;
+}
+
+/* Mejoras de rendimiento en animaciones */
+.hamburger .line {
+    /* Usar transform en lugar de cambiar propiedades que causan reflow */
+    transform-origin: center;
+    will-change: transform, opacity;
+}
+
+/* Optimizaciones para iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .nav-mobile {
+        /* Mejorar rendimiento en iOS Safari */
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .hamburger {
+        /* Prevenir zoom en iOS Safari */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+    }
+}

@@ -3,7 +3,8 @@
  * Handles hamburger menu open/close and body scroll lock
  */
 
-(function() {
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     // Get DOM elements
@@ -17,6 +18,8 @@
         console.warn('Mobile menu elements not found');
         return;
     }
+
+    console.log('Mobile menu elements found:', { mobileMenuToggle, mobileMenuOverlay });
 
     /**
      * Toggle mobile menu
@@ -37,7 +40,12 @@
     function openMobileMenu() {
         mobileMenuToggle.classList.add('active');
         mobileMenuOverlay.classList.add('active');
-        body.style.overflow = 'hidden'; // Prevent body scroll
+        
+        // Prevent body scroll - iPhone optimized
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.width = '100%';
+        body.style.top = `-${window.scrollY}px`;
         
         // Set ARIA attributes
         mobileMenuToggle.setAttribute('aria-expanded', 'true');
@@ -50,7 +58,14 @@
     function closeMobileMenu() {
         mobileMenuToggle.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
-        body.style.overflow = ''; // Restore body scroll
+        
+        // Restore body scroll - iPhone optimized
+        const scrollY = body.style.top;
+        body.style.position = '';
+        body.style.top = '';
+        body.style.width = '';
+        body.style.overflow = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
         
         // Set ARIA attributes
         mobileMenuToggle.setAttribute('aria-expanded', 'false');
@@ -80,8 +95,31 @@
 
     // Event Listeners
     mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    mobileMenuToggle.addEventListener('touchstart', (e) => {
+        e.preventDefault(); // Prevent double-tap zoom
+        toggleMobileMenu();
+    }, { passive: false });
+    
     document.addEventListener('keydown', handleEscapeKey);
     mobileMenuOverlay.addEventListener('click', handleClickOutside);
+    
+    // Touch gesture support for closing menu
+    let startY = 0;
+    mobileMenuOverlay.addEventListener('touchstart', (e) => {
+        startY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    mobileMenuOverlay.addEventListener('touchmove', (e) => {
+        if (!mobileMenuOverlay.classList.contains('active')) return;
+        
+        const currentY = e.touches[0].clientY;
+        const diffY = startY - currentY;
+        
+        // Close menu if swiped up significantly
+        if (diffY > 100) {
+            closeMobileMenu();
+        }
+    }, { passive: true });
 
     // Close menu when clicking on a link
     mobileNavLinks.forEach(link => {
@@ -106,5 +144,5 @@
     mobileMenuToggle.setAttribute('aria-controls', 'mobileMenuOverlay');
     mobileMenuOverlay.setAttribute('aria-hidden', 'true');
 
-})();
+}); // End of DOMContentLoaded
 

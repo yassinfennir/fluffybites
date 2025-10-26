@@ -1,0 +1,500 @@
+/* ========================================
+   MODERN BURGER MENU - OPTIMIZADO PARA IPHONE
+   ======================================== */
+
+/* Variables CSS para consistencia */
+:root {
+    --burger-primary: #E63946;
+    --burger-primary-dark: #D62828;
+    --burger-secondary: #F77F00;
+    --burger-accent: #FCBF49;
+    --burger-dark: #1A1A1A;
+    --burger-light: #FFFFFF;
+    --burger-gray: #6C757D;
+    --burger-gray-light: #F8F9FA;
+    --burger-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --burger-shadow-strong: 0 8px 30px rgba(0, 0, 0, 0.25);
+    --burger-border-radius: 12px;
+    --burger-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --burger-transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   BURGER MENU TOGGLE BUTTON
+   ======================================== */
+
+.modern-burger-toggle {
+    display: none;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.modern-burger-toggle:focus {
+    outline: 2px solid var(--burger-accent);
+    outline-offset: 2px;
+}
+
+/* Líneas del botón hamburguesa */
+.modern-burger-lines {
+    position: relative;
+    width: 24px;
+    height: 18px;
+    margin: auto;
+    transform: rotate(0deg);
+    transition: var(--burger-transition);
+}
+
+.modern-burger-lines span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--burger-light);
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: var(--burger-transition);
+}
+
+.modern-burger-lines span:nth-child(1) {
+    top: 0px;
+    transform-origin: left center;
+}
+
+.modern-burger-lines span:nth-child(2) {
+    top: 7px;
+    transform-origin: left center;
+}
+
+.modern-burger-lines span:nth-child(3) {
+    top: 14px;
+    transform-origin: left center;
+}
+
+/* Animación cuando está activo */
+.modern-burger-toggle.active .modern-burger-lines span:nth-child(1) {
+    transform: rotate(45deg);
+    top: -2px;
+    left: 8px;
+}
+
+.modern-burger-toggle.active .modern-burger-lines span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.modern-burger-toggle.active .modern-burger-lines span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 16px;
+    left: 8px;
+}
+
+/* ========================================
+   OVERLAY DEL MENÚ
+   ======================================== */
+
+.modern-burger-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--burger-transition);
+    overflow: hidden;
+}
+
+.modern-burger-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========================================
+   CONTENIDO DEL MENÚ
+   ======================================== */
+
+.modern-burger-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--burger-dark) 0%, #2D2D2D 100%);
+    box-shadow: var(--burger-shadow-strong);
+    transform: translateX(100%);
+    transition: var(--burger-transition);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+.modern-burger-overlay.active .modern-burger-content {
+    transform: translateX(0);
+}
+
+/* ========================================
+   HEADER DEL MENÚ
+   ======================================== */
+
+.modern-burger-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modern-burger-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--burger-light);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.modern-burger-logo img {
+    height: 32px;
+    width: auto;
+}
+
+.modern-burger-close {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: var(--burger-light);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--burger-transition-fast);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modern-burger-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* ========================================
+   NAVEGACIÓN PRINCIPAL
+   ======================================== */
+
+.modern-burger-nav {
+    padding: 20px 0;
+}
+
+.modern-burger-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.modern-burger-nav-item {
+    margin: 0;
+}
+
+.modern-burger-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 20px;
+    color: var(--burger-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: var(--burger-transition-fast);
+    border-left: 3px solid transparent;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modern-burger-nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: var(--burger-primary);
+    color: var(--burger-accent);
+    transform: translateX(5px);
+}
+
+.modern-burger-nav-link.active {
+    background: rgba(230, 57, 70, 0.2);
+    border-left-color: var(--burger-primary);
+    color: var(--burger-accent);
+}
+
+.modern-burger-nav-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* ========================================
+   SECCIONES ESPECIALES
+   ======================================== */
+
+.modern-burger-section {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modern-burger-section-title {
+    color: var(--burger-accent);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 15px 0;
+    opacity: 0.9;
+}
+
+/* Información de contacto */
+.modern-burger-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modern-burger-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--burger-light);
+    font-size: 14px;
+    text-decoration: none;
+    transition: var(--burger-transition-fast);
+}
+
+.modern-burger-contact-item:hover {
+    color: var(--burger-accent);
+}
+
+.modern-burger-contact-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+/* Redes sociales */
+.modern-burger-social {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.modern-burger-social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--burger-light);
+    text-decoration: none;
+    font-size: 16px;
+    transition: var(--burger-transition-fast);
+}
+
+.modern-burger-social-link:hover {
+    background: var(--burger-primary);
+    color: var(--burger-light);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Mostrar botón hamburguesa solo en móvil */
+@media (max-width: 1024px) {
+    .modern-burger-toggle {
+        display: flex;
+    }
+}
+
+/* Optimizaciones específicas para iPhone */
+@media (max-width: 768px) {
+    .modern-burger-content {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .modern-burger-nav-link {
+        padding: 18px 20px;
+        font-size: 17px;
+    }
+    
+    .modern-burger-header {
+        padding: 25px 20px;
+    }
+    
+    .modern-burger-section {
+        padding: 25px 20px;
+    }
+}
+
+/* iPhone SE y pantallas muy pequeñas */
+@media (max-width: 375px) {
+    .modern-burger-nav-link {
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+    
+    .modern-burger-header {
+        padding: 20px;
+    }
+    
+    .modern-burger-section {
+        padding: 20px;
+    }
+}
+
+/* ========================================
+   ANIMACIONES Y EFECTOS
+   ======================================== */
+
+/* Animación de entrada para los elementos del menú */
+.modern-burger-nav-item {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideInRight 0.3s ease-out forwards;
+}
+
+.modern-burger-nav-item:nth-child(1) { animation-delay: 0.1s; }
+.modern-burger-nav-item:nth-child(2) { animation-delay: 0.15s; }
+.modern-burger-nav-item:nth-child(3) { animation-delay: 0.2s; }
+.modern-burger-nav-item:nth-child(4) { animation-delay: 0.25s; }
+.modern-burger-nav-item:nth-child(5) { animation-delay: 0.3s; }
+.modern-burger-nav-item:nth-child(6) { animation-delay: 0.35s; }
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efecto de desvanecimiento para el overlay */
+.modern-burger-overlay {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   ACCESIBILIDAD
+   ======================================== */
+
+/* Focus visible para navegación por teclado */
+.modern-burger-nav-link:focus-visible {
+    outline: 2px solid var(--burger-accent);
+    outline-offset: -2px;
+}
+
+.modern-burger-close:focus-visible {
+    outline: 2px solid var(--burger-accent);
+    outline-offset: 2px;
+}
+
+/* Reducir animaciones para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+    .modern-burger-lines,
+    .modern-burger-content,
+    .modern-burger-overlay,
+    .modern-burger-nav-link,
+    .modern-burger-contact-item,
+    .modern-burger-social-link {
+        transition: none;
+    }
+    
+    .modern-burger-nav-item {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ========================================
+   ESTADOS DE CARGA
+   ======================================== */
+
+.modern-burger-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-burger-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* ========================================
+   UTILIDADES
+   ======================================== */
+
+.modern-burger-hidden {
+    display: none !important;
+}
+
+.modern-burger-visible {
+    display: block !important;
+}
+
+.modern-burger-no-scroll {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+}
