@@ -44,6 +44,7 @@ build/
 # Archivos de IDE
 .vscode/
 .idea/
+.cursor/
 *.swp
 *.swo
 

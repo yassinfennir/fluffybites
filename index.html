@@ -1,403 +1,191 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fluffy Bites - Cafetería de especialidad en Espoo. Café artesanal, sandwiches gourmet y pasteles frescos. Tu nueva cafetería favorita en Merituulentie 36.">
-    <title>Fluffy Bites - Cafetería de Especialidad</title>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" as="style">
-    <link rel="preload" href="css/apple-style.css" as="style">
-    <link rel="preload" href="css/apple-premium-menu.css" as="style">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/apple-style.css">
-    <link rel="stylesheet" href="css/apple-premium-menu.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Fluffy Bites Café",
-      "image": "https://fluffybites.net/Fotos/Chocolate/1.png",
-      "url": "https://fluffybites.net",
-      "telephone": "+358 45 3549022",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Merituulentie 36",
-        "addressLocality": "Espoo",
-        "addressRegion": "Uusimaa",
-        "postalCode": "02200",
-        "addressCountry": "FI"
-      },
-      "priceRange": "€€",
-      "servesCuisine": "Café, Bakery",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "07:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday", "Sunday"],
-          "opens": "08:00",
-          "closes": "18:00"
-        }
-      ]
-    }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Fluffy Bites — Specialty coffee & sweets café in Espoo. Fluffy House | Everyone's House.">
+<title>Fluffy Bites | Specialty Coffee & Sweets — Espoo</title>
+<link rel="icon" type="image/png" href="Logo/1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav-container">
-        <div class="nav-content">
-            <div class="nav-logo">
-                <img src="Logo/1.png" alt="Fluffy Bites" class="logo-img">
-                <span class="logo-text">Fluffy Bites</span>
-            </div>
-            
-            <div class="nav-menu">
-                <a href="#inicio" class="nav-link active">Inicio</a>
-                <a href="#menu" class="nav-link">Menú</a>
-                <a href="#especialidades" class="nav-link">Especialidades</a>
-                <a href="#ubicacion" class="nav-link">Ubicación</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
-            </div>
-            
-            <div class="nav-actions">
-                <button class="btn-primary">Pedir Ahora</button>
-                <button class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar transparent" id="navbar" role="navigation" aria-label="Main">
+<div class="navbar__inner">
+<a href="#hero" class="navbar__logo" aria-label="Fluffy Bites Home">
+<img src="Logo/1.png" alt="Fluffy Bites" width="40" height="40" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+<span class="navbar__logo-text">Fluffy Bites</span>
+</a>
+<ul class="navbar__links">
+<li><a href="#hero" class="navbar__link" data-section="hero">Home</a></li>
+<li><a href="#menu" class="navbar__link" data-section="menu">Menu</a></li>
+<li><a href="#gallery" class="navbar__link" data-section="gallery">Gallery</a></li>
+<li><a href="#contact" class="navbar__link" data-section="contact">Contact</a></li>
+<li><a href="#location" class="navbar__link" data-section="location">Location</a></li>
+</ul>
+<button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+<span class="navbar__hamburger"></span>
+</button>
+</div>
+<ul class="navbar__mobile" id="navMenu" role="navigation" aria-label="Mobile menu">
+<li><a href="#hero" class="navbar__link" data-section="hero">Home</a></li>
+<li><a href="#menu" class="navbar__link" data-section="menu">Menu</a></li>
+<li><a href="#gallery" class="navbar__link" data-section="gallery">Gallery</a></li>
+<li><a href="#contact" class="navbar__link" data-section="contact">Contact</a></li>
+<li><a href="#location" class="navbar__link" data-section="location">Location</a></li>
+</ul>
+</nav>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero-section">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="title-line">Café de</span>
-                    <span class="title-line highlight">Especialidad</span>
-                    <span class="title-line">en Espoo</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Descubre el sabor auténtico del café artesanal, sandwiches gourmet y pasteles frescos en el corazón de Espoo.
-                </p>
-                <div class="hero-actions">
-                    <button class="btn-primary large">Ver Menú</button>
-                    <button class="btn-secondary large">Ubicación</button>
-                </div>
-            </div>
-            
-            <div class="hero-image">
-                <div class="image-container">
-                    <img src="Fotos/Caffe/1.png" alt="Café Especialidad" class="hero-img">
-                    <div class="image-overlay"></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
-            <span class="scroll-text">Desliza para explorar</span>
-        </div>
-    </section>
+<section id="hero" aria-labelledby="hero-title">
+<div class="hero-bg" aria-hidden="true"></div>
+<div class="hero-overlay" aria-hidden="true"></div>
+<div class="hero-content">
+<img src="Logo/1.png" alt="Fluffy Bites" class="hero-logo" width="120" height="120">
+<p class="hero-eyebrow">Espoo · Merituulentie 36</p>
+<h1 id="hero-title" class="hero-title">Fluffy House <span>| Everyone's House</span></h1>
+<p class="hero-subtitle">Specialty Coffee & Sweets in the heart of Espoo</p>
+<div class="hero-cta">
+<a href="#menu" class="btn btn--primary">View Menu</a>
+<a href="#contact" class="btn btn--outline">Contact Us</a>
+</div>
+</div>
+</section>
 
-    <!-- Menu Section - AUTO-GENERATED FROM JSON -->
-    <section id="menu" class="menu-section">
-        <div class="menu-header">
-            <h1>OUR MENU</h1>
-            <p>Culinary Art in Every Detail</p>
-            <div class="line-decoration"></div>
-        </div>
+<section class="about-strip">
+<div class="about-strip__grid">
+<div class="about-strip__card"><i class="fas fa-mug-hot" aria-hidden="true"></i><span>Artisan Coffee</span></div>
+<div class="about-strip__card"><i class="fas fa-cookie-bite" aria-hidden="true"></i><span>Homemade Sweets</span></div>
+<div class="about-strip__card"><i class="fas fa-utensils" aria-hidden="true"></i><span>Fresh Food</span></div>
+</div>
+</section>
 
-        <!-- Category Buttons (Auto-generated) -->
-        <div class="menu-buttons">
-            <button class="menu-btn active" data-category-btn="food">🍔 FOOD</button>
-            <button class="menu-btn" data-category-btn="drinks">🥤 DRINKS</button>
-        </div>
+<section class="menu-section" id="menu">
+<h2 class="section-title">Our Menu</h2>
+<p class="section-subtitle">Carefully crafted for you</p>
+<div class="menu__tabs">
+<button class="menu__tab active" data-tab="coffees">Coffees</button>
+<button class="menu__tab" data-tab="sweets">Sweets</button>
+<button class="menu__tab" data-tab="food">Food</button>
+<button class="menu__tab" data-tab="drinks">Drinks</button>
+</div>
+<div class="menu__panels">
+<div class="menu__panel active" id="panel-coffees">
+<div class="menu__grid">
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Espresso</h3><p>Single or double shot</p><span class="menu__price">$3.50</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Cappuccino</h3><p>Rich espresso & steamed milk</p><span class="menu__price">$4.50</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Cold Brew</h3><p>Slow steeped</p><span class="menu__price">$5.00</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Latte</h3><p>Espresso & silky milk</p><span class="menu__price">$4.75</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Mocha</h3><p>Chocolate & espresso</p><span class="menu__price">$5.25</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Macchiato</h3><p>Espresso with foam</p><span class="menu__price">$4.25</span></div></div>
+</div>
+</div>
+<div class="menu__panel" id="panel-sweets">
+<div class="menu__grid">
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Chocolate Brownie</h3><p>Decadent & fudgy</p><span class="menu__price">$4.00</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Cheesecake</h3><p>New York style</p><span class="menu__price">$5.50</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Croissant</h3><p>Butter laminated</p><span class="menu__price">$3.75</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Cinnamon Roll</h3><p>Freshly baked</p><span class="menu__price">$4.25</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Macarons</h3><p>Assorted flavors</p><span class="menu__price">$3.50</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Tiramisu</h3><p>Classic Italian</p><span class="menu__price">$6.00</span></div></div>
+</div>
+</div>
+<div class="menu__panel" id="panel-food">
+<div class="menu__grid">
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Avocado Toast</h3><p>Sourdough & cherry tomatoes</p><span class="menu__price">$8.50</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Bagel & Cream Cheese</h3><p>Fresh bagel</p><span class="menu__price">$6.00</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Granola Bowl</h3><p>Yogurt & berries</p><span class="menu__price">$7.50</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Club Sandwich</h3><p>Chicken, bacon, lettuce</p><span class="menu__price">$9.00</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Quiche</h3><p>Daily special</p><span class="menu__price">$7.00</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Fruit Bowl</h3><p>Seasonal fresh fruit</p><span class="menu__price">$6.50</span></div></div>
+</div>
+</div>
+<div class="menu__panel" id="panel-drinks">
+<div class="menu__grid">
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Fresh Orange Juice</h3><p>Freshly squeezed</p><span class="menu__price">$4.50</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Matcha Latte</h3><p>Premium matcha</p><span class="menu__price">$5.50</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Smoothie</h3><p>Berry or tropical</p><span class="menu__price">$6.00</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Iced Tea</h3><p>Green or fruit</p><span class="menu__price">$3.50</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Lemonade</h3><p>House-made</p><span class="menu__price">$4.00</span></div></div>
+<div class="menu__card"><div class="menu__img" role="img" aria-label="Product" style="background:#ddd"></div><div class="menu__info"><h3>Hot Chocolate</h3><p>Belgian chocolate</p><span class="menu__price">$4.75</span></div></div>
+</div>
+</div>
+</div>
+</section>
 
-        <!-- Products Container (Auto-populated from data/products.json) -->
-        <div id="products-container" class="products-container">
-            <!-- Products will be auto-generated by js/auto-menu-generator.js -->
-            <div class="menu-loader">
-                <div class="loader-spinner"></div>
-                <p>Loading delicious menu...</p>
-            </div>
-        </div>
-    </section>
+<section class="gallery-section" id="gallery">
+<h2 class="section-title">Our Space</h2>
+<p class="section-subtitle">Come visit us</p>
+<div class="gallery__masonry">
+<!-- REPLACE PLACEHOLDER IMAGES WITH YOUR CAFÉ PHOTOS -->
+<div class="gallery__item" data-index="0"><div class="gallery__placeholder" style="min-height:250px"><i class="fas fa-camera" aria-hidden="true"></i></div></div>
+<div class="gallery__item" data-index="1"><div class="gallery__placeholder" style="min-height:350px"><i class="fas fa-camera" aria-hidden="true"></i></div></div>
+<div class="gallery__item" data-index="2"><div class="gallery__placeholder" style="min-height:200px"><i class="fas fa-camera" aria-hidden="true"></i></div></div>
+<div class="gallery__item" data-index="3"><div class="gallery__placeholder" style="min-height:300px"><i class="fas fa-camera" aria-hidden="true"></i></div></div>
+<div class="gallery__item" data-index="4"><div class="gallery__placeholder" style="min-height:250px"><i class="fas fa-camera" aria-hidden="true"></i></div></div>
+<div class="gallery__item" data-index="5"><div class="gallery__placeholder" style="min-height:400px"><i class="fas fa-camera" aria-hidden="true"></i></div></div>
+<div class="gallery__item" data-index="6"><div class="gallery__placeholder" style="min-height:280px"><i class="fas fa-camera" aria-hidden="true"></i></div></div>
+<div class="gallery__item" data-index="7"><div class="gallery__placeholder" style="min-height:220px"><i class="fas fa-camera" aria-hidden="true"></i></div></div>
+<div class="gallery__item" data-index="8"><div class="gallery__placeholder" style="min-height:320px"><i class="fas fa-camera" aria-hidden="true"></i></div></div>
+</div>
+</section>
 
-    <!-- Specialties Section -->
-    <section id="especialidades" class="specialties-section">
-        <div class="section-header">
-            <h2 class="section-title">Especialidades</h2>
-            <p class="section-subtitle">Nuestras creaciones más populares</p>
-        </div>
-        
-        <div class="specialties-grid">
-            <div class="specialty-card">
-                <div class="card-image">
-                    <img src="Fotos/Chocolate/1.png" alt="Chocolate Dreamland">
-                    <div class="card-overlay">
-                        <button class="btn-primary">Ver Detalles</button>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Chocolate Dreamland</h3>
-                    <p class="card-description">Pastel de chocolate premium con crema belga</p>
-                    <div class="card-price">€8.50</div>
-                </div>
-            </div>
-            
-            <div class="specialty-card">
-                <div class="card-image">
-                    <img src="Fotos/Pasteles/1.png" alt="Tiramisu Clásico">
-                    <div class="card-overlay">
-                        <button class="btn-primary">Ver Detalles</button>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Tiramisu Clásico</h3>
-                    <p class="card-description">El auténtico sabor italiano en cada bocado</p>
-                    <div class="card-price">€7.90</div>
-                </div>
-            </div>
-            
-            <div class="specialty-card">
-                <div class="card-image">
-                    <img src="Fotos/Sandwitches/1.png" alt="Sandwich Gourmet">
-                    <div class="card-overlay">
-                        <button class="btn-primary">Ver Detalles</button>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Sandwich Gourmet</h3>
-                    <p class="card-description">Ingredientes frescos y sabores únicos</p>
-                    <div class="card-price">€9.50</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+<button class="lightbox__close" aria-label="Close">&times;</button>
+<button class="lightbox__prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+<button class="lightbox__next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+<div class="lightbox__content"></div>
+</div>
 
-    <!-- Location Section -->
-    <section id="ubicacion" class="location-section">
-        <div class="location-content">
-            <div class="location-info">
-                <h2 class="section-title">Visítanos</h2>
-                <div class="location-details">
-                    <div class="detail-item">
-                        <div class="detail-icon">📍</div>
-                        <div class="detail-text">
-                            <h3>Dirección</h3>
-                            <p>Merituulentie 36<br>02200 Espoo, Finlandia</p>
-                        </div>
-                    </div>
-                    
-                    <div class="detail-item">
-                        <div class="detail-icon">🕒</div>
-                        <div class="detail-text">
-                            <h3>Horarios</h3>
-                            <p>Lun-Vie: 7:00 - 20:00<br>Sáb-Dom: 8:00 - 18:00</p>
-                        </div>
-                    </div>
-                    
-                    <div class="detail-item">
-                        <div class="detail-icon">📞</div>
-                        <div class="detail-text">
-                            <h3>Contacto</h3>
-                            <p>+358 45 3549022<br>info@fluffybites.fi</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="location-actions">
-                    <button class="btn-primary">Cómo Llegar</button>
-                    <button class="btn-secondary">Llamar</button>
-                </div>
-            </div>
-            
-            <div class="location-map">
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.123456789!2d24.7414!3d60.1558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920b8a6a5c4d4d%3A0x8b8c8d8e8f8g8h8i!2sMerituulentie%2036%2C%2002200%20Espoo!5e0!3m2!1ses!2sfi!4v1234567890123!5m2!1ses!2sfi"
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="contact-section" id="contact">
+<h2 class="section-title">Get in Touch</h2>
+<p class="section-subtitle">We'd love to hear from you</p>
+<div class="contact__grid">
+<form class="contact__form" id="contactForm" novalidate>
+<input type="text" name="name" placeholder="Full Name" required autocomplete="name">
+<input type="email" name="email" placeholder="Email" required autocomplete="email">
+<input type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel">
+<textarea name="message" placeholder="Message" required rows="5"></textarea>
+<button type="submit" class="btn btn--primary btn--full">Send Message</button>
+<p class="contact__success" id="formSuccess" hidden>✅ Message sent!</p>
+</form>
+<div class="contact__info">
+<div class="contact__card"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Address</strong><span>Merituulentie 36, 02200 Espoo, Finland</span></div></div>
+<div class="contact__card"><i class="fas fa-phone" aria-hidden="true"></i><div><strong>Phone</strong><span>+358 45 3549022</span></div></div>
+<div class="contact__card"><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Email</strong><span>hello@fluffybites.fi</span></div></div>
+<div class="contact__card"><i class="fas fa-clock" aria-hidden="true"></i><div><strong>Hours</strong><span>Mon–Fri 7am–8pm | Sat–Sun 8am–9pm</span></div></div>
+<div class="contact__social">
+<a href="https://www.instagram.com/fluffybites.fi" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/fluffybites.fi" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.tiktok.com/@fluffybites.fi" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="contact-section">
-        <div class="section-header">
-            <h2 class="section-title">Contáctanos</h2>
-            <p class="section-subtitle">Estamos aquí para ayudarte</p>
-        </div>
-        
-        <div class="contact-content">
-            <div class="contact-form">
-                <form id="contactForm" class="form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Tu email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary large">Enviar Mensaje</button>
-                </form>
-            </div>
-            
-            <div class="contact-info">
-                <div class="social-links">
-                    <a href="#" class="social-link">Instagram</a>
-                    <a href="#" class="social-link">Facebook</a>
-                    <a href="#" class="social-link">TikTok</a>
-                </div>
-                
-                <div class="newsletter">
-                    <h3>Mantente al día</h3>
-                    <p>Recibe nuestras últimas novedades y ofertas especiales</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Tu email" required>
-                        <button type="submit" class="btn-primary">Suscribirse</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="map-section" id="location">
+<h2 class="section-title">Find Us</h2>
+<!-- REPLACE src WITH YOUR GOOGLE MAPS EMBED LINK -->
+<iframe class="map__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.7!2d24.7414!3d60.1558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjDCsDA5JzIwLjkiTiAyNMKwNDQnMjEuNSJF!5e0!3m2!1sen!2sfi" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Fluffy Bites Location"></iframe>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="Logo/1.png" alt="Fluffy Bites">
-                <span>Fluffy Bites</span>
-            </div>
-            
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>Menú</h4>
-                    <a href="#">Café</a>
-                    <a href="#">Sandwiches</a>
-                    <a href="#">Pasteles</a>
-                    <a href="#">Bebidas</a>
-                </div>
-                
-                <div class="link-group">
-                    <h4>Información</h4>
-                    <a href="#">Ubicación</a>
-                    <a href="#">Horarios</a>
-                    <a href="#">Contacto</a>
-                    <a href="#">Reservas</a>
-                </div>
-                
-                <div class="link-group">
-                    <h4>Legal</h4>
-                    <a href="#">Privacidad</a>
-                    <a href="#">Términos</a>
-                    <a href="#">Cookies</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2024 Fluffy Bites. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+<footer class="footer">
+<div class="footer__main">
+<div class="footer__brand"><img src="Logo/1.png" alt="Fluffy Bites" width="48" height="48"><span>Fluffy Bites — Specialty Coffee & Sweets</span></div>
+<nav class="footer__nav" aria-label="Footer">
+<a href="#hero">Home</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a><a href="#location">Location</a>
+</nav>
+<div class="footer__social">
+<a href="https://www.instagram.com/fluffybites.fi" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/fluffybites.fi" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.tiktok.com/@fluffybites.fi" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<p class="footer__copy">© 2026 Fluffy Bites. All rights reserved.</p>
+</footer>
 
-    <!-- Scripts -->
-    <script src="js/product-manager.js"></script>
-    <script src="js/auto-menu-generator.js"></script>
-    <script src="js/performance-optimizer.js"></script>
-    <script src="js/automation-system.js"></script>
-    <script src="js/apple-style.js"></script>
-    <script src="js/admin-panel.js"></script>
-    
-    <!-- Admin Mode Toggle -->
-    <script>
-        // Enable admin mode with ?admin=true in URL or localStorage
-        if (window.location.search.includes('admin=true') || localStorage.getItem('admin-mode') === 'true') {
-            localStorage.setItem('admin-mode', 'true');
-            console.log('👨‍💼 Admin mode enabled');
-        }
-        
-        // Global notification function
-        window.showNotification = function(message, type = 'info') {
-            if (window.automationSystem) {
-                window.automationSystem.logActivity('User notification', { message, type });
-            }
-            
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            notification.innerHTML = `
-                <div class="notification-content">
-                    <span class="notification-message">${message}</span>
-                    <button class="notification-close">&times;</button>
-                </div>
-            `;
-
-            // Add styles
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                z-index: 10000;
-                background: ${type === 'success' ? '#34C759' : type === 'error' ? '#FF3B30' : '#007AFF'};
-                color: white;
-                padding: 16px 20px;
-                border-radius: 12px;
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-                transform: translateX(100%);
-                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                max-width: 400px;
-            `;
-
-            document.body.appendChild(notification);
-
-            // Animate in
-            setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 100);
-
-            // Auto remove after 5 seconds
-            setTimeout(() => {
-                notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.remove();
-                    }
-                }, 300);
-            }, 5000);
-
-            // Close button
-            notification.querySelector('.notification-close').addEventListener('click', () => {
-                notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.remove();
-                    }
-                }, 300);
-            });
-        };
-    </script>
+<script src="script.js" defer></script>
 </body>
 </html>
